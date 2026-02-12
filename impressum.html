@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum — bayern(x)tech</title>
+    <meta name="robots" content="noindex">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-blue: #2fa9e2;
+            --bg-dark: #050505;
+            --bg-card: #0a0a0a;
+            --text-white: #ffffff;
+            --text-muted: #999999;
+            --border-dim: #1a1a1a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(5,5,5,0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            text-decoration: none;
+        }
+        .logo-text {
+            color: var(--brand-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+        .logo-box {
+            background-color: var(--brand-blue);
+            color: white;
+            height: 38px;
+            width: 38px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 4px;
+            padding-bottom: 2px;
+        }
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        nav a:hover { opacity: 1; color: var(--brand-blue); }
+
+        /* --- IMPRESSUM CONTENT --- */
+        .impressum {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 140px 40px 80px;
+        }
+
+        .impressum h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 48px;
+            color: var(--text-white);
+        }
+        .impressum h1 span {
+            color: var(--brand-blue);
+            font-weight: 600;
+        }
+
+        .impressum section {
+            margin-bottom: 36px;
+            padding: 28px 32px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: 12px;
+        }
+
+        .impressum h2 {
+            color: var(--brand-blue);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            border-left: 2px solid var(--brand-blue);
+            padding-left: 12px;
+        }
+
+        .impressum p,
+        .impressum li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .impressum a {
+            color: var(--brand-blue);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        .impressum a:hover { opacity: 0.75; }
+
+        .impressum ul {
+            list-style: none;
+            padding: 0;
+        }
+        .impressum ul li::before {
+            content: '—';
+            color: var(--brand-blue);
+            margin-right: 8px;
+        }
+
+        /* --- BACK LINK --- */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: var(--brand-blue); }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-dim);
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 0.03em;
+        }
+        footer a { color: #666; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--brand-blue); }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .logo-text { font-size: 1.4rem; }
+            .logo-box { width: 30px; height: 30px; font-size: 1.1rem; }
+            .impressum { padding: 120px 20px 60px; }
+            .impressum section { padding: 20px 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <span class="logo-text">bayern</span>
+            <div class="logo-box">(x)</div>
+            <span class="logo-text">tech</span>
+        </a>
+        <nav>
+            <a href="index.html">Startseite</a>
+            <a href="mailto:dylan.kane@bayernxtech.de">Kontakt</a>
+            <a href="https://www.linkedin.com/company/bayern-x-tech">LinkedIn</a>
+        </nav>
+    </header>
+
+    <main class="impressum">
+        <a href="index.html" class="back-link">&larr; Zurück zur Startseite</a>
+
+        <h1>Impressum</h1>
+
+        <section>
+            <h2>Angaben gemäß § 5 TMG</h2>
+            <p>
+                <strong>bayern(x)tech UG (haftungsbeschränkt)</strong><br>
+                Innstraße 69b<br>
+                94032 Passau<br>
+                Deutschland
+            </p>
+        </section>
+
+        <section>
+            <h2>Vertreten durch</h2>
+            <ul>
+                <li>Dylan Kane</li>
+                <li>Dennis Jahrstorfer</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+            <p>
+                Telefon: <a href="tel:+4917163249995">+49 171 632 4995</a><br>
+                E-Mail: <a href="mailto:dylan.kane@bayernxtech.de">dylan.kane@bayernxtech.de</a>
+            </p>
+        </section>
+
+        <section>
+            <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+            <p>
+                Dylan Kane<br>
+                Innstraße 69b<br>
+                94032 Passau
+            </p>
+        </section>
+
+        <section>
+            <h2>Haftungsausschluss</h2>
+
+            <p><strong>Haftung für Inhalte</strong></p>
+            <p>
+                Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+                Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+                können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter
+                sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen
+                Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8
+                bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
+                übermittelte oder gespeicherte fremde Informationen zu überwachen
+                oder nach Umständen zu forschen, die auf eine rechtswidrige
+                Tätigkeit hinweisen.
+            </p>
+
+            <p style="margin-top: 16px;"><strong>Haftung für Links</strong></p>
+            <p>
+                Unser Angebot enthält Links zu externen Webseiten Dritter, auf
+                deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
+                diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+                Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+                oder Betreiber der Seiten verantwortlich.
+            </p>
+        </section>
+
+        <section>
+            <h2>Urheberrecht</h2>
+            <p>
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
+                diesen Seiten unterliegen dem deutschen Urheberrecht. Die
+                Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen
+                der schriftlichen Zustimmung des jeweiligen Autors bzw.
+                Erstellers.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 bayern(x)tech</p>
+    </footer>
+
+</body>
+</html>
