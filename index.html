@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bayern(x)tech — Engineering & AI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- BRAND VARIABLES --- */
+        :root {
+            --brand-blue: #2fa9e2; /* Exact color from your logo */
+            --bg-dark: #050505;     /* Deep Industrial Black */
+            --text-white: #ffffff;
+            --text-muted: #999999;
+            --border-dim: #222222;
+        }
+
+        /* --- RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            /* Gradient fade for the header */
+            background: linear-gradient(to bottom, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.8) 80%, transparent 100%);
+        }
+
+        /* --- LOGO CONSTRUCTION (CSS only) --- */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .logo-text {
+            color: var(--brand-blue);
+            font-weight: 700; /* Bold like the image */
+            font-size: 1.8rem;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+
+        .logo-box {
+            background-color: var(--brand-blue);
+            color: white;
+            height: 38px;
+            width: 38px;
+            border-radius: 8px; /* Soft square edges */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 0 4px; /* Space between words and box */
+            padding-bottom: 2px; /* Optical alignment */
+        }
+
+        /* --- NAVIGATION --- */
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        nav a:hover { opacity: 1; color: var(--brand-blue); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            
+            /* Dark Industrial Background Image */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(64, 64, 64, 0.5)), 
+                              url('https://media.licdn.com/dms/image/v2/D4D22AQGAYrPnvbkXIg/feedshare-shrink_2048_1536/B4DZwkJx2hG8Ao-/0/1770133069630?e=1772668800&v=beta&t=7HBbmnEN-ERWkO1vkWWKi-kvYSmiPwmF2jzxr8ImxiI');
+            background-size: cover;
+            background-position: center;
+            
+            /* The Cyan "Laser" Border at bottom */
+            border-bottom: 2px solid var(--brand-blue);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4.5rem);
+            font-weight: 300; /* Thin, elegant tech font */
+            line-height: 1.1;
+            max-width: 1100px;
+            padding: 0 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+        
+        /* Highlight specific words in the title */
+        .hero-highlight {
+            color: var(--brand-blue);
+            font-weight: 600;
+        }
+
+        /* --- CONTENT GRID --- */
+        .content-wrapper {
+            background-color: var(--bg-dark);
+            padding: 100px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px; /* Lots of space between items */
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .grid-item h3 {
+            color: var(--brand-blue);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+            border-left: 2px solid var(--brand-blue); /* Little blue bar next to title */
+            padding-left: 15px;
+        }
+
+        .grid-item p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* --- INFO BAR --- */
+        .info-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px;
+            background: linear-gradient(to right, transparent, var(--border-dim), transparent);
+            border-top: 1px solid var(--border-dim);
+            border-bottom: 1px solid var(--border-dim);
+        }
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .info-label {
+            color: var(--brand-blue);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+        .info-value {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .info-value a {
+            color: var(--text-white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .info-value a:hover { color: var(--brand-blue); }
+
+        /* --- PROJECTS SECTION (AZX Style) --- */
+        .projects-section {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .projects-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .projects-header h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--brand-blue);
+            margin-bottom: 12px;
+        }
+        .projects-header p {
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--text-white);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .project-card {
+            padding: 40px;
+            background: transparent;
+            border: 1px solid var(--border-dim);
+            border-radius: 4px;
+            transition: all 0.4s ease;
+        }
+        .project-card:hover {
+            border-color: var(--brand-blue);
+            transform: translateY(-4px);
+        }
+        .project-icon {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .project-tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 6px 12px;
+            background: rgba(47, 169, 226, 0.1);
+            border: 1px solid rgba(47, 169, 226, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--brand-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-dim);
+            padding:   10px 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        footer a { color: #777; text-decoration: none; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .logo-text { font-size: 1.4rem; }
+            .logo-box { width: 30px; height: 30px; font-size: 1.1rem; }
+            .hero { height: 70vh; }
+            .grid { gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-text">bayern</span>
+            <div class="logo-box">(x)</div>
+            <span class="logo-text">tech</span>
+        </div>
+        
+        <nav>
+            <a href="mailto:dylan.kane@bayernxtech.de">Kontakt</a>
+            <a href="https://www.linkedin.com/company/bayern-x-tech">LinkedIn</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>
+            Ingenieurgetriebene Entwicklung & <br> 
+            <span class="hero-highlight">Sichere KI-Systeme</span>
+        </h1>
+    </section>
+
+    <div class="content-wrapper">
+        <div class="grid">
+            <div class="grid-item">
+                <h3>01 — Technische Tiefe</h3>
+                <p>Unser Team besteht aus Ingenieur:innen mit über zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe ermöglicht Lösungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen stoßen.</p>
+            </div>
+
+            <div class="grid-item">
+                <h3>02 — Datensouveränität</h3>
+                <p>Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollständig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen – stets DSGVO-konform.</p>
+            </div>
+
+            <div class="grid-item">
+                <h3>03 — Fokus</h3>
+                <p>Wir arbeiten projektbasiert und unterstützen Unternehmen dort, wo Zuverlässigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section (AZX Style) -->
+    <section class="projects-section">
+        <div class="projects-header">
+            <h2>Projekte</h2>
+            <p>Aktuelle Entwicklungen</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-icon">&#9728;</span>
+                <h3>OCR+ für Photovoltaik</h3>
+                <p>Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.</p>
+                <span class="project-tag">In Entwicklung</span>
+            </div>
+            <div class="project-card">
+                <span class="project-icon">&#10047;</span>
+                <h3>Edge-Case KI</h3>
+                <p>Vertrauliche KI-Implementierung für technisch anspruchsvolle Anwendungsfälle, die Standard-Modelle überfordern.</p>
+                <span class="project-tag">Vertraulich</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Bar -->
+    <div class="info-bar">
+        <div class="info-item">
+            <span class="info-label">Team</span>
+            <span class="info-value">Data Science · Robotik · Mechatronik · KI</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Standort</span>
+            <span class="info-value">Passau, Bayern</span>
+        </div>
+        <div class="info-item">
+            <span class="info-label">Kontakt</span>
+            <span class="info-value">
+                <a href="mailto:dylan.kane@bayernxtech.de">Dylan Kane</a> ·
+                <a href="mailto:dennis.jahrstorfer@bayernxtech.de">Dennis Jahrstorfer</a>
+            </span>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 bayern(x)tech</p>
+    </footer>
+
+    <!-- ==================== AI CHAT WIDGET ==================== -->
+    <style>
+        /* --- Chat Toggle Button --- */
+        .chat-toggle {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--brand-blue);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(47, 169, 226, 0.4);
+            z-index: 9999;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .chat-toggle:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 28px rgba(47, 169, 226, 0.55);
+        }
+        .chat-toggle svg { width: 26px; height: 26px; fill: #fff; }
+        .chat-toggle .icon-close { display: none; }
+        .chat-toggle.open .icon-chat { display: none; }
+        .chat-toggle.open .icon-close { display: block; }
+
+        /* --- Chat Window --- */
+        .chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            width: 380px;
+            max-height: 540px;
+            background: #0a0a0a;
+            border: 1px solid var(--border-dim);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            z-index: 9998;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .chat-window.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* --- Chat Header --- */
+        .chat-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-dim);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .chat-header-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--brand-blue);
+            box-shadow: 0 0 6px var(--brand-blue);
+        }
+        .chat-header-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-white);
+            letter-spacing: 0.03em;
+        }
+        .chat-header-sub {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        /* --- Chat Messages --- */
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 280px;
+            max-height: 360px;
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+        }
+        .chat-messages::-webkit-scrollbar { width: 5px; }
+        .chat-messages::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .chat-bubble.user {
+            align-self: flex-end;
+            background: var(--brand-blue);
+            color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+        .chat-bubble.assistant {
+            align-self: flex-start;
+            background: #1a1a1a;
+            color: var(--text-white);
+            border: 1px solid var(--border-dim);
+            border-bottom-left-radius: 4px;
+        }
+        .chat-bubble.assistant a {
+            color: var(--brand-blue);
+            text-decoration: underline;
+        }
+        .chat-bubble.error {
+            align-self: center;
+            background: transparent;
+            color: #e55;
+            font-size: 0.8rem;
+            border: 1px solid rgba(238,85,85,0.3);
+            text-align: center;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            padding: 10px 18px;
+            background: #1a1a1a;
+            border: 1px solid var(--border-dim);
+            border-radius: 12px;
+            border-bottom-left-radius: 4px;
+        }
+        .typing-indicator.active { display: flex; gap: 4px; }
+        .typing-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            animation: typingBounce 1.2s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-4px); opacity: 1; }
+        }
+
+        /* --- Chat Input --- */
+        .chat-input-area {
+            padding: 12px 14px;
+            border-top: 1px solid var(--border-dim);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .chat-input {
+            flex: 1;
+            background: #111;
+            border: 1px solid var(--border-dim);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s;
+            resize: none;
+            max-height: 80px;
+            line-height: 1.4;
+        }
+        .chat-input::placeholder { color: #555; }
+        .chat-input:focus { border-color: var(--brand-blue); }
+
+        .chat-send {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            border: none;
+            background: var(--brand-blue);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: opacity 0.2s;
+        }
+        .chat-send:disabled { opacity: 0.4; cursor: default; }
+        .chat-send svg { width: 18px; height: 18px; fill: #fff; }
+
+        /* --- Responsive --- */
+        @media (max-width: 480px) {
+            .chat-window {
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                max-height: 100%;
+                border-radius: 12px 12px 0 0;
+            }
+            .chat-toggle { bottom: 16px; right: 16px; }
+        }
+    </style>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Chat öffnen">
+        <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-dot"></div>
+            <span class="chat-header-title">BXT KI-Assistent</span>
+            <span class="chat-header-sub">Online</span>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-bubble assistant">Hallo! Ich bin der KI-Assistent von bayern(x)tech. Wie kann ich Ihnen helfen?</div>
+        </div>
+
+        <div class="chat-input-area">
+            <textarea class="chat-input" id="chatInput" placeholder="Nachricht eingeben…" rows="1"></textarea>
+            <button class="chat-send" id="chatSend" aria-label="Senden">
+                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+    (() => {
+        // ── BROWSER FINGERPRINT (stable even after cookie/storage wipe) ──
+        function generateFingerprint() {
+            const signals = [];
+
+            // Screen properties
+            signals.push(screen.width, screen.height, screen.colorDepth, screen.pixelDepth);
+            signals.push(window.devicePixelRatio || 1);
+
+            // Platform / language / timezone
+            signals.push(navigator.language || '');
+            signals.push(navigator.platform || navigator.userAgentData?.platform || '');
+            signals.push(navigator.hardwareConcurrency || 0);
+            signals.push(navigator.deviceMemory || 0);
+            signals.push(Intl.DateTimeFormat().resolvedOptions().timeZone || '');
+            signals.push(new Date().getTimezoneOffset());
+
+            // Installed plugins count (legacy but stable)
+            signals.push(navigator.plugins ? navigator.plugins.length : 0);
+
+            // WebGL renderer / vendor
+            try {
+                const c = document.createElement('canvas');
+                const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
+                if (gl) {
+                    const dbg = gl.getExtension('WEBGL_debug_renderer_info');
+                    if (dbg) {
+                        signals.push(gl.getParameter(dbg.UNMASKED_VENDOR_WEBGL));
+                        signals.push(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL));
+                    }
+                    signals.push(gl.getParameter(gl.MAX_TEXTURE_SIZE));
+                    signals.push(gl.getParameter(gl.MAX_RENDERBUFFER_SIZE));
+                }
+            } catch (_) {}
+
+            // Canvas fingerprint
+            try {
+                const cv = document.createElement('canvas');
+                cv.width = 200; cv.height = 50;
+                const ctx = cv.getContext('2d');
+                ctx.textBaseline = 'top';
+                ctx.font = '14px Arial';
+                ctx.fillStyle = '#a1c3d4';
+                ctx.fillRect(10, 0, 180, 50);
+                ctx.fillStyle = '#183042';
+                ctx.fillText('BXT-fp-2026!@#$', 12, 15);
+                ctx.strokeStyle = '#2fa9e2';
+                ctx.arc(80, 25, 12, 0, Math.PI * 2);
+                ctx.stroke();
+                signals.push(cv.toDataURL());
+            } catch (_) {}
+
+            // AudioContext fingerprint
+            try {
+                const ac = new (window.OfflineAudioContext || window.webkitOfflineAudioContext)(1, 44100, 44100);
+                signals.push(ac.sampleRate);
+            } catch (_) {}
+
+            // Hash all signals into a stable hex ID
+            const raw = signals.join('|||');
+            let h1 = 0x811c9dc5, h2 = 0x1f351fd5;
+            for (let i = 0; i < raw.length; i++) {
+                const c = raw.charCodeAt(i);
+                h1 = Math.imul(h1 ^ c, 0x01000193);
+                h2 = Math.imul(h2 ^ c, 0x100193af);
+            }
+            h1 = (h1 >>> 0); h2 = (h2 >>> 0);
+            return 'bxt-' + h1.toString(16).padStart(8,'0') + h2.toString(16).padStart(8,'0');
+        }
+
+        // Cache in localStorage for speed, but always regenerable
+        function getStableUserId() {
+            const fp = generateFingerprint();
+            try { localStorage.setItem('bxt_uid', fp); } catch (_) {}
+            return fp;
+        }
+
+        // ── CONFIG ──────────────────────────────────────────────
+        const API_URL  = 'http://localhost:8000/api/chat/';
+        const USER_ID  = getStableUserId();
+
+        // Visitor metadata — sent with every request so the analytics
+        // dashboard can break usage down by role / business / sector.
+        const USER_META = {
+            role:     '',   // e.g. "Engineer", "Manager", "Student"
+            business: '',   // e.g. "BMW", "Siemens"
+            sector:   '',   // e.g. "Automotive", "Energy", "Legal"
+        };
+
+        // ── DOM ─────────────────────────────────────────────────
+        const toggle   = document.getElementById('chatToggle');
+        const win      = document.getElementById('chatWindow');
+        const messages = document.getElementById('chatMessages');
+        const input    = document.getElementById('chatInput');
+        const sendBtn  = document.getElementById('chatSend');
+
+        let sessionId  = null;
+        let sending    = false;
+
+        // ── TOGGLE ──────────────────────────────────────────────
+        toggle.addEventListener('click', () => {
+            const open = win.classList.toggle('visible');
+            toggle.classList.toggle('open', open);
+            if (open) input.focus();
+        });
+
+        // ── HELPERS ─────────────────────────────────────────────
+        function addBubble(text, role) {
+            const el = document.createElement('div');
+            el.className = `chat-bubble ${role}`;
+            el.textContent = text;
+            messages.appendChild(el);
+            messages.scrollTop = messages.scrollHeight;
+            return el;
+        }
+
+        function showTyping() {
+            let ind = messages.querySelector('.typing-indicator');
+            if (!ind) {
+                ind = document.createElement('div');
+                ind.className = 'typing-indicator';
+                ind.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+                messages.appendChild(ind);
+            }
+            ind.classList.add('active');
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function hideTyping() {
+            const ind = messages.querySelector('.typing-indicator');
+            if (ind) ind.remove();
+        }
+
+        function setLock(locked) {
+            sending = locked;
+            sendBtn.disabled = locked;
+            input.disabled = locked;
+        }
+
+        // ── SEND MESSAGE ────────────────────────────────────────
+        async function send() {
+            const text = input.value.trim();
+            if (!text || sending) return;
+
+            addBubble(text, 'user');
+            input.value = '';
+            autoResize();
+            setLock(true);
+            showTyping();
+
+            try {
+                const body = {
+                    message: text,
+                    user_id: USER_ID,
+                    enable_rag: true,
+                    enable_functions: false,
+                    user_meta: USER_META,
+                };
+                if (sessionId) body.session_id = sessionId;
+
+                const res = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body),
+                });
+
+                hideTyping();
+
+                if (!res.ok) {
+                    const err = await res.json().catch(() => ({}));
+                    throw new Error(err.detail || `Server error ${res.status}`);
+                }
+
+                const data = await res.json();
+                sessionId = data.session_id;
+                addBubble(data.response, 'assistant');
+            } catch (e) {
+                hideTyping();
+                addBubble(`Fehler: ${e.message}`, 'error');
+            } finally {
+                setLock(false);
+                input.focus();
+            }
+        }
+
+        // ── INPUT EVENTS ────────────────────────────────────────
+        sendBtn.addEventListener('click', send);
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                send();
+            }
+        });
+
+        function autoResize() {
+            input.style.height = 'auto';
+            input.style.height = Math.min(input.scrollHeight, 80) + 'px';
+        }
+        input.addEventListener('input', autoResize);
+    })();
+    </script>
+
+</body>
+</html>
