@@ -12,15 +12,22 @@
     <style>
         /* --- BRAND VARIABLES --- */
         :root {
-            --brand-blue: #2fa9e2; /* Exact color from your logo */
-            --bg-dark: #050505;     /* Deep Industrial Black */
+            --brand-blue: #2fa9e2;
+            --brand-blue-glow: rgba(47, 169, 226, 0.15);
+            --bg-dark: #050505;
+            --bg-card: #0a0a0a;
             --text-white: #ffffff;
             --text-muted: #999999;
-            --border-dim: #222222;
+            --border-dim: #1a1a1a;
         }
 
         /* --- RESET --- */
         * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y proximity;
+        }
 
         body {
             background-color: var(--bg-dark);
@@ -28,20 +35,48 @@
             font-family: 'Inter', sans-serif;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
+
+        /* --- SNAP SECTIONS --- */
+        .snap-section {
+            scroll-snap-align: start;
+        }
+
+        /* --- SCROLL REVEAL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
 
         /* --- HEADER --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 40px;
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            /* Gradient fade for the header */
-            background: linear-gradient(to bottom, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.8) 80%, transparent 100%);
+            background: rgba(5,5,5,0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: padding 0.3s;
+        }
+        header.scrolled {
+            padding: 12px 40px;
+            background: rgba(5,5,5,0.92);
         }
 
         /* --- LOGO CONSTRUCTION (CSS only) --- */
@@ -87,80 +122,207 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 85vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
-            
-            /* Dark Industrial Background Image */
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(64, 64, 64, 0.5)), 
+            overflow: hidden;
+            scroll-snap-align: start;
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(5,5,5,0.85)),
                               url('https://media.licdn.com/dms/image/v2/D4D22AQGAYrPnvbkXIg/feedshare-shrink_2048_1536/B4DZwkJx2hG8Ao-/0/1770133069630?e=1772668800&v=beta&t=7HBbmnEN-ERWkO1vkWWKi-kvYSmiPwmF2jzxr8ImxiI');
             background-size: cover;
             background-position: center;
-            
-            /* The Cyan "Laser" Border at bottom */
-            border-bottom: 2px solid var(--brand-blue);
+        }
+
+        /* Animated gradient overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 120%, rgba(47,169,226,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Bottom glow border */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--brand-blue) 30%, var(--brand-blue) 70%, transparent 100%);
+            box-shadow: 0 0 20px var(--brand-blue), 0 0 60px rgba(47,169,226,0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 5vw, 4.5rem);
-            font-weight: 300; /* Thin, elegant tech font */
+            font-size: clamp(2.2rem, 5vw, 4.5rem);
+            font-weight: 300;
             line-height: 1.1;
             max-width: 1100px;
             padding: 0 20px;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            text-shadow: 0 4px 40px rgba(0,0,0,0.6);
         }
-        
-        /* Highlight specific words in the title */
+
+        .hero-subtitle {
+            margin-top: 24px;
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            animation: heroFadeIn 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 36px;
+            padding: 14px 36px;
+            background: transparent;
+            border: 1px solid rgba(47,169,226,0.5);
+            color: var(--brand-blue);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.35s ease;
+            animation: heroFadeIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero-cta:hover {
+            background: var(--brand-blue);
+            color: #fff;
+            border-color: var(--brand-blue);
+            box-shadow: 0 4px 30px rgba(47,169,226,0.35);
+            transform: translateY(-2px);
+        }
+
         .hero-highlight {
             color: var(--brand-blue);
             font-weight: 600;
         }
 
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 36px;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: heroFadeIn 1.2s 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .scroll-indicator span {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+        }
+        .scroll-line {
+            width: 1px;
+            height: 32px;
+            background: linear-gradient(to bottom, var(--brand-blue), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.6); }
+        }
+
         /* --- CONTENT GRID --- */
         .content-wrapper {
             background-color: var(--bg-dark);
-            padding: 100px 40px;
+            padding: 120px 40px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 100vh;
+            scroll-snap-align: start;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 80px; /* Lots of space between items */
+            gap: 40px;
             max-width: 1400px;
             width: 100%;
         }
 
+        .grid-item {
+            padding: 36px;
+            border-radius: 12px;
+            border: 1px solid var(--border-dim);
+            background: var(--bg-card);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .grid-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--brand-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .grid-item:hover {
+            border-color: rgba(47,169,226,0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        .grid-item:hover::before { opacity: 1; }
+
         .grid-item h3 {
             color: var(--brand-blue);
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin-bottom: 20px;
-            border-left: 2px solid var(--brand-blue); /* Little blue bar next to title */
+            border-left: 2px solid var(--brand-blue);
             padding-left: 15px;
         }
 
         .grid-item p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.75;
         }
 
+        /* --- INFO BAR + FOOTER --- */
         /* --- INFO BAR --- */
         .info-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-            padding: 40px;
-            background: linear-gradient(to right, transparent, var(--border-dim), transparent);
+            gap: 60px;
+            padding: 50px 40px;
+            background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(5,5,5,1) 100%);
             border-top: 1px solid var(--border-dim);
             border-bottom: 1px solid var(--border-dim);
+            position: relative;
+            flex-shrink: 0;
+        }
+        .info-bar::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: 20%; right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(47,169,226,0.3), transparent);
         }
         .info-item {
             display: flex;
@@ -186,44 +348,63 @@
         }
         .info-value a:hover { color: var(--brand-blue); }
 
-        /* --- PROJECTS SECTION (AZX Style) --- */
+        /* --- PROJECTS SECTION --- */
         .projects-section {
-            padding: 100px 40px;
+            padding: 120px 40px;
             max-width: 1200px;
             margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            scroll-snap-align: start;
         }
         .projects-header {
             text-align: center;
             margin-bottom: 60px;
         }
         .projects-header h2 {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.2em;
             color: var(--brand-blue);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .projects-header p {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 300;
             color: var(--text-white);
         }
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            gap: 28px;
         }
         .project-card {
             padding: 40px;
-            background: transparent;
+            background: var(--bg-card);
             border: 1px solid var(--border-dim);
-            border-radius: 4px;
-            transition: all 0.4s ease;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(47,169,226,0.04) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
         }
         .project-card:hover {
-            border-color: var(--brand-blue);
-            transform: translateY(-4px);
+            border-color: rgba(47,169,226,0.4);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(47,169,226,0.06);
         }
+        .project-card:hover::after { opacity: 1; }
         .project-icon {
             font-size: 2.5rem;
             margin-bottom: 24px;
@@ -238,39 +419,46 @@
         .project-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.65;
         }
         .project-tag {
             display: inline-block;
             margin-top: 20px;
-            padding: 6px 12px;
-            background: rgba(47, 169, 226, 0.1);
-            border: 1px solid rgba(47, 169, 226, 0.3);
+            padding: 6px 14px;
+            background: rgba(47, 169, 226, 0.08);
+            border: 1px solid rgba(47, 169, 226, 0.25);
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: var(--brand-blue);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.06em;
+            font-weight: 500;
         }
 
         /* --- FOOTER --- */
         footer {
             border-top: 1px solid var(--border-dim);
-            padding:   10px 40px;
+            padding: 40px;
             text-align: center;
-            font-size: 0.85rem;
-            color: #555;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 0.03em;
         }
 
-        footer a { color: #777; text-decoration: none; }
+        footer a { color: #666; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--brand-blue); }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             .logo-text { font-size: 1.4rem; }
             .logo-box { width: 30px; height: 30px; font-size: 1.1rem; }
-            .hero { height: 70vh; }
-            .grid { gap: 40px; }
+            .hero { height: 100vh; }
+            .grid { gap: 20px; }
+            .grid-item { padding: 28px; }
+            .content-wrapper { padding: 80px 20px; }
+            .projects-section { padding: 80px 20px; }
+            .info-bar { gap: 30px; }
         }
     </style>
 </head>
@@ -284,71 +472,80 @@
         </div>
         
         <nav>
-            <a href="mailto:dylan.kane@bayernxtech.de">Kontakt</a>
+            <a href="mailto:dylan.kane@bayernxtech.de" data-i18n="nav_contact">Kontakt</a>
             <a href="https://www.linkedin.com/company/bayern-x-tech">LinkedIn</a>
+            <a href="#" id="langToggle" style="cursor:pointer;text-transform:uppercase;font-weight:600;letter-spacing:0.05em">EN</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>
-            Ingenieurgetriebene Entwicklung & <br> 
-            <span class="hero-highlight">Sichere KI-Systeme</span>
-        </h1>
+        <div class="hero-content">
+            <h1>
+                <span data-i18n="hero_line1">Ingenieurgetriebene Entwicklung &</span> <br> 
+                <span class="hero-highlight" data-i18n="hero_line2">Sichere KI-Systeme</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Robotik · Data Science · On-Premise KI</p>
+            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen &rarr;</a>
+        </div>
+        <div class="scroll-indicator">
+            <span data-i18n="scroll_label">Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
     <div class="content-wrapper">
         <div class="grid">
-            <div class="grid-item">
-                <h3>01 — Technische Tiefe</h3>
-                <p>Unser Team besteht aus Ingenieur:innen mit über zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe ermöglicht Lösungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen stoßen.</p>
+            <div class="grid-item reveal">
+                <h3 data-i18n="grid1_title">01 — Technische Tiefe</h3>
+                <p data-i18n="grid1_text">Unser Team besteht aus Ingenieur:innen mit über zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe ermöglicht Lösungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen stoßen.</p>
             </div>
 
-            <div class="grid-item">
-                <h3>02 — Datensouveränität</h3>
-                <p>Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollständig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen – stets DSGVO-konform.</p>
+            <div class="grid-item reveal reveal-delay-1">
+                <h3 data-i18n="grid2_title">02 — Datensouveränität</h3>
+                <p data-i18n="grid2_text">Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollständig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen – stets DSGVO-konform.</p>
             </div>
 
-            <div class="grid-item">
-                <h3>03 — Fokus</h3>
-                <p>Wir arbeiten projektbasiert und unterstützen Unternehmen dort, wo Zuverlässigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.</p>
+            <div class="grid-item reveal reveal-delay-2">
+                <h3 data-i18n="grid3_title">03 — Fokus</h3>
+                <p data-i18n="grid3_text">Wir arbeiten projektbasiert und unterstützen Unternehmen dort, wo Zuverlässigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.</p>
             </div>
         </div>
     </div>
 
-    <!-- Projects Section (AZX Style) -->
+    <!-- Projects Section -->
     <section class="projects-section">
-        <div class="projects-header">
-            <h2>Projekte</h2>
-            <p>Aktuelle Entwicklungen</p>
+        <div class="projects-header reveal">
+            <h2 data-i18n="projects_label">Projekte</h2>
+            <p data-i18n="projects_sub">Aktuelle Entwicklungen</p>
         </div>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card reveal">
                 <span class="project-icon">&#9728;</span>
-                <h3>OCR+ für Photovoltaik</h3>
-                <p>Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.</p>
-                <span class="project-tag">In Entwicklung</span>
+                <h3 data-i18n="proj1_title">OCR+ für Photovoltaik</h3>
+                <p data-i18n="proj1_text">Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.</p>
+                <span class="project-tag" data-i18n="proj1_tag">In Entwicklung</span>
             </div>
-            <div class="project-card">
+            <div class="project-card reveal reveal-delay-1">
                 <span class="project-icon">&#10047;</span>
-                <h3>Edge-Case KI</h3>
-                <p>Vertrauliche KI-Implementierung für technisch anspruchsvolle Anwendungsfälle, die Standard-Modelle überfordern.</p>
-                <span class="project-tag">Vertraulich</span>
+                <h3 data-i18n="proj2_title">Edge-Case KI</h3>
+                <p data-i18n="proj2_text">Vertrauliche KI-Implementierung für technisch anspruchsvolle Anwendungsfälle, die Standard-Modelle überfordern.</p>
+                <span class="project-tag" data-i18n="proj2_tag">Vertraulich</span>
             </div>
         </div>
     </section>
 
-    <!-- Info Bar -->
-    <div class="info-bar">
+    <!-- Info Bar + Footer -->
+    <div class="info-bar reveal">
         <div class="info-item">
             <span class="info-label">Team</span>
-            <span class="info-value">Data Science · Robotik · Mechatronik · KI</span>
+            <span class="info-value" data-i18n="info_team">Data Science · Robotik · Mechatronik · KI</span>
         </div>
         <div class="info-item">
-            <span class="info-label">Standort</span>
-            <span class="info-value">Passau, Bayern</span>
+            <span class="info-label" data-i18n="info_location_label">Standort</span>
+            <span class="info-value" data-i18n="info_location">Passau, Bayern</span>
         </div>
         <div class="info-item">
-            <span class="info-label">Kontakt</span>
+            <span class="info-label" data-i18n="info_contact_label">Kontakt</span>
             <span class="info-value">
                 <a href="mailto:dylan.kane@bayernxtech.de">Dylan Kane</a> ·
                 <a href="mailto:dennis.jahrstorfer@bayernxtech.de">Dennis Jahrstorfer</a>
@@ -358,6 +555,7 @@
 
     <footer>
         <p>&copy; 2026 bayern(x)tech</p>
+        <a href="Impressum">Impressum</a>
     </footer>
 
     <!-- ==================== AI CHAT WIDGET ==================== -->
@@ -585,11 +783,11 @@
         </div>
 
         <div class="chat-messages" id="chatMessages">
-            <div class="chat-bubble assistant">Hallo! Ich bin der KI-Assistent von bayern(x)tech. Wie kann ich Ihnen helfen?</div>
+            <div class="chat-bubble assistant" data-i18n="chat_greeting">Hi, we're bayern(x)tech. We partner with engineers and scientists to push the boundaries of what's possible. What challenge can we help you solve?</div>
         </div>
 
         <div class="chat-input-area">
-            <textarea class="chat-input" id="chatInput" placeholder="Nachricht eingeben…" rows="1"></textarea>
+            <textarea class="chat-input" id="chatInput" data-i18n-placeholder="chat_placeholder" placeholder="Nachricht eingeben…" rows="1"></textarea>
             <button class="chat-send" id="chatSend" aria-label="Senden">
                 <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
@@ -797,6 +995,131 @@
             input.style.height = Math.min(input.scrollHeight, 80) + 'px';
         }
         input.addEventListener('input', autoResize);
+    })();
+    </script>
+
+    <!-- ==================== SCROLL REVEAL & HEADER ==================== -->
+    <script>
+    (() => {
+        // Scroll-reveal with IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Header shrink on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+    })();
+    </script>
+
+    <!-- ==================== i18n ENGINE ==================== -->
+    <script>
+    (() => {
+        const T = {
+            de: {
+                nav_contact: 'Kontakt',
+                hero_line1: 'Ingenieurgetriebene Entwicklung &',
+                hero_line2: 'Sichere KI-Systeme',
+                hero_subtitle: 'Robotik · Data Science · On-Premise KI',
+                hero_cta: 'Projekt besprechen →',
+                scroll_label: 'Scroll',
+                grid1_title: '01 \u2014 Technische Tiefe',
+                grid1_text: 'Unser Team besteht aus Ingenieur:innen mit \u00fcber zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe erm\u00f6glicht L\u00f6sungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen sto\u00dfen.',
+                grid2_title: '02 \u2014 Datensouver\u00e4nit\u00e4t',
+                grid2_text: 'Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollst\u00e4ndig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen \u2013 stets DSGVO-konform.',
+                grid3_title: '03 \u2014 Fokus',
+                grid3_text: 'Wir arbeiten projektbasiert und unterst\u00fctzen Unternehmen dort, wo Zuverl\u00e4ssigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.',
+                projects_label: 'Projekte',
+                projects_sub: 'Aktuelle Entwicklungen',
+                proj1_title: 'OCR+ f\u00fcr Photovoltaik',
+                proj1_text: 'Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.',
+                proj1_tag: 'In Entwicklung',
+                proj2_title: 'Edge-Case KI',
+                proj2_text: 'Vertrauliche KI-Implementierung f\u00fcr technisch anspruchsvolle Anwendungsf\u00e4lle, die Standard-Modelle \u00fcberfordern.',
+                proj2_tag: 'Vertraulich',
+                info_team: 'Data Science \u00b7 Robotik \u00b7 Mechatronik \u00b7 KI',
+                info_location_label: 'Standort',
+                info_location: 'Passau, Bayern',
+                info_contact_label: 'Kontakt',
+                chat_greeting: 'Hallo! Wir sind bayern(x)tech. Wir arbeiten mit Ingenieur:innen und Wissenschaftler:innen zusammen, um die Grenzen des M\u00f6glichen zu verschieben. Welche Herausforderung k\u00f6nnen wir f\u00fcr Sie l\u00f6sen?',
+                chat_placeholder: 'Nachricht eingeben\u2026',
+            },
+            en: {
+                nav_contact: 'Contact',
+                hero_line1: 'Engineering-Driven Development &',
+                hero_line2: 'Secure AI Systems',
+                hero_subtitle: 'Robotics · Data Science · On-Premise AI',
+                hero_cta: 'Discuss Your Project →',
+                scroll_label: 'Scroll',
+                grid1_title: '01 \u2014 Technical Depth',
+                grid1_text: 'Our team consists of engineers with over ten years of experience in robotics, mechatronics, and data science. This depth enables solutions even where standard AI and off-the-shelf systems reach their limits.',
+                grid2_title: '02 \u2014 Data Sovereignty',
+                grid2_text: 'Our systems are local and transparent. Depending on requirements, we implement fully offline or isolated environments, or controlled hybrid architectures \u2014 always GDPR-compliant.',
+                grid3_title: '03 \u2014 Focus',
+                grid3_text: 'We work on a project basis and support companies where reliability, traceability, and data protection are critical. BXT combines legal tech with hard-core engineering.',
+                projects_label: 'Projects',
+                projects_sub: 'Current Developments',
+                proj1_title: 'OCR+ for Photovoltaics',
+                proj1_text: 'Specialised document intelligence for automated processing of technical documents in the solar industry.',
+                proj1_tag: 'In Development',
+                proj2_title: 'Edge-Case AI',
+                proj2_text: 'Confidential AI implementation for technically demanding use cases that overwhelm standard models.',
+                proj2_tag: 'Confidential',
+                info_team: 'Data Science \u00b7 Robotics \u00b7 Mechatronics \u00b7 AI',
+                info_location_label: 'Location',
+                info_location: 'Passau, Bavaria',
+                info_contact_label: 'Contact',
+                chat_greeting: "Hi, we're bayern(x)tech. We partner with engineers and scientists to push the boundaries of what's possible. What challenge can we help you solve?",
+                chat_placeholder: 'Type a message\u2026',
+            }
+        };
+
+        // Detect language: check localStorage override, then browser lang
+        function detectLang() {
+            const saved = localStorage.getItem('bxt_lang');
+            if (saved === 'de' || saved === 'en') return saved;
+            return (navigator.language || navigator.userLanguage || '').startsWith('de') ? 'de' : 'en';
+        }
+
+        let currentLang = detectLang();
+
+        function applyLang(lang) {
+            currentLang = lang;
+            localStorage.setItem('bxt_lang', lang);
+            document.documentElement.lang = lang;
+
+            const strings = T[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (strings[key] != null) el.textContent = strings[key];
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (strings[key] != null) el.placeholder = strings[key];
+            });
+
+            // Update toggle button label to show the OTHER language
+            const btn = document.getElementById('langToggle');
+            if (btn) btn.textContent = lang === 'de' ? 'EN' : 'DE';
+        }
+
+        // Toggle handler
+        document.getElementById('langToggle').addEventListener('click', (e) => {
+            e.preventDefault();
+            applyLang(currentLang === 'de' ? 'en' : 'de');
+        });
+
+        // Apply on load
+        applyLang(currentLang);
     })();
     </script>
 
