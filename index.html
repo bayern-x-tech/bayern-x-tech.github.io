@@ -794,7 +794,7 @@
         </div>
     </div>
 
-            <script>
+                <script>
     (() => {
         // -- BROWSER FINGERPRINT --
         function generateFingerprint() {
@@ -847,8 +847,8 @@
         }
 
         // -- CONFIG --
-        const API_URL  = 'https://msgid-curve-disposal-ethernet.trycloudflare.com/api/chat/';
-        const HEALTH_URL = 'https://msgid-curve-disposal-ethernet.trycloudflare.com/health';
+        const API_URL  = 'https://whatever-handmade-important-tall.trycloudflare.com/api/chat/';
+        const HEALTH_URL = 'https://whatever-handmade-important-tall.trycloudflare.com/health';
         const USER_ID  = getStableUserId();
         const USER_META = { role: '', business: '', sector: '' };
 
@@ -929,18 +929,31 @@
         });
 
         // -- HELPERS --
-        function addBubble(text, role) {
+        let sendStartTime = 0;
+
+        function addBubble(text, role, meta) {
             const el = document.createElement('div');
             el.className = 'chat-bubble ' + role;
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(8px)';
             if (role === 'assistant') {
                 const safe = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                el.innerHTML = safe
+                let html = safe
                     .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
                     .replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>');
+                if (meta && meta.elapsed) {
+                    html += '<div style="font-size:0.65rem;color:#555;margin-top:6px;text-align:right">' + meta.elapsed.toFixed(1) + 's</div>';
+                }
+                el.innerHTML = html;
             } else {
                 el.textContent = text;
             }
             messages.appendChild(el);
+            requestAnimationFrame(() => {
+                el.style.transition = 'opacity 0.3s, transform 0.3s';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
             messages.scrollTop = messages.scrollHeight;
             return el;
         }
@@ -978,6 +991,7 @@
             autoResize();
             setLock(true);
             showTyping();
+            sendStartTime = performance.now();
 
             if (!serverOnline) {
                 hideTyping();
@@ -1021,7 +1035,8 @@
 
                 const data = await res.json();
                 sessionId = data.session_id;
-                addBubble(data.response, 'assistant');
+                const elapsed = (performance.now() - sendStartTime) / 1000;
+                addBubble(data.response, 'assistant', { elapsed });
             } catch (e) {
                 hideTyping();
                 if (e.name === 'AbortError') {
