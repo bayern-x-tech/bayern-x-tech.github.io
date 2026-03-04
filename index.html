@@ -635,7 +635,6 @@
         .chat-header-sub {
             font-size: 0.7rem;
             color: var(--text-muted);
-            margin-left: auto;
         }
 
         /* --- Chat Messages --- */
@@ -755,6 +754,22 @@
         .chat-send:disabled { opacity: 0.4; cursor: default; }
         .chat-send svg { width: 18px; height: 18px; fill: #fff; }
 
+        /* --- Close button in header --- */
+        .chat-header-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .chat-header-close:hover { background: rgba(255,255,255,0.1); }
+        .chat-header-close svg { width: 18px; height: 18px; fill: var(--text-muted); }
+
         /* --- Responsive --- */
         @media (max-width: 480px) {
             .chat-window {
@@ -765,6 +780,7 @@
                 border-radius: 12px 12px 0 0;
             }
             .chat-toggle { bottom: 16px; right: 16px; }
+            .chat-toggle.open { display: none; }
         }
     </style>
 
@@ -780,6 +796,9 @@
             <div class="chat-header-dot"></div>
             <span class="chat-header-title">BXT KI-Assistent</span>
             <span class="chat-header-sub">Online</span>
+            <button class="chat-header-close" id="chatClose" aria-label="Chat schliessen">
+                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
         </div>
 
         <div class="chat-messages" id="chatMessages">
@@ -794,7 +813,7 @@
         </div>
     </div>
 
-                <script>
+                    <script>
     (() => {
         // -- BROWSER FINGERPRINT --
         function generateFingerprint() {
@@ -847,8 +866,8 @@
         }
 
         // -- CONFIG --
-        const API_URL  = 'https://whatever-handmade-important-tall.trycloudflare.com/api/chat/';
-        const HEALTH_URL = 'https://whatever-handmade-important-tall.trycloudflare.com/health';
+        const API_URL  = 'https://thrown-longitude-have-farming.trycloudflare.com/api/chat/';
+        const HEALTH_URL = 'https://thrown-longitude-have-farming.trycloudflare.com/health';
         const USER_ID  = getStableUserId();
         const USER_META = { role: '', business: '', sector: '' };
 
@@ -922,11 +941,21 @@
         setInterval(checkServer, 15000);
 
         // -- TOGGLE --
+        function closeChat() {
+            win.classList.remove('visible');
+            toggle.classList.remove('open');
+        }
+        function openChat() {
+            win.classList.add('visible');
+            toggle.classList.add('open');
+            input.focus();
+            checkServer();
+        }
         toggle.addEventListener('click', () => {
-            const open = win.classList.toggle('visible');
-            toggle.classList.toggle('open', open);
-            if (open) { input.focus(); checkServer(); }
+            if (win.classList.contains('visible')) { closeChat(); } else { openChat(); }
         });
+        const closeBtn = document.getElementById('chatClose');
+        if (closeBtn) closeBtn.addEventListener('click', closeChat);
 
         // -- HELPERS --
         let sendStartTime = 0;
