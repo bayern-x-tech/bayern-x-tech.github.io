@@ -188,6 +188,8 @@
             display: inline-block;
             margin-top: 36px;
             padding: 14px 36px;
+            white-space: pre-line;
+            text-align: center;
             background: transparent;
             border: 1px solid rgba(47,169,226,0.5);
             color: var(--brand-blue);
@@ -199,6 +201,17 @@
             border-radius: 6px;
             transition: all 0.35s ease;
             animation: heroFadeIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero-cta::after {
+            content: '→';
+            display: block;
+            margin-top: 6px;
+            font-size: 1.2em;
+            color: var(--brand-blue);
+            transition: transform 0.3s ease;
+        }
+        .hero-cta:hover::after {
+            transform: translateX(6px);
         }
         .hero-cta:hover {
             background: var(--brand-blue);
@@ -509,7 +522,8 @@
                 <span class="hero-highlight" data-i18n="hero_line2">Sichere KI-Systeme</span>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Robotik · Data Science · On-Premise KI</p>
-            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen &rarr;</a>
+            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen.
+Wir bauen komplette Lösungen.</a>
         </div>
         <div class="scroll-indicator">
             <span data-i18n="scroll_label">Scroll</span>
@@ -675,7 +689,7 @@
         </div>
         <div class="info-item">
             <span class="info-label" data-i18n="info_location_label">Standort</span>
-            <span class="info-value" data-i18n="info_location">Passau, Bayern</span>
+            <span class="info-value"><a href="https://maps.app.goo.gl/JdNoxKRRrUxH3byb9" target="_blank" rel="noopener" data-i18n="info_location">Passau, Bayern</a></span>
         </div>
         <div class="info-item">
             <span class="info-label" data-i18n="info_contact_label">Kontakt</span>
@@ -1229,7 +1243,7 @@
                 hero_line1: 'Ingenieurgetriebene Entwicklung &',
                 hero_line2: 'Sichere KI-Systeme',
                 hero_subtitle: 'Robotik · Data Science · On-Premise KI',
-                hero_cta: 'Projekt besprechen →',
+                hero_cta: 'Projekt besprechen.\nWir bauen komplette L\u00f6sungen.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technische Tiefe',
                 grid1_text: 'Unser Team besteht aus Ingenieur:innen mit \u00fcber zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe erm\u00f6glicht L\u00f6sungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen sto\u00dfen.',
@@ -1283,7 +1297,7 @@
                 hero_line1: 'Engineering-Driven Development &',
                 hero_line2: 'Secure AI Systems',
                 hero_subtitle: 'Robotics · Data Science · On-Premise AI',
-                hero_cta: 'Discuss Your Project →',
+                hero_cta: 'Discuss Your Project.\nWe build complete solutions.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technical Depth',
                 grid1_text: 'Our team consists of engineers with over ten years of experience in robotics, mechatronics, and data science. This depth enables solutions even where standard AI and off-the-shelf systems reach their limits.',
