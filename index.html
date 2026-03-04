@@ -131,7 +131,7 @@
             overflow: hidden;
             scroll-snap-align: start;
             background-image: linear-gradient(rgba(0,0,0,0.65), rgba(5,5,5,0.85)),
-                              url('https://media.licdn.com/dms/image/v2/D4D22AQGAYrPnvbkXIg/feedshare-shrink_2048_1536/B4DZwkJx2hG8Ao-/0/1770133069630?e=1772668800&v=beta&t=7HBbmnEN-ERWkO1vkWWKi-kvYSmiPwmF2jzxr8ImxiI');
+                              url('assets/hero-passau.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -188,6 +188,8 @@
             display: inline-block;
             margin-top: 36px;
             padding: 14px 36px;
+            white-space: pre-line;
+            text-align: center;
             background: transparent;
             border: 1px solid rgba(47,169,226,0.5);
             color: var(--brand-blue);
@@ -199,6 +201,17 @@
             border-radius: 6px;
             transition: all 0.35s ease;
             animation: heroFadeIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .hero-cta::after {
+            content: '→';
+            display: block;
+            margin-top: 6px;
+            font-size: 1.2em;
+            color: var(--brand-blue);
+            transition: transform 0.3s ease;
+        }
+        .hero-cta:hover::after {
+            transform: translateX(6px);
         }
         .hero-cta:hover {
             background: var(--brand-blue);
@@ -348,48 +361,45 @@
         }
         .info-value a:hover { color: var(--brand-blue); }
 
-        /* --- PROJECTS SECTION --- */
-        .projects-section {
+        /* --- USE CASES SECTION --- */
+        .usecases-section {
             padding: 120px 40px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             scroll-snap-align: start;
         }
-        .projects-header {
+        .usecases-header {
             text-align: center;
             margin-bottom: 60px;
         }
-        .projects-header h2 {
+        .usecases-header h2 {
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--brand-blue);
             margin-bottom: 14px;
         }
-        .projects-header p {
+        .usecases-header p {
             font-size: 2.2rem;
             font-weight: 300;
             color: var(--text-white);
         }
-        .projects-grid {
+        .usecases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 28px;
         }
-        .project-card {
-            padding: 40px;
+        .uc-card {
             background: var(--bg-card);
             border: 1px solid var(--border-dim);
             border-radius: 12px;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        .project-card::after {
+        .uc-card::after {
             content: '';
             position: absolute;
             top: -50%; left: -50%;
@@ -399,36 +409,62 @@
             transition: opacity 0.5s;
             pointer-events: none;
         }
-        .project-card:hover {
+        .uc-card:hover {
             border-color: rgba(47,169,226,0.4);
             transform: translateY(-6px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(47,169,226,0.06);
         }
-        .project-card:hover::after { opacity: 1; }
-        .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 24px;
-            display: block;
+        .uc-card:hover::after { opacity: 1; }
+        .uc-visual {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(47,169,226,0.06) 0%, rgba(47,169,226,0.02) 100%);
+            border-bottom: 1px solid var(--border-dim);
+            position: relative;
         }
-        .project-card h3 {
-            font-size: 1.25rem;
+        .uc-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .uc-visual-icon {
+            font-size: 3.5rem;
+            line-height: 1;
+            filter: grayscale(0.2);
+        }
+        .uc-body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .uc-body h3 {
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--text-white);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
-        .project-card p {
+        .uc-body p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.65;
+            flex: 1;
         }
-        .project-tag {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 6px 14px;
+        .uc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+        .uc-tag {
+            padding: 5px 12px;
             background: rgba(47, 169, 226, 0.08);
             border: 1px solid rgba(47, 169, 226, 0.25);
             border-radius: 20px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--brand-blue);
             text-transform: uppercase;
             letter-spacing: 0.06em;
@@ -457,7 +493,8 @@
             .grid { gap: 20px; }
             .grid-item { padding: 28px; }
             .content-wrapper { padding: 80px 20px; }
-            .projects-section { padding: 80px 20px; }
+            .usecases-section { padding: 80px 20px; }
+            .usecases-grid { grid-template-columns: 1fr; }
             .info-bar { gap: 30px; }
         }
     </style>
@@ -485,7 +522,8 @@
                 <span class="hero-highlight" data-i18n="hero_line2">Sichere KI-Systeme</span>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Robotik · Data Science · On-Premise KI</p>
-            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen &rarr;</a>
+            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen.
+Wir bauen komplette Lösungen.</a>
         </div>
         <div class="scroll-indicator">
             <span data-i18n="scroll_label">Scroll</span>
@@ -512,25 +550,134 @@
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <section class="projects-section">
-        <div class="projects-header reveal">
-            <h2 data-i18n="projects_label">Projekte</h2>
-            <p data-i18n="projects_sub">Aktuelle Entwicklungen</p>
+    <!-- Use Cases Section -->
+    <section class="usecases-section">
+        <div class="usecases-header reveal">
+            <h2 data-i18n="uc_label">Anwendungsfälle</h2>
+            <p data-i18n="uc_sub">Konkrete Lösungen für konkrete Probleme</p>
         </div>
-        <div class="projects-grid">
-            <div class="project-card reveal">
-                <span class="project-icon">&#9728;</span>
-                <h3 data-i18n="proj1_title">OCR+ für Photovoltaik</h3>
-                <p data-i18n="proj1_text">Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.</p>
-                <span class="project-tag" data-i18n="proj1_tag">In Entwicklung</span>
+        <div class="usecases-grid">
+
+            <!-- UC1: 3D-CAD Assistenz | IMG-READY: assets/uc1-3d-cad.jpg -->
+            <div class="uc-card reveal">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🏗️📐</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc1_title">KI-Assistenz für 3D-Konstruktion</h3>
+                    <p data-i18n="uc1_text">Designabsicht beschreiben, Geometrie-Features erzeugen. Weniger Menüs, weniger Lernkurve — mehr Zeit für Engineering.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc1_tag1">3D-CAD (CATIA, SolidWorks, NX)</span>
+                        <span class="uc-tag" data-i18n="uc1_tag2">Automotive</span>
+                    </div>
+                </div>
             </div>
-            <div class="project-card reveal reveal-delay-1">
-                <span class="project-icon">&#10047;</span>
-                <h3 data-i18n="proj2_title">Edge-Case KI</h3>
-                <p data-i18n="proj2_text">Vertrauliche KI-Implementierung für technisch anspruchsvolle Anwendungsfälle, die Standard-Modelle überfordern.</p>
-                <span class="project-tag" data-i18n="proj2_tag">Vertraulich</span>
+
+            <!-- UC2: Qualitätsmanagement | IMG-READY: assets/uc2-quality.jpg -->
+            <div class="uc-card reveal reveal-delay-1">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🔬📊</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc2_title">Root Cause Analysis in der Montage</h3>
+                    <p data-i18n="uc2_text">Schraubdaten, Materialchargen, Prüfstandsergebnisse — KI verknüpft fragmentierte Datenquellen und führt Ihre QM-Experten schneller zur Fehlerursache.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc2_tag1">Qualitätsmanagement</span>
+                        <span class="uc-tag" data-i18n="uc2_tag2">Fertigung</span>
+                    </div>
+                </div>
             </div>
+
+            <!-- UC3: Supply Chain | IMG-READY: assets/uc3-supply-chain.jpg -->
+            <div class="uc-card reveal reveal-delay-2">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">📦🚚</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc3_title">Supply Chain Intelligence</h3>
+                    <p data-i18n="uc3_text">Reklamationen, Fehlteile, Lagerbestände — KI-gestützte Optimierung vom Wareneingang bis zur Rückverfolgung fehlerhafter Komponenten.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc3_tag1">Supply Chain</span>
+                        <span class="uc-tag" data-i18n="uc3_tag2">Logistik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC4: Smart Grid | IMG-READY: assets/uc4-smart-grid.jpg -->
+            <div class="uc-card reveal">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">⚡🌆</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc4_title">Energienetze intelligent steuern</h3>
+                    <p data-i18n="uc4_text">Erzeugung, Speicherung, Verteilung — KI-basierte Optimierung urbaner Energienetze für Stadtwerke und Kommunen auf dem Weg zu 100% Erneuerbar.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc4_tag1">Smart Grid</span>
+                        <span class="uc-tag" data-i18n="uc4_tag2">Energiemanagement</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC5: Ladeinfrastruktur | IMG-READY: assets/uc5-ev-charging.jpg -->
+            <div class="uc-card reveal reveal-delay-1">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🔌🚗</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc5_title">Ladeinfrastruktur, die sich rechnet</h3>
+                    <p data-i18n="uc5_text">Standortplanung, Lastverteilung, Demand Forecasting — für Betreiber von Ladenetzwerken, die jede Kilowattstunde intelligent routen wollen.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc5_tag1">E-Mobilität</span>
+                        <span class="uc-tag" data-i18n="uc5_tag2">Netzplanung</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC6: Agentic Engineering | IMG-READY: assets/uc6-agentic.jpg -->
+            <div class="uc-card reveal reveal-delay-2">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🤖📝</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc6_title">Agentic Engineering: Tickets lösen sich selbst</h3>
+                    <p data-i18n="uc6_text">Ihre Fachkräfte gehören an komplexe Probleme — nicht an Ticket-Queues. KI-Agenten übernehmen Routinefälle autonom und senken operative Kosten messbar.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc6_tag1">IT-Automatisierung</span>
+                        <span class="uc-tag" data-i18n="uc6_tag2">OPEX-Reduktion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC7: Dokumenten-Intelligenz | IMG-READY: assets/uc7-ocr.jpg -->
+            <div class="uc-card reveal">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">📄🔍</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc7_title">Dokumenten-Intelligenz (OCR+)</h3>
+                    <p data-i18n="uc7_text">Spezialisierte Erkennung und Verarbeitung technischer Unterlagen — von handschriftlichen Anmerkungen bis zu komplexen Tabellenstrukturen.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc7_tag1">OCR / NLP</span>
+                        <span class="uc-tag" data-i18n="uc7_tag2">Dokumentenverarbeitung</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC8: Edge-Case KI | IMG-READY: assets/uc8-edge-case.jpg -->
+            <div class="uc-card reveal reveal-delay-1">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🧪⚙️</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc8_title">Edge-Case KI</h3>
+                    <p data-i18n="uc8_text">KI-Implementierung für technisch anspruchsvolle Randbedingungen, bei denen Standardmodelle versagen. Dort, wo es schwierig wird, fangen wir an.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc8_tag1">Spezial-KI</span>
+                        <span class="uc-tag" data-i18n="uc8_tag2">R&amp;D</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -542,7 +689,7 @@
         </div>
         <div class="info-item">
             <span class="info-label" data-i18n="info_location_label">Standort</span>
-            <span class="info-value" data-i18n="info_location">Passau, Bayern</span>
+            <span class="info-value"><a href="https://maps.app.goo.gl/JdNoxKRRrUxH3byb9" target="_blank" rel="noopener" data-i18n="info_location">Passau, Bayern</a></span>
         </div>
         <div class="info-item">
             <span class="info-label" data-i18n="info_contact_label">Kontakt</span>
@@ -635,6 +782,7 @@
         .chat-header-sub {
             font-size: 0.7rem;
             color: var(--text-muted);
+            margin-left: auto;
         }
 
         /* --- Chat Messages --- */
@@ -754,22 +902,6 @@
         .chat-send:disabled { opacity: 0.4; cursor: default; }
         .chat-send svg { width: 18px; height: 18px; fill: #fff; }
 
-        /* --- Close button in header --- */
-        .chat-header-close {
-            margin-left: auto;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            transition: background 0.2s;
-        }
-        .chat-header-close:hover { background: rgba(255,255,255,0.1); }
-        .chat-header-close svg { width: 18px; height: 18px; fill: var(--text-muted); }
-
         /* --- Responsive --- */
         @media (max-width: 480px) {
             .chat-window {
@@ -780,7 +912,6 @@
                 border-radius: 12px 12px 0 0;
             }
             .chat-toggle { bottom: 16px; right: 16px; }
-            .chat-toggle.open { display: none; }
         }
     </style>
 
@@ -796,13 +927,10 @@
             <div class="chat-header-dot"></div>
             <span class="chat-header-title">BXT KI-Assistent</span>
             <span class="chat-header-sub">Online</span>
-            <button class="chat-header-close" id="chatClose" aria-label="Chat schliessen">
-                <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-            </button>
         </div>
 
         <div class="chat-messages" id="chatMessages">
-            <div class="chat-bubble assistant" data-i18n="chat_greeting">Hi, we're bayern(x)tech. We partner with engineers and scientists to push the boundaries of what's possible. What challenge can we help you solve?</div>
+            <div class="chat-bubble assistant" data-i18n="chat_greeting">Die physikalische Wahrheit erkennen. Engineering – begrenzt nur durch Naturgesetze. Welche Herausforderung können wir für Sie lösen?</div>
         </div>
 
         <div class="chat-input-area">
@@ -813,7 +941,7 @@
         </div>
     </div>
 
-                    <script>
+                <script>
     (() => {
         // -- BROWSER FINGERPRINT --
         function generateFingerprint() {
@@ -866,8 +994,8 @@
         }
 
         // -- CONFIG --
-        const API_URL  = 'https://thrown-longitude-have-farming.trycloudflare.com/api/chat/';
-        const HEALTH_URL = 'https://thrown-longitude-have-farming.trycloudflare.com/health';
+        const API_URL  = 'https://whatever-handmade-important-tall.trycloudflare.com/api/chat/';
+        const HEALTH_URL = 'https://whatever-handmade-important-tall.trycloudflare.com/health';
         const USER_ID  = getStableUserId();
         const USER_META = { role: '', business: '', sector: '' };
 
@@ -941,21 +1069,11 @@
         setInterval(checkServer, 15000);
 
         // -- TOGGLE --
-        function closeChat() {
-            win.classList.remove('visible');
-            toggle.classList.remove('open');
-        }
-        function openChat() {
-            win.classList.add('visible');
-            toggle.classList.add('open');
-            input.focus();
-            checkServer();
-        }
         toggle.addEventListener('click', () => {
-            if (win.classList.contains('visible')) { closeChat(); } else { openChat(); }
+            const open = win.classList.toggle('visible');
+            toggle.classList.toggle('open', open);
+            if (open) { input.focus(); checkServer(); }
         });
-        const closeBtn = document.getElementById('chatClose');
-        if (closeBtn) closeBtn.addEventListener('click', closeChat);
 
         // -- HELPERS --
         let sendStartTime = 0;
@@ -1125,7 +1243,7 @@
                 hero_line1: 'Ingenieurgetriebene Entwicklung &',
                 hero_line2: 'Sichere KI-Systeme',
                 hero_subtitle: 'Robotik · Data Science · On-Premise KI',
-                hero_cta: 'Projekt besprechen →',
+                hero_cta: 'Projekt besprechen.\nWir bauen komplette L\u00f6sungen.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technische Tiefe',
                 grid1_text: 'Unser Team besteht aus Ingenieur:innen mit \u00fcber zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe erm\u00f6glicht L\u00f6sungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen sto\u00dfen.',
@@ -1133,19 +1251,45 @@
                 grid2_text: 'Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollst\u00e4ndig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen \u2013 stets DSGVO-konform.',
                 grid3_title: '03 \u2014 Fokus',
                 grid3_text: 'Wir arbeiten projektbasiert und unterst\u00fctzen Unternehmen dort, wo Zuverl\u00e4ssigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.',
-                projects_label: 'Projekte',
-                projects_sub: 'Aktuelle Entwicklungen',
-                proj1_title: 'OCR+ f\u00fcr Photovoltaik',
-                proj1_text: 'Spezialisierte Dokumenten-Intelligenz zur automatisierten Verarbeitung technischer Unterlagen in der Solarbranche.',
-                proj1_tag: 'In Entwicklung',
-                proj2_title: 'Edge-Case KI',
-                proj2_text: 'Vertrauliche KI-Implementierung f\u00fcr technisch anspruchsvolle Anwendungsf\u00e4lle, die Standard-Modelle \u00fcberfordern.',
-                proj2_tag: 'Vertraulich',
+                uc_label: 'Anwendungsf\u00e4lle',
+                uc_sub: 'Konkrete L\u00f6sungen f\u00fcr konkrete Probleme',
+                uc1_title: 'KI-Assistenz f\u00fcr 3D-Konstruktion',
+                uc1_text: 'Designabsicht beschreiben, Geometrie-Features erzeugen. Weniger Men\u00fcs, weniger Lernkurve \u2014 mehr Zeit f\u00fcr Engineering.',
+                uc1_tag1: '3D-CAD (CATIA, SolidWorks, NX)',
+                uc1_tag2: 'Automotive',
+                uc2_title: 'Root Cause Analysis in der Montage',
+                uc2_text: 'Schraubdaten, Materialchargen, Pr\u00fcfstandsergebnisse \u2014 KI verkn\u00fcpft fragmentierte Datenquellen und f\u00fchrt Ihre QM-Experten schneller zur Fehlerursache.',
+                uc2_tag1: 'Qualit\u00e4tsmanagement',
+                uc2_tag2: 'Fertigung',
+                uc3_title: 'Supply Chain Intelligence',
+                uc3_text: 'Reklamationen, Fehlteile, Lagerbest\u00e4nde \u2014 KI-gest\u00fctzte Optimierung vom Wareneingang bis zur R\u00fcckverfolgung fehlerhafter Komponenten.',
+                uc3_tag1: 'Supply Chain',
+                uc3_tag2: 'Logistik',
+                uc4_title: 'Energienetze intelligent steuern',
+                uc4_text: 'Erzeugung, Speicherung, Verteilung \u2014 KI-basierte Optimierung urbaner Energienetze f\u00fcr Stadtwerke und Kommunen auf dem Weg zu 100% Erneuerbar.',
+                uc4_tag1: 'Smart Grid',
+                uc4_tag2: 'Energiemanagement',
+                uc5_title: 'Ladeinfrastruktur, die sich rechnet',
+                uc5_text: 'Standortplanung, Lastverteilung, Demand Forecasting \u2014 f\u00fcr Betreiber von Ladenetzwerken, die jede Kilowattstunde intelligent routen wollen.',
+                uc5_tag1: 'E-Mobilit\u00e4t',
+                uc5_tag2: 'Netzplanung',
+                uc6_title: 'Agentic Engineering: Tickets l\u00f6sen sich selbst',
+                uc6_text: 'Ihre Fachkr\u00e4fte geh\u00f6ren an komplexe Probleme \u2014 nicht an Ticket-Queues. KI-Agenten \u00fcbernehmen Routinef\u00e4lle autonom und senken operative Kosten messbar.',
+                uc6_tag1: 'IT-Automatisierung',
+                uc6_tag2: 'OPEX-Reduktion',
+                uc7_title: 'Dokumenten-Intelligenz (OCR+)',
+                uc7_text: 'Spezialisierte Erkennung und Verarbeitung technischer Unterlagen \u2014 von handschriftlichen Anmerkungen bis zu komplexen Tabellenstrukturen.',
+                uc7_tag1: 'OCR / NLP',
+                uc7_tag2: 'Dokumentenverarbeitung',
+                uc8_title: 'Edge-Case KI',
+                uc8_text: 'KI-Implementierung f\u00fcr technisch anspruchsvolle Randbedingungen, bei denen Standardmodelle versagen. Dort, wo es schwierig wird, fangen wir an.',
+                uc8_tag1: 'Spezial-KI',
+                uc8_tag2: 'R&D',
                 info_team: 'Data Science \u00b7 Robotik \u00b7 Mechatronik \u00b7 KI',
                 info_location_label: 'Standort',
                 info_location: 'Passau, Bayern',
                 info_contact_label: 'Kontakt',
-                chat_greeting: 'Hallo! Wir sind bayern(x)tech. Wir arbeiten mit Ingenieur:innen und Wissenschaftler:innen zusammen, um die Grenzen des M\u00f6glichen zu verschieben. Welche Herausforderung k\u00f6nnen wir f\u00fcr Sie l\u00f6sen?',
+                chat_greeting: 'Die physikalische Wahrheit erkennen. Engineering \u2013 begrenzt nur durch Naturgesetze. Welche Herausforderung k\u00f6nnen wir f\u00fcr Sie l\u00f6sen?',
                 chat_placeholder: 'Nachricht eingeben\u2026',
             },
             en: {
@@ -1153,7 +1297,7 @@
                 hero_line1: 'Engineering-Driven Development &',
                 hero_line2: 'Secure AI Systems',
                 hero_subtitle: 'Robotics · Data Science · On-Premise AI',
-                hero_cta: 'Discuss Your Project →',
+                hero_cta: 'Discuss Your Project.\nWe build complete solutions.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technical Depth',
                 grid1_text: 'Our team consists of engineers with over ten years of experience in robotics, mechatronics, and data science. This depth enables solutions even where standard AI and off-the-shelf systems reach their limits.',
@@ -1161,19 +1305,45 @@
                 grid2_text: 'Our systems are local and transparent. Depending on requirements, we implement fully offline or isolated environments, or controlled hybrid architectures \u2014 always GDPR-compliant.',
                 grid3_title: '03 \u2014 Focus',
                 grid3_text: 'We work on a project basis and support companies where reliability, traceability, and data protection are critical. BXT combines legal tech with hard-core engineering.',
-                projects_label: 'Projects',
-                projects_sub: 'Current Developments',
-                proj1_title: 'OCR+ for Photovoltaics',
-                proj1_text: 'Specialised document intelligence for automated processing of technical documents in the solar industry.',
-                proj1_tag: 'In Development',
-                proj2_title: 'Edge-Case AI',
-                proj2_text: 'Confidential AI implementation for technically demanding use cases that overwhelm standard models.',
-                proj2_tag: 'Confidential',
+                uc_label: 'Use Cases',
+                uc_sub: 'Concrete solutions for concrete problems',
+                uc1_title: 'AI-Powered 3D Design Assistance',
+                uc1_text: 'Describe your design intent, generate geometry features. Less menus, less learning curve \u2014 more time for engineering.',
+                uc1_tag1: '3D CAD (CATIA, SolidWorks, NX)',
+                uc1_tag2: 'Automotive',
+                uc2_title: 'Root Cause Analysis in Assembly',
+                uc2_text: 'Torque data, material batches, test bench results \u2014 AI connects fragmented data sources and guides your QM experts to the root cause faster.',
+                uc2_tag1: 'Quality Management',
+                uc2_tag2: 'Manufacturing',
+                uc3_title: 'Supply Chain Intelligence',
+                uc3_text: 'Claims, missing parts, inventory levels \u2014 AI-driven optimization from goods receipt to tracing faulty components.',
+                uc3_tag1: 'Supply Chain',
+                uc3_tag2: 'Logistics',
+                uc4_title: 'Intelligent Grid Management',
+                uc4_text: 'Generation, storage, distribution \u2014 AI-based optimization of urban energy grids for utilities on the path to 100% renewable.',
+                uc4_tag1: 'Smart Grid',
+                uc4_tag2: 'Energy Management',
+                uc5_title: 'Charging Infrastructure That Pays Off',
+                uc5_text: 'Site planning, load balancing, demand forecasting \u2014 for charging network operators who want to route every kilowatt-hour intelligently.',
+                uc5_tag1: 'E-Mobility',
+                uc5_tag2: 'Grid Planning',
+                uc6_title: 'Agentic Engineering: Tickets That Resolve Themselves',
+                uc6_text: 'Your skilled experts belong on complex problems \u2014 not in ticket queues. AI agents handle routine cases autonomously and measurably reduce operational costs.',
+                uc6_tag1: 'IT Automation',
+                uc6_tag2: 'OPEX Reduction',
+                uc7_title: 'Document Intelligence (OCR+)',
+                uc7_text: 'Specialized recognition and processing of technical documents \u2014 from handwritten annotations to complex table structures.',
+                uc7_tag1: 'OCR / NLP',
+                uc7_tag2: 'Document Processing',
+                uc8_title: 'Edge-Case AI',
+                uc8_text: 'AI implementation for technically demanding boundary conditions where standard models fail. Where it gets difficult, we start.',
+                uc8_tag1: 'Specialized AI',
+                uc8_tag2: 'R&D',
                 info_team: 'Data Science \u00b7 Robotics \u00b7 Mechatronics \u00b7 AI',
                 info_location_label: 'Location',
                 info_location: 'Passau, Bavaria',
                 info_contact_label: 'Contact',
-                chat_greeting: "Hi, we're bayern(x)tech. We partner with engineers and scientists to push the boundaries of what's possible. What challenge can we help you solve?",
+                chat_greeting: "Discover ground truth. Engineering bounded only by physics. What challenge can we help you solve?",
                 chat_placeholder: 'Type a message\u2026',
             }
         };
