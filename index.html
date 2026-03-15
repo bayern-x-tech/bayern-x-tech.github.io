@@ -203,15 +203,14 @@
             animation: heroFadeIn 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
         .hero-cta::after {
-            content: '→';
-            display: block;
-            margin-top: 6px;
-            font-size: 1.2em;
+            content: ' →';
+            display: inline;
+            font-size: 1.1em;
             color: var(--brand-blue);
             transition: transform 0.3s ease;
         }
         .hero-cta:hover::after {
-            transform: translateX(6px);
+            color: #fff;
         }
         .hero-cta:hover {
             background: var(--brand-blue);
@@ -518,12 +517,12 @@
     <section class="hero">
         <div class="hero-content">
             <h1>
-                <span data-i18n="hero_line1">Ingenieurgetriebene Entwicklung &</span> <br> 
-                <span class="hero-highlight" data-i18n="hero_line2">Sichere KI-Systeme</span>
+                <span data-i18n="hero_line1">Ground Truth erkennen &amp; physikbasierte Intelligenz bauen.</span> <br>
+                <span class="hero-highlight" data-i18n="hero_line2">Das Labor ist das Produkt.</span>
             </h1>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">Robotik · Data Science · On-Premise KI</p>
-            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Projekt besprechen.
-Wir bauen komplette Lösungen.</a>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Ein einsatzbereites F&amp;E-Labor mit Veteranen-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.</p>
+            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Ihre technische Herausforderung besprechen</a>
+            <p class="hero-subtitle" style="margin-top:16px;font-size:clamp(0.85rem,1.3vw,1rem);font-weight:500;color:var(--text-white);opacity:0.85;letter-spacing:0.01em" data-i18n="hero_cta_sub">Unsere Ingenieure liefern komplette Lösungen.</p>
         </div>
         <div class="scroll-indicator">
             <span data-i18n="scroll_label">Scroll</span>
@@ -535,17 +534,17 @@ Wir bauen komplette Lösungen.</a>
         <div class="grid">
             <div class="grid-item reveal">
                 <h3 data-i18n="grid1_title">01 — Technische Tiefe</h3>
-                <p data-i18n="grid1_text">Unser Team besteht aus Ingenieur:innen mit über zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe ermöglicht Lösungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen stoßen.</p>
+                <p data-i18n="grid1_text">Unser Team besteht aus ehemaligen Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Diese Tiefe ermöglicht Lösungen weit über den Punkt hinaus, an dem allgemeine KI-Werkzeuge an ihre Grenzen stoßen.</p>
             </div>
 
             <div class="grid-item reveal reveal-delay-1">
                 <h3 data-i18n="grid2_title">02 — Datensouveränität</h3>
-                <p data-i18n="grid2_text">Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollständig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen – stets DSGVO-konform.</p>
+                <p data-i18n="grid2_text">Unsere Systeme sind lokal und transparent. Mit LegalTech-Expertise und dem Datenschutzniveau deutscher Forschungslabore realisieren wir vollständig isolierte oder kontrollierte Hybrid-Architekturen — DSGVO-konform und darüber hinaus. Ihre Daten verlassen nie Ihr Netzwerk.</p>
             </div>
 
             <div class="grid-item reveal reveal-delay-2">
                 <h3 data-i18n="grid3_title">03 — Fokus</h3>
-                <p data-i18n="grid3_text">Wir arbeiten projektbasiert und unterstützen Unternehmen dort, wo Zuverlässigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.</p>
+                <p data-i18n="grid3_text">Wir arbeiten projektbasiert und unterstützen Unternehmen dort, wo Zuverlässigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet domänenspezifisches Wissen mit harter Ingenieurskunst.</p>
             </div>
         </div>
     </div>
@@ -558,8 +557,23 @@ Wir bauen komplette Lösungen.</a>
         </div>
         <div class="usecases-grid">
 
-            <!-- UC1: 3D-CAD Assistenz | IMG-READY: assets/uc1-3d-cad.jpg -->
+            <!-- UC9: Audio Engineering -->
             <div class="uc-card reveal">
+                <div class="uc-visual">
+                    <span class="uc-visual-icon">🎵🔬</span>
+                </div>
+                <div class="uc-body">
+                    <h3 data-i18n="uc9_title">Audio Engineering: Von Bühne bis Bioakustik</h3>
+                    <p data-i18n="uc9_text">Von Musikvenues bis zur biologischen Akustik — neue Wege, wie Menschen Musik erleben, wahrnehmen und mit ihr interagieren, sowie breitere Anwendungen in biologischer Kommunikation und Klanganalyse.</p>
+                    <div class="uc-tags">
+                        <span class="uc-tag" data-i18n="uc9_tag1">Audio / Akustik</span>
+                        <span class="uc-tag" data-i18n="uc9_tag2">Bioakustik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UC1: 3D-CAD Assistenz | IMG-READY: assets/uc1-3d-cad.jpg -->
+            <div class="uc-card reveal reveal-delay-1">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">🏗️📐</span>
                 </div>
@@ -574,7 +588,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC2: Qualitätsmanagement | IMG-READY: assets/uc2-quality.jpg -->
-            <div class="uc-card reveal reveal-delay-1">
+            <div class="uc-card reveal reveal-delay-2">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">🔬📊</span>
                 </div>
@@ -589,7 +603,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC3: Supply Chain | IMG-READY: assets/uc3-supply-chain.jpg -->
-            <div class="uc-card reveal reveal-delay-2">
+            <div class="uc-card reveal">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">📦🚚</span>
                 </div>
@@ -604,7 +618,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC4: Smart Grid | IMG-READY: assets/uc4-smart-grid.jpg -->
-            <div class="uc-card reveal">
+            <div class="uc-card reveal reveal-delay-1">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">⚡🌆</span>
                 </div>
@@ -634,7 +648,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC6: Agentic Engineering | IMG-READY: assets/uc6-agentic.jpg -->
-            <div class="uc-card reveal reveal-delay-2">
+            <div class="uc-card reveal">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">🤖📝</span>
                 </div>
@@ -649,7 +663,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC7: Dokumenten-Intelligenz | IMG-READY: assets/uc7-ocr.jpg -->
-            <div class="uc-card reveal">
+            <div class="uc-card reveal reveal-delay-1">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">📄🔍</span>
                 </div>
@@ -664,7 +678,7 @@ Wir bauen komplette Lösungen.</a>
             </div>
 
             <!-- UC8: Edge-Case KI | IMG-READY: assets/uc8-edge-case.jpg -->
-            <div class="uc-card reveal reveal-delay-1">
+            <div class="uc-card reveal reveal-delay-2">
                 <div class="uc-visual">
                     <span class="uc-visual-icon">🧪⚙️</span>
                 </div>
@@ -695,7 +709,8 @@ Wir bauen komplette Lösungen.</a>
             <span class="info-label" data-i18n="info_contact_label">Kontakt</span>
             <span class="info-value">
                 <a href="mailto:dylan.kane@bayernxtech.de">Dylan Kane</a> ·
-                <a href="mailto:dennis.jahrstorfer@bayernxtech.de">Dennis Jahrstorfer</a>
+                <a href="mailto:dennis.jahrstorfer@bayernxtech.de">Dennis Jahrstorfer</a> ·
+                <a href="mailto:sebastian.kathke@bayernxtech.de">Sebastian Kathke</a>
             </span>
         </div>
     </div>
@@ -739,8 +754,8 @@ Wir bauen komplette Lösungen.</a>
             position: fixed;
             bottom: 100px;
             right: 28px;
-            width: 380px;
-            max-height: 540px;
+            width: min(380px, calc(100vw - 56px));
+            max-height: min(540px, calc(100vh - 140px));
             background: #0a0a0a;
             border: 1px solid var(--border-dim);
             border-radius: 12px;
@@ -748,6 +763,7 @@ Wir bauen komplette Lösungen.</a>
             flex-direction: column;
             z-index: 9998;
             overflow: hidden;
+            box-sizing: border-box;
             opacity: 0;
             transform: translateY(20px) scale(0.95);
             pointer-events: none;
@@ -766,6 +782,8 @@ Wir bauen komplette Lösungen.</a>
             display: flex;
             align-items: center;
             gap: 10px;
+            min-height: 56px;
+            box-sizing: border-box;
         }
         .chat-header-dot {
             width: 8px; height: 8px;
@@ -778,17 +796,23 @@ Wir bauen komplette Lösungen.</a>
             font-weight: 600;
             color: var(--text-white);
             letter-spacing: 0.03em;
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow-wrap: anywhere;
         }
         .chat-header-sub {
             font-size: 0.7rem;
             color: var(--text-muted);
             margin-left: auto;
+            flex: 0 0 auto;
+            white-space: nowrap;
         }
 
         /* --- Chat Messages --- */
         .chat-messages {
             flex: 1;
             overflow-y: auto;
+            overflow-x: hidden;
             padding: 16px;
             display: flex;
             flex-direction: column;
@@ -802,19 +826,23 @@ Wir bauen komplette Lösungen.</a>
         .chat-messages::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
 
         .chat-bubble {
-            max-width: 85%;
+            max-width: 100%;
             padding: 10px 14px;
             border-radius: 12px;
             font-size: 0.88rem;
             line-height: 1.5;
             word-wrap: break-word;
+            overflow-wrap: anywhere;
+            word-break: break-word;
             white-space: pre-wrap;
+            box-sizing: border-box;
         }
         .chat-bubble.user {
             align-self: flex-end;
             background: var(--brand-blue);
             color: #fff;
             border-bottom-right-radius: 4px;
+            max-width: 85%;
         }
         .chat-bubble.assistant {
             align-self: flex-start;
@@ -822,6 +850,7 @@ Wir bauen komplette Lösungen.</a>
             color: var(--text-white);
             border: 1px solid var(--border-dim);
             border-bottom-left-radius: 4px;
+            max-width: 92%;
         }
         .chat-bubble.assistant a {
             color: var(--brand-blue);
@@ -865,11 +894,14 @@ Wir bauen komplette Lösungen.</a>
             padding: 12px 14px;
             border-top: 1px solid var(--border-dim);
             display: flex;
-            gap: 8px;
-            align-items: center;
+            gap: 10px;
+            align-items: flex-end;
+            flex-wrap: nowrap;
+            box-sizing: border-box;
         }
         .chat-input {
-            flex: 1;
+            flex: 1 1 auto;
+            min-width: 0;
             background: #111;
             border: 1px solid var(--border-dim);
             border-radius: 8px;
@@ -896,20 +928,51 @@ Wir bauen komplette Lösungen.</a>
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: 0 0 38px;
             flex-shrink: 0;
             transition: opacity 0.2s;
         }
         .chat-send:disabled { opacity: 0.4; cursor: default; }
         .chat-send svg { width: 18px; height: 18px; fill: #fff; }
 
+        .chat-suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 16px 12px;
+            margin: 0;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .chat-suggestion {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
         /* --- Responsive --- */
         @media (max-width: 480px) {
             .chat-window {
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                max-height: 100%;
-                border-radius: 12px 12px 0 0;
+                left: 1rem;
+                right: 1rem;
+                bottom: 1rem;
+                width: calc(100vw - 2rem);
+                max-height: calc(100vh - 2rem);
+                border-radius: 12px;
+            }
+            .chat-header {
+                padding: 14px 16px;
+            }
+            .chat-messages {
+                padding: 14px;
+            }
+            .chat-input-area {
+                padding: 12px;
+            }
+            .chat-toggle.open {
+                top: 16px;
+                right: 16px;
+                bottom: auto;
             }
             .chat-toggle { bottom: 16px; right: 16px; }
         }
@@ -925,12 +988,12 @@ Wir bauen komplette Lösungen.</a>
     <div class="chat-window" id="chatWindow">
         <div class="chat-header">
             <div class="chat-header-dot"></div>
-            <span class="chat-header-title">BXT KI-Assistent</span>
+            <span class="chat-header-title" data-i18n="chat_title">BXT Intelligenter Assistent</span>
             <span class="chat-header-sub">Online</span>
         </div>
 
         <div class="chat-messages" id="chatMessages">
-            <div class="chat-bubble assistant" data-i18n="chat_greeting">Die physikalische Wahrheit erkennen. Engineering – begrenzt nur durch Naturgesetze. Welche Herausforderung können wir für Sie lösen?</div>
+            <div class="chat-bubble assistant" data-i18n="chat_greeting">BXT Assistent — Fragen zu unseren Leistungen?</div>
         </div>
 
         <div class="chat-input-area">
@@ -1240,17 +1303,18 @@ Wir bauen komplette Lösungen.</a>
         const T = {
             de: {
                 nav_contact: 'Kontakt',
-                hero_line1: 'Ingenieurgetriebene Entwicklung &',
-                hero_line2: 'Sichere KI-Systeme',
-                hero_subtitle: 'Robotik · Data Science · On-Premise KI',
-                hero_cta: 'Projekt besprechen.\nWir bauen komplette L\u00f6sungen.',
+                hero_line1: 'Ground Truth erkennen & physikbasierte Intelligenz bauen.',
+                hero_line2: 'Das Labor ist das Produkt.',
+                hero_subtitle: 'Ein einsatzbereites F&E-Labor mit Veteranen-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern \u2014 mit der Geschwindigkeit moderner Technologie.',
+                hero_cta: 'Ihre technische Herausforderung besprechen',
+                hero_cta_sub: 'Unsere Ingenieure liefern komplette L\u00f6sungen.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technische Tiefe',
-                grid1_text: 'Unser Team besteht aus Ingenieur:innen mit \u00fcber zehn Jahren Erfahrung in Robotik, Mechatronik und Data Science. Diese Tiefe erm\u00f6glicht L\u00f6sungen auch dort, wo Standard-KI und Baukastensysteme an ihre Grenzen sto\u00dfen.',
+                grid1_text: 'Unser Team besteht aus ehemaligen Volvo-, ZF- und Mercedes-Ingenieur:innen mit \u00fcber 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Diese Tiefe erm\u00f6glicht L\u00f6sungen weit \u00fcber den Punkt hinaus, an dem allgemeine KI-Werkzeuge an ihre Grenzen sto\u00dfen.',
                 grid2_title: '02 \u2014 Datensouver\u00e4nit\u00e4t',
-                grid2_text: 'Unsere Systeme sind lokal und transparent. Je nach Anforderung realisieren wir vollst\u00e4ndig offline bzw. isolierte Umgebungen oder kontrollierte Hybrid-Architekturen \u2013 stets DSGVO-konform.',
+                grid2_text: 'Unsere Systeme sind lokal und transparent. Mit LegalTech-Expertise und dem Datenschutzniveau deutscher Forschungslabore realisieren wir vollst\u00e4ndig isolierte oder kontrollierte Hybrid-Architekturen \u2014 DSGVO-konform und dar\u00fcber hinaus. Ihre Daten verlassen nie Ihr Netzwerk.',
                 grid3_title: '03 \u2014 Fokus',
-                grid3_text: 'Wir arbeiten projektbasiert und unterst\u00fctzen Unternehmen dort, wo Zuverl\u00e4ssigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet Legal-Tech mit harter Ingenieurskunst.',
+                grid3_text: 'Wir arbeiten projektbasiert und unterst\u00fctzen Unternehmen dort, wo Zuverl\u00e4ssigkeit, Nachvollziehbarkeit und Datenschutz entscheidend sind. BXT verbindet dom\u00e4nenspezifisches Wissen mit harter Ingenieurskunst.',
                 uc_label: 'Anwendungsf\u00e4lle',
                 uc_sub: 'Konkrete L\u00f6sungen f\u00fcr konkrete Probleme',
                 uc1_title: 'KI-Assistenz f\u00fcr 3D-Konstruktion',
@@ -1285,26 +1349,32 @@ Wir bauen komplette Lösungen.</a>
                 uc8_text: 'KI-Implementierung f\u00fcr technisch anspruchsvolle Randbedingungen, bei denen Standardmodelle versagen. Dort, wo es schwierig wird, fangen wir an.',
                 uc8_tag1: 'Spezial-KI',
                 uc8_tag2: 'R&D',
+                uc9_title: 'Audio Engineering: Von B\u00fchne bis Bioakustik',
+                uc9_text: 'Von Musikvenues bis zur biologischen Akustik \u2014 neue Wege, wie Menschen Musik erleben, wahrnehmen und mit ihr interagieren, sowie breitere Anwendungen in biologischer Kommunikation und Klanganalyse.',
+                uc9_tag1: 'Audio / Akustik',
+                uc9_tag2: 'Bioakustik',
                 info_team: 'Data Science \u00b7 Robotik \u00b7 Mechatronik \u00b7 KI',
                 info_location_label: 'Standort',
                 info_location: 'Passau, Bayern',
                 info_contact_label: 'Kontakt',
-                chat_greeting: 'Die physikalische Wahrheit erkennen. Engineering \u2013 begrenzt nur durch Naturgesetze. Welche Herausforderung k\u00f6nnen wir f\u00fcr Sie l\u00f6sen?',
+                chat_title: 'BXT Intelligenter Assistent',
+                chat_greeting: 'BXT Assistent \u2014 Fragen zu unseren Leistungen?',
                 chat_placeholder: 'Nachricht eingeben\u2026',
             },
             en: {
                 nav_contact: 'Contact',
-                hero_line1: 'Engineering-Driven Development &',
-                hero_line2: 'Secure AI Systems',
-                hero_subtitle: 'Robotics · Data Science · On-Premise AI',
-                hero_cta: 'Discuss Your Project.\nWe build complete solutions.',
+                hero_line1: 'Discover ground truth.',
+                hero_line2: 'The Lab Is the Product.',
+                hero_subtitle: 'A ready-built R&D lab with ex-Volvo, Mercedes & ZF engineers. We build, test, analyze, and improve \u2014 at the speed of modern technology.',
+                hero_cta: 'Discuss Your Technical Challenge',
+                hero_cta_sub: 'Our engineers deliver complete solutions.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technical Depth',
-                grid1_text: 'Our team consists of engineers with over ten years of experience in robotics, mechatronics, and data science. This depth enables solutions even where standard AI and off-the-shelf systems reach their limits.',
+                grid1_text: 'Our team consists of ex-Volvo, ex-ZF, and ex-Mercedes engineers with over 15 years of experience in robotics, mechatronics, and data analytics. This depth enables solutions well beyond where standard AI and off-the-shelf systems reach their limits.',
                 grid2_title: '02 \u2014 Data Sovereignty',
-                grid2_text: 'Our systems are local and transparent. Depending on requirements, we implement fully offline or isolated environments, or controlled hybrid architectures \u2014 always GDPR-compliant.',
+                grid2_text: 'Our systems are local and transparent. With LegalTech expertise and the data protection standards of German research labs, we implement fully isolated or controlled hybrid architectures \u2014 GDPR-compliant and beyond. Your data never leaves your network.',
                 grid3_title: '03 \u2014 Focus',
-                grid3_text: 'We work on a project basis and support companies where reliability, traceability, and data protection are critical. BXT combines legal tech with hard-core engineering.',
+                grid3_text: 'We work on a project basis and support companies where reliability, traceability, and data protection are critical. BXT combines domain-specific knowledge with rigorous engineering.',
                 uc_label: 'Use Cases',
                 uc_sub: 'Concrete solutions for concrete problems',
                 uc1_title: 'AI-Powered 3D Design Assistance',
@@ -1339,11 +1409,16 @@ Wir bauen komplette Lösungen.</a>
                 uc8_text: 'AI implementation for technically demanding boundary conditions where standard models fail. Where it gets difficult, we start.',
                 uc8_tag1: 'Specialized AI',
                 uc8_tag2: 'R&D',
+                uc9_title: 'Audio Engineering: From Stage to Bioacoustics',
+                uc9_text: 'From music venues to bioacoustics \u2014 enabling new pathways in how humans perform, perceive, and interact with music, as well as broader applications in biological communication and sound analysis.',
+                uc9_tag1: 'Audio / Acoustics',
+                uc9_tag2: 'Bioacoustics',
                 info_team: 'Data Science \u00b7 Robotics \u00b7 Mechatronics \u00b7 AI',
                 info_location_label: 'Location',
                 info_location: 'Passau, Bavaria',
                 info_contact_label: 'Contact',
-                chat_greeting: "Discover ground truth. Engineering bounded only by physics. What challenge can we help you solve?",
+                chat_title: 'BXT Intelligent Assistant',
+                chat_greeting: 'BXT Assistant \u2014 Questions about our services?',
                 chat_placeholder: 'Type a message\u2026',
             }
         };
