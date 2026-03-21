@@ -227,7 +227,11 @@
 
         .hero-highlight {
             color: var(--brand-blue);
-            font-weight: 600;
+            font-weight: 400;
+            font-size: clamp(1.4rem, 3vw, 2.5rem);
+            letter-spacing: 0.02em;
+            display: inline-block;
+            margin-top: 12px;
         }
 
         /* Scroll indicator */
@@ -488,6 +492,13 @@
         footer a { color: #666; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: var(--brand-blue); }
 
+        /* --- PRODUCT PORTFOLIO GRID --- */
+        .pp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 28px;
+        }
+
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
@@ -499,6 +510,7 @@
             .content-wrapper { padding: 80px 20px; }
             .usecases-section { padding: 80px 20px; }
             .usecases-grid { grid-template-columns: 1fr; }
+            .pp-grid { grid-template-columns: 1fr; }
             .info-bar { gap: 30px; }
         }
     </style>
@@ -522,7 +534,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>
-                <span data-i18n="hero_line1">KI- & Engineering-Lösungen für die moderne Ära.</span> <br>
+                <span data-i18n="hero_line1">Intelligenz & Lösungen für die moderne Ära.</span> <br>
                 <span class="hero-highlight" data-i18n="hero_line2">Dein Team verdient mehr als Standard-Copiloten.</span>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Ein einsatzbereites F&amp;E-Labor mit ehemaligen Volvo-, Mercedes- &amp; ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.</p>
@@ -694,6 +706,31 @@
                         <span class="uc-tag" data-i18n="uc8_tag1">Spezial-Engineering</span>
                         <span class="uc-tag" data-i18n="uc8_tag2">R&amp;D</span>
                     </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Product Portfolio Section -->
+    <section class="usecases-section">
+        <div class="usecases-header reveal">
+            <h2 data-i18n="pp_label">Produktportfolio</h2>
+            <p data-i18n="pp_sub">Was wir anbieten</p>
+        </div>
+        <div class="pp-grid">
+
+            <div class="uc-card reveal">
+                <div class="uc-body">
+                    <h3 data-i18n="pp1_title">xPathfinder Labs</h3>
+                    <p data-i18n="pp1_text">Maßgeschneiderte Toolkits &amp; Technologien, die Wissenschaftler:innen, Ingenieur:innen, Kreativen &amp; Innovator:innen helfen, neue Durchbrüche zu erzielen und zu erfinden.</p>
+                </div>
+            </div>
+
+            <div class="uc-card reveal reveal-delay-1">
+                <div class="uc-body">
+                    <h3 data-i18n="pp2_title">xPathfinder Workshops</h3>
+                    <p data-i18n="pp2_text">Intelligenter Assistent für Hands-on-Macher:innen, die Dinge erledigen wollen. Klicken Sie auf die Chat-Blase unten rechts, um einen kostenlosen Vorgeschmack auf das zu bekommen, was wir gemeinsam bauen können.</p>
                 </div>
             </div>
 
@@ -1308,7 +1345,7 @@
         const T = {
             de: {
                 nav_contact: 'Kontakt',
-                hero_line1: 'KI- & Engineering-L\u00f6sungen f\u00fcr die moderne \u00c4ra.',
+                hero_line1: 'Intelligenz & L\u00f6sungen f\u00fcr die moderne \u00c4ra.',
                 hero_line2: 'Dein Team verdient mehr als Standard-Copiloten.',
                 hero_subtitle: 'Ein einsatzbereites F&E-Labor mit ehemaligen Volvo-, Mercedes- & ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern \u2014 mit der Geschwindigkeit moderner Technologie.',
                 hero_cta: 'Sprich mit uns \u00fcber deine Herausforderungen',
@@ -1358,6 +1395,12 @@
                 uc9_text: 'Von Musikvenues bis zur biologischen Akustik \u2014 neue Wege, wie Menschen Musik erleben, wahrnehmen und mit ihr interagieren, sowie breitere Anwendungen in biologischer Kommunikation und Klanganalyse.',
                 uc9_tag1: 'Audio / Akustik',
                 uc9_tag2: 'Bioakustik',
+                pp_label: 'Produktportfolio',
+                pp_sub: 'Was wir anbieten',
+                pp1_title: 'xPathfinder Labs',
+                pp1_text: 'Ma\u00dfgeschneiderte Toolkits & Technologien, die Wissenschaftler:innen, Ingenieur:innen, Kreativen & Innovator:innen helfen, neue Durchbr\u00fcche zu erzielen und zu erfinden.',
+                pp2_title: 'xPathfinder Workshops',
+                pp2_text: 'Intelligenter Assistent f\u00fcr Hands-on-Macher:innen, die Dinge erledigen wollen. Klicken Sie auf die Chat-Blase unten rechts, um einen kostenlosen Vorgeschmack auf das zu bekommen, was wir gemeinsam bauen k\u00f6nnen.',
                 info_team: 'Data Science \u00b7 Robotik \u00b7 Mechatronik \u00b7 KI',
                 info_location_label: 'Standort',
                 info_location: 'Passau, Bayern',
@@ -1368,7 +1411,7 @@
             },
             en: {
                 nav_contact: 'Contact',
-                hero_line1: 'Intelligence & engineering solutions for the modern era.',
+                hero_line1: 'Intelligence & solutions for the modern era.',
                 hero_line2: 'Your team deserves better than standard corporate copilots.',
                 hero_subtitle: 'A ready-built R&D lab with ex-Volvo, Mercedes & ZF engineers. We build, test, analyze, and improve \u2014 at the speed of modern technology.',
                 hero_cta: 'Discuss your challenges with us',
@@ -1418,6 +1461,12 @@
                 uc9_text: 'From music venues to bioacoustics \u2014 enabling new pathways in how humans perform, perceive, and interact with music, as well as broader applications in biological communication and sound analysis.',
                 uc9_tag1: 'Audio / Acoustics',
                 uc9_tag2: 'Bioacoustics',
+                pp_label: 'Product Portfolio',
+                pp_sub: 'What We Offer',
+                pp1_title: 'xPathfinder Labs',
+                pp1_text: 'Custom toolkit & technologies to help scientists, engineers, creatives & innovators make new breakthroughs and invent.',
+                pp2_title: 'xPathfinder Workshops',
+                pp2_text: 'Intelligent assistant for hands-on workers that want to get shit done. Click on the chat bubble in the bottom right corner to get a free taste of what we can build together.',
                 info_team: 'Data Science \u00b7 Robotics \u00b7 Mechatronics \u00b7 AI',
                 info_location_label: 'Location',
                 info_location: 'Passau, Bavaria',
