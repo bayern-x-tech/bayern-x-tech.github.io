@@ -130,10 +130,12 @@
             position: relative;
             overflow: hidden;
             scroll-snap-align: start;
-            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(5,5,5,0.85)),
+            padding-top: 70px; /* offset for fixed header so content + bg stay centered below it */
+            background-image: linear-gradient(rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.55) 30%, rgba(5,5,5,0.85) 100%),
                               url('assets/hero-passau.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: 65% top;
+            background-origin: padding-box;
         }
 
         /* Animated gradient overlay */
@@ -158,6 +160,9 @@
         .hero-content {
             position: relative;
             z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
             animation: heroFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
@@ -170,8 +175,7 @@
             font-size: clamp(2.2rem, 5vw, 4.5rem);
             font-weight: 300;
             line-height: 1.1;
-            max-width: 1100px;
-            padding: 0 20px;
+            max-width: 100%;
             text-shadow: 0 4px 40px rgba(0,0,0,0.6);
         }
 
@@ -181,6 +185,7 @@
             color: var(--text-muted);
             font-weight: 300;
             letter-spacing: 0.02em;
+            max-width: 100%;
             animation: heroFadeIn 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
@@ -517,12 +522,12 @@
     <section class="hero">
         <div class="hero-content">
             <h1>
-                <span data-i18n="hero_line1">Ground Truth erkennen.</span> <br>
-                <span class="hero-highlight" data-i18n="hero_line2">Das Labor ist das Produkt.</span>
+                <span data-i18n="hero_line1">KI- & Engineering-Lösungen für die moderne Ära.</span> <br>
+                <span class="hero-highlight" data-i18n="hero_line2">Dein Team verdient mehr als Standard-Copiloten.</span>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Ein einsatzbereites F&amp;E-Labor mit ehemaligen Volvo-, Mercedes- &amp; ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.</p>
-            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Ihre technische Herausforderung besprechen</a>
-            <p class="hero-subtitle" style="margin-top:16px;font-size:clamp(0.85rem,1.3vw,1rem);font-weight:500;color:var(--text-white);opacity:0.85;letter-spacing:0.01em" data-i18n="hero_cta_sub">Unsere Ingenieure liefern komplette Lösungen.</p>
+            <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Sprich mit uns über deine Herausforderungen</a>
+            <p class="hero-subtitle" style="margin-top:16px;font-size:clamp(0.85rem,1.3vw,1rem);font-weight:500;color:var(--text-white);opacity:0.85;letter-spacing:0.01em" data-i18n="hero_cta_sub">Wir bauen komplette Lösungen — & schärfen dein Team für das, was als Nächstes kommt.</p>
         </div>
         <div class="scroll-indicator">
             <span data-i18n="scroll_label">Scroll</span>
@@ -1303,11 +1308,11 @@
         const T = {
             de: {
                 nav_contact: 'Kontakt',
-                hero_line1: 'Ground Truth erkennen.',
-                hero_line2: 'Das Labor ist das Produkt.',
+                hero_line1: 'KI- & Engineering-L\u00f6sungen f\u00fcr die moderne \u00c4ra.',
+                hero_line2: 'Dein Team verdient mehr als Standard-Copiloten.',
                 hero_subtitle: 'Ein einsatzbereites F&E-Labor mit ehemaligen Volvo-, Mercedes- & ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern \u2014 mit der Geschwindigkeit moderner Technologie.',
-                hero_cta: 'Ihre technische Herausforderung besprechen',
-                hero_cta_sub: 'Unsere Ingenieure liefern komplette L\u00f6sungen.',
+                hero_cta: 'Sprich mit uns \u00fcber deine Herausforderungen',
+                hero_cta_sub: 'Wir bauen komplette L\u00f6sungen \u2014 & sch\u00e4rfen dein Team f\u00fcr das, was als N\u00e4chstes kommt.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technische Tiefe',
                 grid1_text: 'Unser Team besteht aus ehemaligen Volvo-, ZF- und Mercedes-Ingenieur:innen mit \u00fcber 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Diese Tiefe erm\u00f6glicht L\u00f6sungen weit \u00fcber den Punkt hinaus, an dem allgemeine KI-Werkzeuge an ihre Grenzen sto\u00dfen.',
@@ -1363,11 +1368,11 @@
             },
             en: {
                 nav_contact: 'Contact',
-                hero_line1: 'Discover ground truth.',
-                hero_line2: 'The Lab Is the Product.',
+                hero_line1: 'Intelligence & engineering solutions for the modern era.',
+                hero_line2: 'Your team deserves better than standard corporate copilots.',
                 hero_subtitle: 'A ready-built R&D lab with ex-Volvo, Mercedes & ZF engineers. We build, test, analyze, and improve \u2014 at the speed of modern technology.',
-                hero_cta: 'Discuss Your Technical Challenge',
-                hero_cta_sub: 'Our engineers deliver complete solutions.',
+                hero_cta: 'Discuss your challenges with us',
+                hero_cta_sub: 'We build complete solutions \u2014 & sharpen your team to build what\u0027s next.',
                 scroll_label: 'Scroll',
                 grid1_title: '01 \u2014 Technical Depth',
                 grid1_text: 'Our team consists of ex-Volvo, ex-ZF, and ex-Mercedes engineers with over 15 years of experience in robotics, mechatronics, and data analytics. This depth enables solutions well beyond where standard AI and off-the-shelf systems reach their limits.',
