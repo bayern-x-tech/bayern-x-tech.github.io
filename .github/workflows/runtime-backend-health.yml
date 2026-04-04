@@ -1,0 +1,64 @@
+name: Runtime Backend Health
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  runtime-backend-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check runtime backend manifest
+        id: manifest
+        run: |
+          CFG=$(curl -s --max-time 15 https://bayern-x-tech.github.io/chat-endpoints.json)
+          echo "$CFG" | jq '.' >/dev/null
+          URL=$(echo "$CFG" | jq -r '.active_backend.api_url // empty')
+          HEALTH=$(echo "$CFG" | jq -r '.active_backend.health_url // empty')
+          LABEL=$(echo "$CFG" | jq -r '.active_backend.label // empty')
+          STATUS=$(echo "$CFG" | jq -r '.status // "unknown"')
+          echo "backend_url=$URL" >> $GITHUB_OUTPUT
+          echo "backend_health_url=$HEALTH" >> $GITHUB_OUTPUT
+          echo "backend_label=$LABEL" >> $GITHUB_OUTPUT
+          echo "manifest_status=$STATUS" >> $GITHUB_OUTPUT
+          if [ -z "$HEALTH" ]; then
+            echo "backend_http=000" >> $GITHUB_OUTPUT
+            echo "backend_status=missing" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          HTTP=$(curl -s --max-time 8 -o /dev/null -w "%{http_code}" "$HEALTH" 2>/dev/null || echo "000")
+          echo "backend_http=$HTTP" >> $GITHUB_OUTPUT
+          [ "$HTTP" = "200" ] && echo "backend_status=online" >> $GITHUB_OUTPUT || (echo "backend_status=offline" >> $GITHUB_OUTPUT && exit 1)
+
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const now = new Date().toISOString();
+            const backendUrl = '${{ steps.manifest.outputs.backend_url }}';
+            const backendHealthUrl = '${{ steps.manifest.outputs.backend_health_url }}';
+            const backendLabel = '${{ steps.manifest.outputs.backend_label }}';
+            const backendHttp = '${{ steps.manifest.outputs.backend_http }}';
+            const manifestStatus = '${{ steps.manifest.outputs.manifest_status }}';
+
+            let body = `## Runtime backend degraded - ${now}\n\n`;
+            body += `| Check | Status |\n|---|---|\n`;
+            body += `| Manifest status | ${manifestStatus || 'unknown'} |\n`;
+            body += `| Backend label | ${backendLabel || 'missing'} |\n`;
+            body += `| Backend URL | ${backendUrl || 'missing'} |\n`;
+            body += `| Health URL | ${backendHealthUrl || 'missing'} |\n`;
+            body += `| Health HTTP | ${backendHttp || '000'} |\n\n`;
+            body += `## Recovery\n`;
+            body += `- Start the local watchdog: \`python C:/GitHub/website/bxt_watchdog.py\`\n`;
+            body += `- Or relaunch just the tunnel: \`C:/GitHub/website/restart_tunnel.bat\`\n`;
+            body += `- Verify the GPU API locally: \`curl http://localhost:8000/health\`\n`;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Runtime backend degraded - ${now.slice(0, 16)}`,
+              body,
+              labels: ['bug', 'automated'],
+            });
