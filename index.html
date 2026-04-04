@@ -1029,9 +1029,9 @@
     <!-- Chat Window -->
     <div class="chat-window" id="chatWindow">
         <div class="chat-header">
-            <div class="chat-header-dot"></div>
+            <div class="chat-header-dot" style="background:#666;box-shadow:none"></div>
             <span class="chat-header-title" data-i18n="chat_title">BXT Intelligenter Assistent</span>
-            <span class="chat-header-sub">Online</span>
+            <span class="chat-header-sub">Offline</span>
         </div>
 
         <div class="chat-messages" id="chatMessages">
@@ -1150,7 +1150,7 @@
         async function checkServer() {
             try {
                 const ctrl = new AbortController();
-                const timer = setTimeout(() => ctrl.abort(), 5000);
+                const timer = setTimeout(() => ctrl.abort(), 3000);
                 const r = await fetch(HEALTH_URL, { signal: ctrl.signal });
                 clearTimeout(timer);
                 if (r.ok) {
@@ -1177,7 +1177,24 @@
         toggle.addEventListener('click', () => {
             const open = win.classList.toggle('visible');
             toggle.classList.toggle('open', open);
-            if (open) { input.focus(); checkServer(); }
+            if (open) {
+                input.focus();
+                checkServer();
+                // Show offline notice immediately if we already know the server is down
+                if (!serverOnline) {
+                    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+                    const alreadyNotified = messages.querySelector('.chat-bubble.assistant[data-offline]');
+                    if (!alreadyNotified) {
+                        const el = addBubble(
+                            lang === 'de'
+                                ? 'Der Chat-Server ist momentan nicht erreichbar. Bitte kontaktieren Sie uns direkt: dylan.kane@bayernxtech.de'
+                                : 'The chat server is currently unavailable. Please contact us directly: dylan.kane@bayernxtech.de',
+                            'assistant'
+                        );
+                        el.setAttribute('data-offline', '1');
+                    }
+                }
+            }
         });
 
         // -- HELPERS --
