@@ -1035,7 +1035,7 @@
         </div>
 
         <div class="chat-messages" id="chatMessages">
-            <div class="chat-bubble assistant" data-i18n="chat_greeting">BXT Assistent — Fragen zu unseren Leistungen?</div>
+            <div class="chat-bubble assistant" data-i18n="chat_greeting">Die physikalische Wahrheit erkennen. Engineering – begrenzt nur durch Naturgesetze. Welche Herausforderung können wir für Sie lösen?</div>
         </div>
 
         <div class="chat-input-area">
@@ -1098,65 +1098,67 @@
             return fp;
         }
 
-        // -- KNOWLEDGE BASE (client-side, no backend required) --
+        // -- KNOWLEDGE BASE — BXT voice: physics-first, no "AI" hype, direct engineering identity --
         const KB = {
             de: {
                 greeting: [
-                    'Hallo! Ich bin der BXT-Assistent. Was kann ich über unsere Engineering- & KI-Lösungen erzählen?',
-                    'Guten Tag! Womit kann ich Ihnen helfen? Fragen zu Leistungen, Use Cases oder einem Projektgespräch?',
-                    'Hi! Fragen zu unseren KI-Lösungen für Engineering & Industrie? Gerne.',
+                    'Die physikalische Wahrheit erkennen. Engineering – begrenzt nur durch Naturgesetze. Welche Herausforderung können wir für Sie lösen?',
+                    'Ground Truth erkennen & physikbasierte Intelligenz bauen. Was beschäftigt Sie gerade?',
+                    'Wir arbeiten dort, wo Standard-Werkzeuge scheitern. Was ist Ihr Problem?',
                 ],
-                about: 'Bayern(x)tech ist ein einsatzbereites F&E-Labor mit Sitz in Passau, Bayern. Unser Team besteht aus ehemaligen Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.',
-                team: 'Unser Team vereint ehemalige Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Diese Tiefe ermöglicht Lösungen weit über den Punkt hinaus, an dem allgemeine KI-Werkzeuge scheitern.\n\nDirekte Kontakte:\ndylan.kane@bayernxtech.de\ndennis.jahrstorfer@bayernxtech.de\nsebastian.kathke@bayernxtech.de',
-                contact: 'Sie erreichen uns direkt per E-Mail:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nOder auf LinkedIn: https://www.linkedin.com/company/bayern-x-tech',
-                location: 'Wir sind in Passau, Bayern ansässig — im Herzen des bayerischen Technologie- und Innovationsraums.',
-                services: 'Unsere Kernleistungen:\n\n1. KI-Assistenz für 3D-Konstruktion (CATIA, SolidWorks, NX)\n2. Root Cause Analysis in der Montage\n3. Supply Chain Intelligence\n4. Smart Grid Optimierung\n5. Ladeinfrastruktur & E-Mobilität\n6. Agentic Engineering & IT-Automatisierung\n7. Dokumenten-Intelligenz (OCR+)\n8. Edge-Case Engineering\n9. Audio Engineering & Bioakustik\n\nAlle Lösungen on-premise oder DSGVO-konform hybrid realisierbar.',
-                cad: 'Unsere KI-Assistenz für 3D-Konstruktion übersetzt Designabsichten direkt in Geometrie-Features — für CATIA, SolidWorks und NX. Weniger Menüs, kürzere Lernkurve, mehr Zeit für echtes Engineering. Im Automotive-Bereich erprobt und produktiv.',
-                quality: 'Unsere Root-Cause-Analysis-Lösung verknüpft Schraubdaten, Materialchargen und Prüfstandsergebnisse. KI führt Ihre QM-Experten schneller zur Fehlerursache — besonders wirksam in der Serienproduktion, wo fragmentierte Datenquellen die Analyse verlangsamen.',
-                supplychain: 'BXT Supply Chain Intelligence: Reklamationen, Fehlteile und Lagerbestände werden KI-gestützt optimiert — vom Wareneingang bis zur Rückverfolgung fehlerhafter Komponenten. Für Fertigungs- und Logistikunternehmen mit komplexen Lieferketten.',
-                smartgrid: 'Für Stadtwerke und Kommunen auf dem Weg zu 100 % Erneuerbar: KI-basierte Optimierung urbaner Energienetze — Erzeugung, Speicherung, Verteilung. Wir bringen Rechenmodelle und Echtzeitdaten zusammen.',
-                ev: 'Ladeinfrastruktur, die sich rechnet: Standortplanung, Lastverteilung, Demand Forecasting — für Betreiber von Ladenetzwerken, die jede Kilowattstunde intelligent routen wollen.',
-                agentic: 'Agentic Engineering bei BXT: KI-Agenten übernehmen Routinefälle autonom — Ihre Fachkräfte konzentrieren sich auf komplexe Probleme statt auf Ticket-Queues. Messbare OPEX-Reduktion in IT-Automatisierung und Support-Prozessen.',
-                ocr: 'Dokumenten-Intelligenz (OCR+): spezialisierte Erkennung und Verarbeitung technischer Unterlagen — von handschriftlichen Anmerkungen bis zu komplexen Tabellenstrukturen. Ideal für technische Dokumentation, Normen, Prüfberichte und PDFs jeder Güte.',
-                edgecase: 'Edge-Case Engineering: Wir implementieren für technisch anspruchsvolle Randbedingungen, bei denen Standardansätze versagen. Dort, wo es schwierig wird, fangen wir an — im R&D-Bereich und bei Spezial-Engineering-Aufgaben.',
-                audio: 'Audio Engineering & Bioakustik: von Musikvenues bis zur biologischen Akustik — neue Wege, wie Menschen Musik erleben und wahrnehmen, sowie Anwendungen in biologischer Kommunikation und Klanganalyse.',
-                gdpr: 'Datensouveränität ist ein Kernprinzip von BXT: Unsere Systeme sind lokal und transparent. Mit LegalTech-Expertise realisieren wir vollständig isolierte oder kontrollierte Hybrid-Architekturen — DSGVO-konform und darüber hinaus. Ihre Daten verlassen nie Ihr Netzwerk.',
-                onpremise: 'Ja — alle unsere Lösungen sind on-premise realisierbar. Datensouveränität ist kein Feature, sondern Grundprinzip. Wir arbeiten nach dem Datenschutzniveau deutscher Forschungslabore. Ihre Daten bleiben in Ihrem Netzwerk.',
-                xpathfinder: 'Unser Produktportfolio:\n\n• xPathfinder Labs — maßgeschneiderte Toolkits & Technologien, die Ingenieur:innen, Wissenschaftler:innen und Innovator:innen neue Durchbrüche ermöglichen.\n\n• xPathfinder Workshops — Hands-on-Sessions, in denen wir gemeinsam mit Ihrem Team konkrete KI-Lösungen entwickeln und Ihr Team für den Einsatz schärfen.',
-                project: 'Für ein konkretes Projektgespräch wenden Sie sich direkt an:\ndylan.kane@bayernxtech.de\n\nWir arbeiten projektbasiert — kein Abo, kein Overhead. Problem beschreiben, wir melden uns.',
-                price: 'Wir arbeiten projektbasiert ohne Standardtarife — jedes Projekt ist anders. Für eine erste Einschätzung zu Ihrem Fall: dylan.kane@bayernxtech.de',
-                llm: 'Wir arbeiten mit modernen LLMs (u.a. Claude, Llama, Mistral) und wählen das Modell nach Ihren Anforderungen — on-premise, cloud-hybrid oder vollständig isoliert. Das LLM ist Mittel zum Zweck, nicht das Produkt.',
-                hallucination: 'Halluzinationen bei LLMs sind ein reales Problem — besonders bei technischen Normen und Spezifikationen. Wir lösen das durch RAG (Retrieval-Augmented Generation) mit verifizierten Quellen, klaren Confidence-Grenzen und systematischer Evaluation. Zuverlässigkeit ist kein Zufall, sondern Engineering.',
-                fallback: 'Interessante Frage. Für spezifische technische Anforderungen empfehle ich ein direktes Gespräch: dylan.kane@bayernxtech.de — wir antworten schnell und ohne Verkaufsdruck.',
+                about: 'Bayern(x)tech ist ein eingebettetes F&E-Labor in Passau, Bayern — kein Beratungshaus, kein Software-Reseller. Wir sind ehemalige Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Datenanalyse. Wir bauen Systeme, die in der Realität funktionieren: physikbasiert, messbar, ohne Hype.',
+                team: 'Drei Gründer, ein klares Profil:\n\n• Dylan Kane — Systemarchitektur, Projektstrategie\ndylan.kane@bayernxtech.de\n\n• Dennis Jahrstorfer — Robotik, Mechatronik, Embedded\ndennis.jahrstorfer@bayernxtech.de\n\n• Sebastian Kathke — Audio, Signalverarbeitung, Bioakustik\nsebastian.kathke@bayernxtech.de\n\nHintergrund: ex-Volvo, ex-ZF, ex-Mercedes — kumuliert über 15 Jahre im Maschinenbau und in der angewandten Forschung.',
+                contact: 'Direktkontakt:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nLinkedIn: https://www.linkedin.com/company/bayern-x-tech\n\nKein Kontaktformular. Kein Ticketsystem. Einfach schreiben — wir antworten.',
+                location: 'Passau, Bayern. Nicht München, nicht Berlin — Passau. Wo Donau, Inn und Ilz zusammenfließen und Ingenieurskultur auf Forschungstiefe trifft.',
+                services: 'Was wir bauen — konkret:\n\n• Konstruktionsassistenten für CATIA, SolidWorks, NX\n• Fehlerursachen-Analyse in der Serienproduktion\n• Supply-Chain-Intelligenz (Reklamation bis Rückverfolgung)\n• Energienetz-Optimierung für Stadtwerke & Kommunen\n• Ladeinfrastruktur-Planung für EV-Netzbetreiber\n• Autonome Agenten für IT-Prozesse & Ticket-Automatisierung\n• Technische Dokumenten-Intelligenz (OCR, Handschrift, Tabellen)\n• Edge-Case Engineering — wo Standard-Modelle versagen\n• Audio Engineering & Bioakustik\n\nAlles on-premise oder DSGVO-konform hybrid. Keine Cloud-Pflicht.',
+                cad: 'Konstruktionsassistenz für CATIA, SolidWorks und NX: Designabsicht beschreiben → Geometrie-Feature erzeugen. Das klingt simpel. Die Herausforderung ist, dass CAD-Kernel keine natürliche Sprache sprechen und parametrische Abhängigkeiten kontextabhängig sind. Wir haben das gelöst — im Automotive-Umfeld produktiv im Einsatz. Weniger Menü-Navigation, weniger Lernkurve, mehr Zeit für die eigentliche Konstruktionsaufgabe.',
+                quality: 'Root-Cause-Analysis in der Serienfertigung: Das Problem ist nicht der Fehler selbst — es ist die Datenfragmentierung. Schraubdaten liegen im MES, Materialchargen im ERP, Prüfstandsergebnisse in einer Excel-Datei auf einem Netzlaufwerk. Unser System verknüpft diese Quellen und führt Ihre QM-Experten zur Ursache — nicht zur nächstbesten Korrelation. Kausalität statt Statistik.',
+                supplychain: 'Supply-Chain-Intelligenz: Reklamationen, Fehlteile, Lagerbestände — das klassische Bermuda-Dreieck für Fertigungsunternehmen. Wir bauen Systeme, die vom Wareneingang bis zur Rückverfolgung fehlerhafter Komponenten durchgängig denken. Keine isolierten Dashboards. Ein Modell, das die gesamte Kette versteht.',
+                smartgrid: 'Energienetz-Optimierung für Stadtwerke und Kommunen: Erzeugung, Speicherung, Verteilung — drei Systeme, die selten zusammen optimiert werden. Wir bringen physikbasierte Rechenmodelle und Echtzeitdaten zusammen. Kein generisches Dashboard — ein System, das die thermodynamischen und elektrischen Randbedingungen Ihres Netzes kennt.',
+                ev: 'Ladeinfrastruktur-Planung: Standort, Lastverteilung, Demand Forecasting — für Netzbetreiber, die nicht raten wollen. Das Problem ist nicht die Ladestation, sondern die Netzkapazität an jedem Knoten zu jedem Zeitpunkt. Wir modellieren das. Jede Kilowattstunde kommt dahin, wo sie gebraucht wird.',
+                agentic: 'Autonome Agenten für Engineering-Prozesse: Ihre Fachkräfte lösen komplexe Probleme — nicht Ticket-Queues. Routinefälle übernehmen Agenten. Das ist keine Utopie, das ist eine Architekturentscheidung. Messbare OPEX-Reduktion, nachvollziehbare Entscheidungspfade, keine Black Box.',
+                ocr: 'Technische Dokumenten-Intelligenz: Handschriftliche Anmerkungen auf Zeichnungen, verschachtelte Tabellenstrukturen in Prüfberichten, schlecht gescannte Normen — Standard-OCR versagt hier systematisch. Wir haben spezialisierte Pipelines gebaut, die technischen Kontext verstehen. Nicht generisch. Domänenspezifisch.',
+                edgecase: 'Edge-Case Engineering: Dort, wo Standardansätze versagen, fangen wir an. Das ist kein Marketing-Satz — es ist unser Selektionskriterium für Projekte. Wenn ein Problem trivial lösbar ist, braucht es uns nicht. Wenn physikalische Randbedingungen, Datenmangel oder extreme Zuverlässigkeitsanforderungen im Spiel sind: dann schon.',
+                audio: 'Audio Engineering & Bioakustik: Von Musikvenues bis zur biologischen Klangkommunikation. Sebastian Kathke bringt hier seltene Kombination aus Signalverarbeitung, Akustikphysik und Domänenwissen mit. Anwendungen: Raumakustik-Optimierung, bioakustische Analyse, Schnittstellen zwischen Mensch und Klangsystem.',
+                gdpr: 'Datensouveränität ist kein Compliance-Feature — es ist Grundarchitektur. Unsere Systeme sind lokal und transparent. LegalTech-Expertise ist im Team. Vollständig isolierte Umgebungen, kontrollierte Hybrid-Architekturen, DSGVO-konform und darüber hinaus. Ihre Daten verlassen nie Ihr Netzwerk — ohne Ausnahme.',
+                onpremise: 'On-premise ist bei uns Standard, nicht Aufpreis. Wir wissen, dass Industriedaten das wertvollste Gut vieler Unternehmen sind. Inferenz auf dem eigenen Server, Modelle ohne Cloud-Abhängigkeit, nachvollziehbare Architektur. Das ist keine Kompromisslösung — das ist die richtige Lösung für Ihre Anforderungen.',
+                physics: 'Physikbasierte Intelligenz bedeutet: Modelle, die die Naturgesetze des Problems kennen. Nicht reine Statistik über Trainingsdaten — sondern Systeme, die kausal denken, Randbedingungen respektieren und erklärbare Ergebnisse liefern. Ground Truth erkennen. Engineering – begrenzt nur durch Naturgesetze.',
+                xpathfinder: 'Unser Produktportfolio:\n\n• xPathfinder Labs — maßgeschneiderte Toolkits für Ingenieur:innen, Wissenschaftler:innen und Innovator:innen. Kein Baukastensystem. Gebaut für das spezifische Problem.\n\n• xPathfinder Workshops — Hands-on-Sessions, in denen wir gemeinsam mit Ihrem Team konkrete Systeme entwickeln und Ihr Team für die Eigenverantwortung schärfen. Keine Präsentation. Keine Folien. Nur Werkzeug und Ergebnis.',
+                project: 'Projektgespräch:\ndylan.kane@bayernxtech.de\n\nKein Abo. Kein Rahmenvertrag. Kein Overhead. Problem beschreiben, wir melden uns — direkt, ohne Vorqualifizierungsformular.',
+                price: 'Keine Standardpreise — jedes Projekt ist anders. Wir arbeiten projektbasiert. Erste Einschätzung kostenlos: dylan.kane@bayernxtech.de\n\nWir sagen Ihnen ehrlich, ob es sich lohnt oder nicht.',
+                llm: 'Sprachmodelle sind Werkzeuge — kein Produkt. Wir wählen nach Anforderung: Qwen, Llama, Mistral, Claude — on-premise, cloud-hybrid oder vollständig air-gapped. Das Modell ist nicht die Lösung. Die Architektur drum herum ist die Lösung.',
+                hallucination: 'Halluzinationen auf technischen Normen sind inakzeptabel. Punkt. Wir lösen das mit domänenspezifischem RAG über verifizierte Korpora, klaren Confidence-Schwellen und systematischer Evaluation — keine probabilistische Hoffnung, sondern Engineering. Zuverlässigkeit ist nicht verhandelbar.',
+                fallback: 'Das klingt nach einem konkreten Problem. Beschreiben Sie es direkt:\ndylan.kane@bayernxtech.de\n\nWir antworten ohne Verkaufsgespräch.',
             },
             en: {
                 greeting: [
-                    'Hello! I\'m the BXT assistant. What can I tell you about our engineering & AI solutions?',
-                    'Hi there! How can I help? Questions about our services, use cases, or starting a project?',
-                    'Hey! Curious about our AI solutions for engineering & industry? Ask away.',
+                    'Discover ground truth. Engineering bounded only by physics. What challenge can we help you solve?',
+                    'We build where standard tools fail. What\'s the problem?',
+                    'Physics-based intelligence for real engineering problems. What are you working on?',
                 ],
-                about: 'Bayern(x)tech is a ready-to-deploy R&D lab based in Passau, Bavaria. Our team consists of ex-Volvo, ZF, and Mercedes engineers with 15+ years of experience in robotics, mechatronics, and data analytics. We build, test, analyze, and improve — at the speed of modern technology.',
-                team: 'Our team brings together ex-Volvo, ZF, and Mercedes engineers with 15+ years of experience in robotics, mechatronics, and data analytics. This depth enables solutions that go well beyond where standard AI tools reach their limits.\n\nDirect contacts:\ndylan.kane@bayernxtech.de\ndennis.jahrstorfer@bayernxtech.de\nsebastian.kathke@bayernxtech.de',
-                contact: 'You can reach us directly by email:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nOr on LinkedIn: https://www.linkedin.com/company/bayern-x-tech',
-                location: 'We are based in Passau, Bavaria — in the heart of the Bavarian technology and innovation corridor.',
-                services: 'Our core offerings:\n\n1. AI assistant for 3D design (CATIA, SolidWorks, NX)\n2. Root cause analysis in assembly\n3. Supply chain intelligence\n4. Smart grid optimization\n5. EV charging infrastructure & e-mobility\n6. Agentic engineering & IT automation\n7. Document intelligence (OCR+)\n8. Edge-case engineering\n9. Audio engineering & bioacoustics\n\nAll solutions deployable on-premise or as GDPR-compliant hybrid.',
-                cad: 'Our AI assistant for 3D design translates design intent directly into geometry features — for CATIA, SolidWorks, and NX. Fewer menus, shorter learning curve, more time for actual engineering. Battle-tested and productive in automotive.',
-                quality: 'Our root cause analysis solution connects torque data, material batches, and test bench results. AI guides your QA experts to the root cause faster — especially effective in serial production where fragmented data sources slow down analysis.',
-                supplychain: 'BXT Supply Chain Intelligence: complaints, missing parts, and inventory levels are AI-optimized — from goods receipt to tracing defective components. For manufacturing and logistics companies with complex supply chains.',
-                smartgrid: 'For utilities and municipalities on the road to 100% renewable: AI-based optimization of urban energy grids — generation, storage, distribution. We bring computational models and real-time data together.',
-                ev: 'EV charging infrastructure that pays off: site planning, load balancing, demand forecasting — for charging network operators who want to route every kilowatt-hour intelligently.',
-                agentic: 'Agentic Engineering at BXT: AI agents autonomously handle routine cases — your specialists focus on complex problems, not ticket queues. Measurable OPEX reduction in IT automation and support processes.',
-                ocr: 'Document Intelligence (OCR+): specialized recognition and processing of technical documents — from handwritten annotations to complex table structures. Ideal for technical documentation, standards, test reports, and PDFs of any quality.',
-                edgecase: 'Edge-Case Engineering: we implement for technically demanding boundary conditions where standard approaches fail. Where it gets hard, we start — in R&D and specialized engineering tasks.',
-                audio: 'Audio Engineering & Bioacoustics: from music venues to biological acoustics — new ways people experience and perceive sound, plus applications in biological communication and acoustic analysis.',
-                gdpr: 'Data sovereignty is a core principle at BXT: our systems are local and transparent. With legal-tech expertise, we build fully isolated or controlled hybrid architectures — GDPR-compliant and beyond. Your data never leaves your network.',
-                onpremise: 'Yes — all our solutions can be deployed on-premise. Data sovereignty is not a feature, it\'s a foundation. We operate at the privacy standard of German research labs. Your data stays in your network.',
-                xpathfinder: 'Our product portfolio:\n\n• xPathfinder Labs — custom toolkits & technologies that help engineers, scientists, and innovators achieve new breakthroughs.\n\n• xPathfinder Workshops — hands-on sessions where we develop concrete AI solutions together with your team and sharpen your team for deployment.',
-                project: 'For a concrete project discussion, contact us directly:\ndylan.kane@bayernxtech.de\n\nWe work project-based — no subscription, no overhead. Describe the problem, we\'ll get back to you.',
-                price: 'We work project-based without standard pricing — every project is different. For an initial assessment of your case: dylan.kane@bayernxtech.de',
-                llm: 'We work with modern LLMs (including Claude, Llama, Mistral) and select the model based on your requirements — on-premise, cloud-hybrid, or fully isolated. The LLM is a means to an end, not the product.',
-                hallucination: 'LLM hallucinations are a real problem — especially with technical standards and specifications. We address this with RAG (Retrieval-Augmented Generation) using verified sources, clear confidence boundaries, and systematic evaluation. Reliability is not an accident, it\'s engineering.',
-                fallback: 'Interesting question. For specific technical requirements, I\'d recommend a direct conversation: dylan.kane@bayernxtech.de — we respond quickly and without sales pressure.',
+                about: 'Bayern(x)tech is an embedded R&D lab in Passau, Bavaria — not a consultancy, not a software reseller. We are ex-Volvo, ex-ZF, and ex-Mercedes engineers with 15+ years in robotics, mechatronics, and data analytics. We build systems that work in reality: physics-based, measurable, without hype.',
+                team: 'Three founders, one clear profile:\n\n• Dylan Kane — system architecture, project strategy\ndylan.kane@bayernxtech.de\n\n• Dennis Jahrstorfer — robotics, mechatronics, embedded\ndennis.jahrstorfer@bayernxtech.de\n\n• Sebastian Kathke — audio, signal processing, bioacoustics\nsebastian.kathke@bayernxtech.de\n\nBackground: ex-Volvo, ex-ZF, ex-Mercedes — 15+ cumulative years in mechanical engineering and applied research.',
+                contact: 'Direct contact:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nLinkedIn: https://www.linkedin.com/company/bayern-x-tech\n\nNo contact form. No ticket system. Just write — we respond.',
+                location: 'Passau, Bavaria. Not Munich, not Berlin — Passau. Where the Danube, Inn, and Ilz converge, and engineering culture meets research depth.',
+                services: 'What we build — concretely:\n\n• Design assistants for CATIA, SolidWorks, NX\n• Root cause analysis in serial production\n• Supply chain intelligence (complaints to component tracing)\n• Energy grid optimization for utilities & municipalities\n• EV charging infrastructure planning\n• Autonomous agents for IT and ticket automation\n• Technical document intelligence (OCR, handwriting, tables)\n• Edge-case engineering — where standard models fail\n• Audio engineering & bioacoustics\n\nAll on-premise or GDPR-compliant hybrid. No cloud mandate.',
+                cad: 'Design assistance for CATIA, SolidWorks, and NX: describe design intent → generate geometry feature. The challenge is that CAD kernels don\'t speak natural language, and parametric dependencies are context-dependent. We\'ve solved this — deployed productively in automotive. Less menu navigation, shorter learning curve, more time for actual engineering.',
+                quality: 'Root cause analysis in serial production: the problem isn\'t the defect — it\'s data fragmentation. Torque data in the MES, material batches in the ERP, test results in an Excel file on a network drive. Our system connects these sources and leads your QA experts to the cause — not the next best correlation. Causality, not statistics.',
+                supplychain: 'Supply chain intelligence: complaints, missing parts, inventory — the classic Bermuda triangle for manufacturers. We build systems that think continuously from goods receipt to defective component tracing. No isolated dashboards. One model that understands the entire chain.',
+                smartgrid: 'Energy grid optimization for utilities and municipalities: generation, storage, distribution — three systems rarely optimized together. We bring physics-based computational models and real-time data together. Not a generic dashboard — a system that knows the thermodynamic and electrical constraints of your grid.',
+                ev: 'EV charging infrastructure planning: location, load balancing, demand forecasting — for network operators who don\'t want to guess. The problem isn\'t the charger, it\'s the grid capacity at every node at every moment. We model that. Every kilowatt-hour goes where it\'s needed.',
+                agentic: 'Autonomous agents for engineering processes: your specialists solve complex problems — not ticket queues. Routine cases are handled by agents. This isn\'t a utopia, it\'s an architecture decision. Measurable OPEX reduction, traceable decision paths, no black box.',
+                ocr: 'Technical document intelligence: handwritten annotations on drawings, nested table structures in test reports, poorly scanned standards — standard OCR fails here systematically. We\'ve built specialized pipelines that understand technical context. Not generic. Domain-specific.',
+                edgecase: 'Edge-case engineering: where standard approaches fail, we start. That\'s not a marketing phrase — it\'s our project selection criterion. If a problem is trivially solvable, you don\'t need us. If physical constraints, data scarcity, or extreme reliability requirements are in play: then you do.',
+                audio: 'Audio engineering & bioacoustics: from music venues to biological sound communication. Sebastian Kathke brings a rare combination of signal processing, acoustic physics, and domain knowledge. Applications: room acoustics optimization, bioacoustic analysis, human-sound system interfaces.',
+                gdpr: 'Data sovereignty is not a compliance feature — it\'s foundational architecture. Our systems are local and transparent. Legal-tech expertise is in-house. Fully isolated environments, controlled hybrid architectures, GDPR-compliant and beyond. Your data never leaves your network — without exception.',
+                onpremise: 'On-premise is our default, not a surcharge. We know that industrial data is the most valuable asset for many companies. Inference on your own server, models without cloud dependency, traceable architecture. This isn\'t a compromise — it\'s the right solution for your requirements.',
+                physics: 'Physics-based intelligence means: models that know the natural laws of the problem. Not pure statistics over training data — but systems that reason causally, respect constraints, and deliver explainable results. Discover ground truth. Engineering bounded only by physics.',
+                xpathfinder: 'Our product portfolio:\n\n• xPathfinder Labs — custom toolkits for engineers, scientists, and innovators. No off-the-shelf system. Built for the specific problem.\n\n• xPathfinder Workshops — hands-on sessions where we build concrete systems with your team and sharpen their ability to own and extend them. No presentation. No slides. Just tools and results.',
+                project: 'Project conversation:\ndylan.kane@bayernxtech.de\n\nNo subscription. No framework contract. No overhead. Describe the problem, we\'ll get back to you — directly, no pre-qualification form.',
+                price: 'No standard pricing — every project is different. We work project-based. First assessment free: dylan.kane@bayernxtech.de\n\nWe\'ll tell you honestly whether it\'s worth it or not.',
+                llm: 'Language models are tools — not products. We select by requirement: Qwen, Llama, Mistral, Claude — on-premise, cloud-hybrid, or fully air-gapped. The model is not the solution. The architecture around it is.',
+                hallucination: 'Hallucinations on technical standards are unacceptable. Full stop. We solve this with domain-specific RAG over verified corpora, clear confidence thresholds, and systematic evaluation — not probabilistic hope, but engineering. Reliability is non-negotiable.',
+                fallback: 'That sounds like a concrete problem. Describe it directly:\ndylan.kane@bayernxtech.de\n\nWe respond without a sales conversation.',
             }
         };
 
@@ -1183,6 +1185,7 @@
             { key: 'price',     de: ['preis', 'kosten', 'budget', 'tarif', 'angebot', 'was kostet', 'wie teuer'], en: ['price', 'cost', 'budget', 'rate', 'quote', 'how much', 'pricing'] },
             { key: 'hallucination', de: ['halluzin', 'falsch', 'unzuverlässig', 'fehler bei ki', 'ki versagt', 'normen', 'zuverlässig'], en: ['hallucin', 'unreliable', 'wrong', 'ai fails', 'standards accuracy', 'reliable'] },
             { key: 'llm',       de: ['llm', 'gpt', 'claude', 'llama', 'mistral', 'sprachmodell', 'modell', 'ki-modell', 'openai'], en: ['llm', 'gpt', 'claude', 'llama', 'mistral', 'language model', 'ai model', 'openai'] },
+            { key: 'physics',   de: ['physik', 'ground truth', 'naturgesetz', 'kausal', 'physikbasiert', 'messbar', 'wahrheit'], en: ['physics', 'ground truth', 'natural law', 'causal', 'physics-based', 'measurable', 'truth'] },
         ];
 
         function matchIntent(text) {
@@ -1224,7 +1227,7 @@
         // -- BACKEND CONFIG (xPathfinder Labs) --
         // Set BACKEND_URL to your Cloudflare Worker URL after deploying worker/chat-worker.js
         // Format: 'https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev/api/chat/'
-        const BACKEND_URL    = 'https://merge-televisions-genetics-grew.trycloudflare.com/api/chat/';
+        const BACKEND_URL    = '';  // Set to tunnel URL when xPathfinder Labs is reachable
         const BACKEND_HEALTH = BACKEND_URL ? BACKEND_URL.replace(/\/api\/chat\/?$/, '/health') : '';
         const USER_ID        = getStableUserId();
 
@@ -1484,7 +1487,7 @@
                 info_location: 'Passau, Bayern',
                 info_contact_label: 'Kontakt',
                 chat_title: 'BXT Intelligenter Assistent',
-                chat_greeting: 'BXT Assistent \u2014 Fragen zu unseren Leistungen?',
+                chat_greeting: 'Die physikalische Wahrheit erkennen. Engineering \u2013 begrenzt nur durch Naturgesetze. Welche Herausforderung k\u00f6nnen wir f\u00fcr Sie l\u00f6sen?',
                 chat_placeholder: 'Nachricht eingeben\u2026',
             },
             en: {
@@ -1550,7 +1553,7 @@
                 info_location: 'Passau, Bavaria',
                 info_contact_label: 'Contact',
                 chat_title: 'BXT Intelligent Assistant',
-                chat_greeting: 'BXT Assistant \u2014 Questions about our services?',
+                chat_greeting: 'Discover ground truth. Engineering bounded only by physics. What challenge can we help you solve?',
                 chat_placeholder: 'Type a message\u2026',
             }
         };

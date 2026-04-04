@@ -1,0 +1,94 @@
+name: Site Health Check
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:          # manual trigger
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check site returns 200
+        id: site_check
+        run: |
+          HTTP=$(curl -s --max-time 15 -o /dev/null -w "%{http_code}" https://bayern-x-tech.github.io/)
+          echo "http_code=$HTTP" >> $GITHUB_OUTPUT
+          echo "Site returned HTTP $HTTP"
+          [ "$HTTP" = "200" ] || exit 1
+
+      - name: Check chatbot widget JS is present
+        id: widget_check
+        run: |
+          BODY=$(curl -s --max-time 15 https://bayern-x-tech.github.io/)
+          echo "$BODY" | grep -q "chat-toggle" && echo "widget=ok" >> $GITHUB_OUTPUT || (echo "widget=missing" >> $GITHUB_OUTPUT && exit 1)
+          echo "$BODY" | grep -q "getBotResponse" && echo "kb=ok" >> $GITHUB_OUTPUT || (echo "kb=missing" >> $GITHUB_OUTPUT && exit 1)
+          echo "$BODY" | grep -q "physikalische Wahrheit" && echo "greeting=ok" >> $GITHUB_OUTPUT || echo "greeting=missing" >> $GITHUB_OUTPUT
+
+      - name: Check BACKEND_URL status
+        id: backend_check
+        run: |
+          BODY=$(curl -s --max-time 15 https://bayern-x-tech.github.io/)
+          URL=$(echo "$BODY" | grep -oP "const BACKEND_URL\s*=\s*'\K[^']+")
+          if [ -z "$URL" ]; then
+            echo "backend_url=empty (KB-only mode)" >> $GITHUB_OUTPUT
+            echo "INFO: Running in KB fallback mode — no live backend configured"
+          else
+            echo "backend_url=$URL" >> $GITHUB_OUTPUT
+            HTTP=$(curl -s --max-time 8 -o /dev/null -w "%{http_code}" "${URL%/api/chat/}/health" 2>/dev/null || echo "000")
+            echo "backend_health=$HTTP" >> $GITHUB_OUTPUT
+            echo "Backend URL: $URL — Health: $HTTP"
+            [ "$HTTP" = "200" ] && echo "backend_status=online" >> $GITHUB_OUTPUT || echo "backend_status=offline" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Open issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const site  = '${{ steps.site_check.outputs.http_code }}';
+            const widget = '${{ steps.widget_check.outputs.widget }}';
+            const kb     = '${{ steps.widget_check.outputs.kb }}';
+            const greeting = '${{ steps.widget_check.outputs.greeting }}';
+            const backendUrl = '${{ steps.backend_check.outputs.backend_url }}';
+            const backendHealth = '${{ steps.backend_check.outputs.backend_health }}';
+
+            const now = new Date().toISOString();
+            let body = `## 🔴 Site Health Check Failed — ${now}\n\n`;
+            body += `| Check | Status |\n|---|---|\n`;
+            body += `| Site HTTP | ${site || 'FAILED'} |\n`;
+            body += `| Chat widget | ${widget || 'FAILED'} |\n`;
+            body += `| KB engine | ${kb || 'FAILED'} |\n`;
+            body += `| Original greeting | ${greeting || 'unknown'} |\n`;
+            body += `| Backend URL | ${backendUrl || 'empty'} |\n`;
+            body += `| Backend health | ${backendHealth || 'n/a'} |\n\n`;
+
+            body += `## Likely causes\n`;
+            if (site !== '200') body += `- GitHub Pages is down or deployment failed\n`;
+            if (widget === 'missing') body += `- Chat widget HTML removed from index.html\n`;
+            if (kb === 'missing') body += `- KB engine JS missing — possible merge conflict overwrote chatbot code\n`;
+            if (greeting === 'missing') body += `- Original greeting text missing — chatbot copy was overwritten\n`;
+            if (backendUrl && backendHealth !== '200') {
+              body += `- Backend tunnel is down: \`${backendUrl}\`\n`;
+              body += `  **Fix**: Start a new cloudflared tunnel on the workstation, update BACKEND_URL in index.html\n`;
+            }
+
+            body += `\n## Workstation recovery commands\n`;
+            body += '```bash\n';
+            body += '# Start Quick Tunnel (temporary — update BACKEND_URL with new URL)\n';
+            body += 'cloudflared tunnel --url http://localhost:8000\n\n';
+            body += '# OR permanent named tunnel (recommended)\n';
+            body += 'cloudflared service start\n\n';
+            body += '# OpenClaw gateway\n';
+            body += 'openclaw gateway start\n';
+            body += 'openclaw channels restart telegram\n';
+            body += 'openclaw channels link whatsapp   # if 401 — needs QR re-scan\n';
+            body += '```\n';
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🔴 Health check failed — ${now.slice(0,16)}`,
+              body,
+              labels: ['bug', 'automated'],
+            });
