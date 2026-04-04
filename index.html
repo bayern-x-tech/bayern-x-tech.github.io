@@ -1029,9 +1029,9 @@
     <!-- Chat Window -->
     <div class="chat-window" id="chatWindow">
         <div class="chat-header">
-            <div class="chat-header-dot" style="background:#666;box-shadow:none"></div>
+            <div class="chat-header-dot"></div>
             <span class="chat-header-title" data-i18n="chat_title">BXT Intelligenter Assistent</span>
-            <span class="chat-header-sub">Offline</span>
+            <span class="chat-header-sub">Online</span>
         </div>
 
         <div class="chat-messages" id="chatMessages">
@@ -1098,11 +1098,110 @@
             return fp;
         }
 
-        // -- CONFIG --
-        const API_URL  = 'https://nuts-jackson-jessica-drum.trycloudflare.com/api/chat/';
-        const HEALTH_URL = 'https://nuts-jackson-jessica-drum.trycloudflare.com/health';
-        const USER_ID  = getStableUserId();
-        const USER_META = { role: '', business: '', sector: '' };
+        // -- KNOWLEDGE BASE (client-side, no backend required) --
+        const KB = {
+            de: {
+                greeting: [
+                    'Hallo! Ich bin der BXT-Assistent. Was kann ich über unsere Engineering- & KI-Lösungen erzählen?',
+                    'Guten Tag! Womit kann ich Ihnen helfen? Fragen zu Leistungen, Use Cases oder einem Projektgespräch?',
+                    'Hi! Fragen zu unseren KI-Lösungen für Engineering & Industrie? Gerne.',
+                ],
+                about: 'Bayern(x)tech ist ein einsatzbereites F&E-Labor mit Sitz in Passau, Bayern. Unser Team besteht aus ehemaligen Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.',
+                team: 'Unser Team vereint ehemalige Volvo-, ZF- und Mercedes-Ingenieur:innen mit über 15 Jahren Erfahrung in Robotik, Mechatronik und Data Analytics. Diese Tiefe ermöglicht Lösungen weit über den Punkt hinaus, an dem allgemeine KI-Werkzeuge scheitern.\n\nDirekte Kontakte:\ndylan.kane@bayernxtech.de\ndennis.jahrstorfer@bayernxtech.de\nsebastian.kathke@bayernxtech.de',
+                contact: 'Sie erreichen uns direkt per E-Mail:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nOder auf LinkedIn: https://www.linkedin.com/company/bayern-x-tech',
+                location: 'Wir sind in Passau, Bayern ansässig — im Herzen des bayerischen Technologie- und Innovationsraums.',
+                services: 'Unsere Kernleistungen:\n\n1. KI-Assistenz für 3D-Konstruktion (CATIA, SolidWorks, NX)\n2. Root Cause Analysis in der Montage\n3. Supply Chain Intelligence\n4. Smart Grid Optimierung\n5. Ladeinfrastruktur & E-Mobilität\n6. Agentic Engineering & IT-Automatisierung\n7. Dokumenten-Intelligenz (OCR+)\n8. Edge-Case Engineering\n9. Audio Engineering & Bioakustik\n\nAlle Lösungen on-premise oder DSGVO-konform hybrid realisierbar.',
+                cad: 'Unsere KI-Assistenz für 3D-Konstruktion übersetzt Designabsichten direkt in Geometrie-Features — für CATIA, SolidWorks und NX. Weniger Menüs, kürzere Lernkurve, mehr Zeit für echtes Engineering. Im Automotive-Bereich erprobt und produktiv.',
+                quality: 'Unsere Root-Cause-Analysis-Lösung verknüpft Schraubdaten, Materialchargen und Prüfstandsergebnisse. KI führt Ihre QM-Experten schneller zur Fehlerursache — besonders wirksam in der Serienproduktion, wo fragmentierte Datenquellen die Analyse verlangsamen.',
+                supplychain: 'BXT Supply Chain Intelligence: Reklamationen, Fehlteile und Lagerbestände werden KI-gestützt optimiert — vom Wareneingang bis zur Rückverfolgung fehlerhafter Komponenten. Für Fertigungs- und Logistikunternehmen mit komplexen Lieferketten.',
+                smartgrid: 'Für Stadtwerke und Kommunen auf dem Weg zu 100 % Erneuerbar: KI-basierte Optimierung urbaner Energienetze — Erzeugung, Speicherung, Verteilung. Wir bringen Rechenmodelle und Echtzeitdaten zusammen.',
+                ev: 'Ladeinfrastruktur, die sich rechnet: Standortplanung, Lastverteilung, Demand Forecasting — für Betreiber von Ladenetzwerken, die jede Kilowattstunde intelligent routen wollen.',
+                agentic: 'Agentic Engineering bei BXT: KI-Agenten übernehmen Routinefälle autonom — Ihre Fachkräfte konzentrieren sich auf komplexe Probleme statt auf Ticket-Queues. Messbare OPEX-Reduktion in IT-Automatisierung und Support-Prozessen.',
+                ocr: 'Dokumenten-Intelligenz (OCR+): spezialisierte Erkennung und Verarbeitung technischer Unterlagen — von handschriftlichen Anmerkungen bis zu komplexen Tabellenstrukturen. Ideal für technische Dokumentation, Normen, Prüfberichte und PDFs jeder Güte.',
+                edgecase: 'Edge-Case Engineering: Wir implementieren für technisch anspruchsvolle Randbedingungen, bei denen Standardansätze versagen. Dort, wo es schwierig wird, fangen wir an — im R&D-Bereich und bei Spezial-Engineering-Aufgaben.',
+                audio: 'Audio Engineering & Bioakustik: von Musikvenues bis zur biologischen Akustik — neue Wege, wie Menschen Musik erleben und wahrnehmen, sowie Anwendungen in biologischer Kommunikation und Klanganalyse.',
+                gdpr: 'Datensouveränität ist ein Kernprinzip von BXT: Unsere Systeme sind lokal und transparent. Mit LegalTech-Expertise realisieren wir vollständig isolierte oder kontrollierte Hybrid-Architekturen — DSGVO-konform und darüber hinaus. Ihre Daten verlassen nie Ihr Netzwerk.',
+                onpremise: 'Ja — alle unsere Lösungen sind on-premise realisierbar. Datensouveränität ist kein Feature, sondern Grundprinzip. Wir arbeiten nach dem Datenschutzniveau deutscher Forschungslabore. Ihre Daten bleiben in Ihrem Netzwerk.',
+                xpathfinder: 'Unser Produktportfolio:\n\n• xPathfinder Labs — maßgeschneiderte Toolkits & Technologien, die Ingenieur:innen, Wissenschaftler:innen und Innovator:innen neue Durchbrüche ermöglichen.\n\n• xPathfinder Workshops — Hands-on-Sessions, in denen wir gemeinsam mit Ihrem Team konkrete KI-Lösungen entwickeln und Ihr Team für den Einsatz schärfen.',
+                project: 'Für ein konkretes Projektgespräch wenden Sie sich direkt an:\ndylan.kane@bayernxtech.de\n\nWir arbeiten projektbasiert — kein Abo, kein Overhead. Problem beschreiben, wir melden uns.',
+                price: 'Wir arbeiten projektbasiert ohne Standardtarife — jedes Projekt ist anders. Für eine erste Einschätzung zu Ihrem Fall: dylan.kane@bayernxtech.de',
+                llm: 'Wir arbeiten mit modernen LLMs (u.a. Claude, Llama, Mistral) und wählen das Modell nach Ihren Anforderungen — on-premise, cloud-hybrid oder vollständig isoliert. Das LLM ist Mittel zum Zweck, nicht das Produkt.',
+                hallucination: 'Halluzinationen bei LLMs sind ein reales Problem — besonders bei technischen Normen und Spezifikationen. Wir lösen das durch RAG (Retrieval-Augmented Generation) mit verifizierten Quellen, klaren Confidence-Grenzen und systematischer Evaluation. Zuverlässigkeit ist kein Zufall, sondern Engineering.',
+                fallback: 'Interessante Frage. Für spezifische technische Anforderungen empfehle ich ein direktes Gespräch: dylan.kane@bayernxtech.de — wir antworten schnell und ohne Verkaufsdruck.',
+            },
+            en: {
+                greeting: [
+                    'Hello! I\'m the BXT assistant. What can I tell you about our engineering & AI solutions?',
+                    'Hi there! How can I help? Questions about our services, use cases, or starting a project?',
+                    'Hey! Curious about our AI solutions for engineering & industry? Ask away.',
+                ],
+                about: 'Bayern(x)tech is a ready-to-deploy R&D lab based in Passau, Bavaria. Our team consists of ex-Volvo, ZF, and Mercedes engineers with 15+ years of experience in robotics, mechatronics, and data analytics. We build, test, analyze, and improve — at the speed of modern technology.',
+                team: 'Our team brings together ex-Volvo, ZF, and Mercedes engineers with 15+ years of experience in robotics, mechatronics, and data analytics. This depth enables solutions that go well beyond where standard AI tools reach their limits.\n\nDirect contacts:\ndylan.kane@bayernxtech.de\ndennis.jahrstorfer@bayernxtech.de\nsebastian.kathke@bayernxtech.de',
+                contact: 'You can reach us directly by email:\n\n• Dylan Kane — dylan.kane@bayernxtech.de\n• Dennis Jahrstorfer — dennis.jahrstorfer@bayernxtech.de\n• Sebastian Kathke — sebastian.kathke@bayernxtech.de\n\nOr on LinkedIn: https://www.linkedin.com/company/bayern-x-tech',
+                location: 'We are based in Passau, Bavaria — in the heart of the Bavarian technology and innovation corridor.',
+                services: 'Our core offerings:\n\n1. AI assistant for 3D design (CATIA, SolidWorks, NX)\n2. Root cause analysis in assembly\n3. Supply chain intelligence\n4. Smart grid optimization\n5. EV charging infrastructure & e-mobility\n6. Agentic engineering & IT automation\n7. Document intelligence (OCR+)\n8. Edge-case engineering\n9. Audio engineering & bioacoustics\n\nAll solutions deployable on-premise or as GDPR-compliant hybrid.',
+                cad: 'Our AI assistant for 3D design translates design intent directly into geometry features — for CATIA, SolidWorks, and NX. Fewer menus, shorter learning curve, more time for actual engineering. Battle-tested and productive in automotive.',
+                quality: 'Our root cause analysis solution connects torque data, material batches, and test bench results. AI guides your QA experts to the root cause faster — especially effective in serial production where fragmented data sources slow down analysis.',
+                supplychain: 'BXT Supply Chain Intelligence: complaints, missing parts, and inventory levels are AI-optimized — from goods receipt to tracing defective components. For manufacturing and logistics companies with complex supply chains.',
+                smartgrid: 'For utilities and municipalities on the road to 100% renewable: AI-based optimization of urban energy grids — generation, storage, distribution. We bring computational models and real-time data together.',
+                ev: 'EV charging infrastructure that pays off: site planning, load balancing, demand forecasting — for charging network operators who want to route every kilowatt-hour intelligently.',
+                agentic: 'Agentic Engineering at BXT: AI agents autonomously handle routine cases — your specialists focus on complex problems, not ticket queues. Measurable OPEX reduction in IT automation and support processes.',
+                ocr: 'Document Intelligence (OCR+): specialized recognition and processing of technical documents — from handwritten annotations to complex table structures. Ideal for technical documentation, standards, test reports, and PDFs of any quality.',
+                edgecase: 'Edge-Case Engineering: we implement for technically demanding boundary conditions where standard approaches fail. Where it gets hard, we start — in R&D and specialized engineering tasks.',
+                audio: 'Audio Engineering & Bioacoustics: from music venues to biological acoustics — new ways people experience and perceive sound, plus applications in biological communication and acoustic analysis.',
+                gdpr: 'Data sovereignty is a core principle at BXT: our systems are local and transparent. With legal-tech expertise, we build fully isolated or controlled hybrid architectures — GDPR-compliant and beyond. Your data never leaves your network.',
+                onpremise: 'Yes — all our solutions can be deployed on-premise. Data sovereignty is not a feature, it\'s a foundation. We operate at the privacy standard of German research labs. Your data stays in your network.',
+                xpathfinder: 'Our product portfolio:\n\n• xPathfinder Labs — custom toolkits & technologies that help engineers, scientists, and innovators achieve new breakthroughs.\n\n• xPathfinder Workshops — hands-on sessions where we develop concrete AI solutions together with your team and sharpen your team for deployment.',
+                project: 'For a concrete project discussion, contact us directly:\ndylan.kane@bayernxtech.de\n\nWe work project-based — no subscription, no overhead. Describe the problem, we\'ll get back to you.',
+                price: 'We work project-based without standard pricing — every project is different. For an initial assessment of your case: dylan.kane@bayernxtech.de',
+                llm: 'We work with modern LLMs (including Claude, Llama, Mistral) and select the model based on your requirements — on-premise, cloud-hybrid, or fully isolated. The LLM is a means to an end, not the product.',
+                hallucination: 'LLM hallucinations are a real problem — especially with technical standards and specifications. We address this with RAG (Retrieval-Augmented Generation) using verified sources, clear confidence boundaries, and systematic evaluation. Reliability is not an accident, it\'s engineering.',
+                fallback: 'Interesting question. For specific technical requirements, I\'d recommend a direct conversation: dylan.kane@bayernxtech.de — we respond quickly and without sales pressure.',
+            }
+        };
+
+        const INTENTS = [
+            { key: 'greeting', de: ['hallo', 'hi ', 'guten tag', 'guten morgen', 'hey', 'servus', 'grüß', 'moin', 'hi!', 'hallo!'], en: ['hello', 'hi ', 'hey', 'good morning', 'good day', 'howdy', 'hi!', 'hello!'] },
+            { key: 'contact',  de: ['kontakt', 'ansprechpartner', 'email', 'e-mail', 'erreichbar', 'wenden', 'dylan', 'dennis', 'sebastian', 'schreiben'], en: ['contact', 'reach', 'email', 'e-mail', 'get in touch', 'dylan', 'dennis', 'sebastian', 'write to'] },
+            { key: 'team',     de: ['team', 'ingenieure', 'erfahrung', 'mitarbeiter', 'volvo', 'mercedes', 'zf', 'wer arbeitet'], en: ['team', 'engineers', 'experience', 'staff', 'volvo', 'mercedes', 'zf', 'who works'] },
+            { key: 'about',    de: ['wer seid ihr', 'was ist bxt', 'was macht ihr', 'über euch', 'über bxt', 'unternehmen', 'firma', 'wer sind sie', 'stellt euch vor'], en: ['who are you', 'what is bxt', 'what do you do', 'about you', 'about bxt', 'company', 'introduce'] },
+            { key: 'location', de: ['standort', 'wo seid ihr', 'passau', 'münchen', 'bavaria', 'bayern', 'büro'], en: ['location', 'where are you', 'passau', 'munich', 'bavaria', 'office', 'based'] },
+            { key: 'services', de: ['leistungen', 'services', 'angebote', 'was bietet', 'was könnt ihr', 'portfolio', 'überblick'], en: ['services', 'offerings', 'what do you offer', 'what can you', 'portfolio', 'overview'] },
+            { key: 'cad',       de: ['cad', 'catia', 'solidworks', 'konstruktion', '3d', 'geometrie', 'feature', 'nx '], en: ['cad', 'catia', 'solidworks', '3d', 'geometry', 'feature', 'nx '] },
+            { key: 'quality',   de: ['qualität', 'qm', 'root cause', 'fehlerursache', 'montage', 'schraubdaten', 'prüfstand', 'reklamation', 'fehler'], en: ['quality', 'root cause', 'defect', 'assembly', 'torque', 'test bench', 'complaint', 'qa'] },
+            { key: 'supplychain', de: ['supply chain', 'lieferkette', 'fehlteile', 'lagerbestand', 'logistik', 'wareneingang', 'komponenten'], en: ['supply chain', 'logistics', 'missing parts', 'inventory', 'warehouse', 'goods receipt'] },
+            { key: 'smartgrid', de: ['smart grid', 'energienetz', 'stadtwerke', 'erneuerbar', 'energiemanagement', 'strom', 'netz', 'energie'], en: ['smart grid', 'energy grid', 'utility', 'renewable', 'energy management', 'electricity', 'grid'] },
+            { key: 'ev',        de: ['ladeinfrastruktur', 'elektro', 'e-mobilität', 'laden ', 'ladenetzwerk', 'kilowatt', 'ev '], en: ['charging', 'electric vehicle', 'e-mobility', 'charging network', 'kilowatt', 'ev '] },
+            { key: 'agentic',   de: ['agentic', 'agent', 'automatisierung', 'ticket', 'opex', 'routine', 'it-automat'], en: ['agentic', 'agent', 'automation', 'ticket', 'opex', 'routine', 'it automat'] },
+            { key: 'ocr',       de: ['ocr', 'dokument', 'erkennung', 'nlp', 'pdf', 'tabelle', 'handschrift', 'unterlagen'], en: ['ocr', 'document', 'recognition', 'nlp', 'pdf', 'table', 'handwriting', 'documents'] },
+            { key: 'edgecase',  de: ['edge case', 'edgecase', 'randbedingung', 'spezial', 'schwierig', 'versagen', 'standard versagt', 'standard scheitert'], en: ['edge case', 'boundary condition', 'special case', 'difficult', 'standard fails', 'challenging boundary'] },
+            { key: 'audio',     de: ['audio', 'akustik', 'musik', 'bioakustik', 'klang', 'bühne', 'ton'], en: ['audio', 'acoustic', 'music', 'bioacoustics', 'sound', 'stage'] },
+            { key: 'gdpr',      de: ['dsgvo', 'datenschutz', 'compliance', 'legal', 'recht', 'datensouveränität', 'datenschutzkonform'], en: ['gdpr', 'data protection', 'compliance', 'privacy', 'data sovereignty', 'regulation'] },
+            { key: 'onpremise', de: ['on-premise', 'onpremise', 'lokal', 'firmenserver', 'eigener server', 'keine cloud', 'nicht cloud', 'inhouse'], en: ['on-premise', 'on premise', 'local', 'own server', 'no cloud', 'self-hosted', 'inhouse'] },
+            { key: 'xpathfinder', de: ['xpathfinder', 'x pathfinder', 'produkt', 'workshop', 'toolkit', 'labs'], en: ['xpathfinder', 'x pathfinder', 'product', 'workshop', 'toolkit', 'labs'] },
+            { key: 'project',   de: ['projekt', 'anfrage', 'zusammenarbeit', 'kooperation', 'wie starten', 'wie beginnen', 'beauftragen', 'wie arbeitet'], en: ['project', 'inquiry', 'collaboration', 'how to start', 'how to begin', 'hire', 'engage', 'how do you work'] },
+            { key: 'price',     de: ['preis', 'kosten', 'budget', 'tarif', 'angebot', 'was kostet', 'wie teuer'], en: ['price', 'cost', 'budget', 'rate', 'quote', 'how much', 'pricing'] },
+            { key: 'hallucination', de: ['halluzin', 'falsch', 'unzuverlässig', 'fehler bei ki', 'ki versagt', 'normen', 'zuverlässig'], en: ['hallucin', 'unreliable', 'wrong', 'ai fails', 'standards accuracy', 'reliable'] },
+            { key: 'llm',       de: ['llm', 'gpt', 'claude', 'llama', 'mistral', 'sprachmodell', 'modell', 'ki-modell', 'openai'], en: ['llm', 'gpt', 'claude', 'llama', 'mistral', 'language model', 'ai model', 'openai'] },
+        ];
+
+        function matchIntent(text) {
+            const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+            const lower = text.toLowerCase();
+            for (const intent of INTENTS) {
+                const keywords = intent[lang] || intent.de;
+                if (keywords.some(kw => lower.includes(kw))) return { key: intent.key, lang };
+            }
+            return { key: 'fallback', lang };
+        }
+
+        function getBotResponse(text) {
+            const { key, lang } = matchIntent(text);
+            const bucket = KB[lang];
+            const val = bucket[key];
+            if (Array.isArray(val)) return val[Math.floor(Math.random() * val.length)];
+            return val || bucket.fallback;
+        }
 
         // -- ROTATING PLACEHOLDERS --
         const PLACEHOLDERS = {
@@ -1128,12 +1227,8 @@
         const messages = document.getElementById('chatMessages');
         const input    = document.getElementById('chatInput');
         const sendBtn  = document.getElementById('chatSend');
-        const headerSub = document.querySelector('.chat-header-sub');
-        const headerDot = document.querySelector('.chat-header-dot');
 
-        let sessionId  = null;
         let sending    = false;
-        let serverOnline = false;
         let placeholderIdx = 0;
 
         // -- PLACEHOLDER ROTATION --
@@ -1146,60 +1241,14 @@
         rotatePlaceholder();
         setInterval(rotatePlaceholder, 5000);
 
-        // -- SERVER STATUS CHECK --
-        async function checkServer() {
-            try {
-                const ctrl = new AbortController();
-                const timer = setTimeout(() => ctrl.abort(), 3000);
-                const r = await fetch(HEALTH_URL, { signal: ctrl.signal });
-                clearTimeout(timer);
-                if (r.ok) {
-                    serverOnline = true;
-                    if (headerSub) headerSub.textContent = 'Online';
-                    if (headerDot) {
-                        headerDot.style.background = 'var(--brand-blue)';
-                        headerDot.style.boxShadow = '0 0 6px var(--brand-blue)';
-                    }
-                    return;
-                }
-            } catch (_) {}
-            serverOnline = false;
-            if (headerSub) headerSub.textContent = 'Offline';
-            if (headerDot) {
-                headerDot.style.background = '#666';
-                headerDot.style.boxShadow = 'none';
-            }
-        }
-        checkServer();
-        setInterval(checkServer, 15000);
-
         // -- TOGGLE --
         toggle.addEventListener('click', () => {
             const open = win.classList.toggle('visible');
             toggle.classList.toggle('open', open);
-            if (open) {
-                input.focus();
-                checkServer();
-                // Show offline notice immediately if we already know the server is down
-                if (!serverOnline) {
-                    const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
-                    const alreadyNotified = messages.querySelector('.chat-bubble.assistant[data-offline]');
-                    if (!alreadyNotified) {
-                        const el = addBubble(
-                            lang === 'de'
-                                ? 'Der Chat-Server ist momentan nicht erreichbar. Bitte kontaktieren Sie uns direkt: dylan.kane@bayernxtech.de'
-                                : 'The chat server is currently unavailable. Please contact us directly: dylan.kane@bayernxtech.de',
-                            'assistant'
-                        );
-                        el.setAttribute('data-offline', '1');
-                    }
-                }
-            }
+            if (open) input.focus();
         });
 
         // -- HELPERS --
-        let sendStartTime = 0;
-
         function addBubble(text, role, meta) {
             const el = document.createElement('div');
             el.className = 'chat-bubble ' + role;
@@ -1207,12 +1256,10 @@
             el.style.transform = 'translateY(8px)';
             if (role === 'assistant') {
                 const safe = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                let html = safe
+                const html = safe
+                    .replace(/\n/g, '<br>')
                     .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
                     .replace(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g, '<a href="mailto:$1">$1</a>');
-                if (meta && meta.elapsed) {
-                    html += '<div style="font-size:0.65rem;color:#555;margin-top:6px;text-align:right">' + meta.elapsed.toFixed(1) + 's</div>';
-                }
                 el.innerHTML = html;
             } else {
                 el.textContent = text;
@@ -1250,7 +1297,7 @@
             input.disabled = locked;
         }
 
-        // -- SEND --
+        // -- SEND (client-side KB, no network required) --
         async function send() {
             const text = input.value.trim();
             if (!text || sending) return;
@@ -1260,64 +1307,14 @@
             autoResize();
             setLock(true);
             showTyping();
-            sendStartTime = performance.now();
 
-            if (!serverOnline) {
-                hideTyping();
-                const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
-                addBubble(
-                    lang === 'de'
-                        ? 'Der Chat-Server ist gerade offline. Bitte kontaktieren Sie uns direkt: dylan.kane@bayernxtech.de'
-                        : 'The chat server is currently offline. Please contact us directly: dylan.kane@bayernxtech.de',
-                    'assistant'
-                );
-                setLock(false);
-                input.focus();
-                return;
-            }
+            // Brief simulated thinking delay for natural UX
+            await new Promise(r => setTimeout(r, 350 + Math.random() * 500));
 
-            try {
-                const body = {
-                    message: text,
-                    user_id: USER_ID,
-                    user_meta: USER_META,
-                };
-                if (sessionId) body.session_id = sessionId;
-
-                const ctrl = new AbortController();
-                const timer = setTimeout(() => ctrl.abort(), 120000);
-
-                const res = await fetch(API_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body),
-                    signal: ctrl.signal,
-                });
-                clearTimeout(timer);
-
-                hideTyping();
-
-                if (!res.ok) {
-                    const err = await res.json().catch(() => ({}));
-                    throw new Error(err.detail || 'Server error ' + res.status);
-                }
-
-                const data = await res.json();
-                sessionId = data.session_id;
-                const elapsed = (performance.now() - sendStartTime) / 1000;
-                addBubble(data.response, 'assistant', { elapsed });
-            } catch (e) {
-                hideTyping();
-                if (e.name === 'AbortError') {
-                    addBubble('Timeout -- der Server antwortet nicht. Bitte erneut versuchen.', 'error');
-                } else {
-                    addBubble('Fehler: ' + e.message, 'error');
-                }
-                checkServer();
-            } finally {
-                setLock(false);
-                input.focus();
-            }
+            hideTyping();
+            addBubble(getBotResponse(text), 'assistant');
+            setLock(false);
+            input.focus();
         }
 
         sendBtn.addEventListener('click', send);
