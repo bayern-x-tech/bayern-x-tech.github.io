@@ -1,0 +1,7 @@
+name = "bxt-intelligent-assistant"
+main = "worker/chat-worker.js"
+compatibility_date = "2025-01-01"
+
+# Workers AI binding — provides env.AI inside the Worker
+[ai]
+binding = "AI"
