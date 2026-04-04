@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-04T13:08:59Z",
+  "updated_at": "2026-04-04T13:22:00Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://dept-tapes-forward-ministries.trycloudflare.com/api/chat/",
-    "health_url": "https://dept-tapes-forward-ministries.trycloudflare.com/health"
+    "api_url": "https://pvc-sagem-challenged-dare.trycloudflare.com/api/chat/",
+    "health_url": "https://pvc-sagem-challenged-dare.trycloudflare.com/health"
   }
 }

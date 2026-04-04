@@ -1227,12 +1227,10 @@
         // -- BACKEND CONFIG (runtime manifest for auto-recovery) --
         const CHAT_CONFIG_PATH = './chat-endpoints.json';
         const USER_ID = getStableUserId();
-        const BACKEND_URL = '';
-        const BACKEND_HEALTH = '';
         const EMPTY_BACKEND_CONFIG = Object.freeze({
             apiUrl: '',
             healthUrl: '',
-            label: 'KB Fallback',
+            label: 'Offline',
             source: 'none',
             protocol: '',
             updatedAt: '',
@@ -1301,7 +1299,7 @@
 
         function setStatus(online) {
             backendOnline = online;
-            if (headerSub) headerSub.textContent = online ? (runtimeBackend.label || 'BXT GPU') : 'KB Fallback';
+            if (headerSub) headerSub.textContent = online ? (runtimeBackend.label || 'BXT GPU') : 'Offline';
             if (headerDot) {
                 headerDot.style.background = online ? '#44d680' : 'var(--brand-blue)';
                 headerDot.style.boxShadow = online ? '0 0 6px #44d680' : '0 0 6px var(--brand-blue)';
@@ -1447,56 +1445,7 @@
             return null;
         }
 
-        // -- SEND (xPathfinder Labs primary, KB fallback) --
-        async function send() {
-            const text = input.value.trim();
-            if (!text || sending) return;
-
-            addBubble(text, 'user');
-            input.value = '';
-            autoResize();
-            setLock(true);
-            showTyping();
-
-            // ── Try live xPathfinder Labs backend first ──────────────────────
-            if (backendOnline && BACKEND_URL) {
-                try {
-                    const body = { message: text, user_id: USER_ID };
-                    if (sessionId) body.session_id = sessionId;
-
-                    const ctrl  = new AbortController();
-                    const timer = setTimeout(() => ctrl.abort(), 90000);
-                    const res   = await fetch(BACKEND_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(body),
-                        signal: ctrl.signal,
-                    });
-                    clearTimeout(timer);
-
-                    if (res.ok) {
-                        const data = await res.json();
-                        sessionId  = data.session_id || sessionId;
-                        hideTyping();
-                        addBubble(data.response, 'assistant');
-                        setLock(false);
-                        input.focus();
-                        return;
-                    }
-                } catch (_) {
-                    // Backend unreachable — fall through to KB
-                    setStatus(false);
-                }
-            }
-
-            // ── KB fallback (always available) ───────────────────────────────
-            await new Promise(r => setTimeout(r, 350 + Math.random() * 500));
-            hideTyping();
-            addBubble(getBotResponse(text), 'assistant');
-            setLock(false);
-            input.focus();
-        }
-
+        // -- SEND (primary backend with auto-recovery, local fallback) --
         async function sendWithRecovery() {
             const text = input.value.trim();
             if (!text || sending) return;
