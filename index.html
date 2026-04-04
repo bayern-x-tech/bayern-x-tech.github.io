@@ -1221,15 +1221,49 @@
             ]
         };
 
-        // -- DOM --
-        const toggle   = document.getElementById('chatToggle');
-        const win      = document.getElementById('chatWindow');
-        const messages = document.getElementById('chatMessages');
-        const input    = document.getElementById('chatInput');
-        const sendBtn  = document.getElementById('chatSend');
+        // -- BACKEND CONFIG (xPathfinder Labs) --
+        // Set BACKEND_URL to your active tunnel when xPathfinder Labs is running.
+        // Leave empty ('') to use the client-side KB exclusively.
+        const BACKEND_URL    = '';   // e.g. 'https://api.bayernxtech.de/api/chat/'
+        const BACKEND_HEALTH = BACKEND_URL ? BACKEND_URL.replace(/\/api\/chat\/?$/, '/health') : '';
+        const USER_ID        = getStableUserId();
 
-        let sending    = false;
+        // -- DOM --
+        const toggle    = document.getElementById('chatToggle');
+        const win       = document.getElementById('chatWindow');
+        const messages  = document.getElementById('chatMessages');
+        const input     = document.getElementById('chatInput');
+        const sendBtn   = document.getElementById('chatSend');
+        const headerSub = document.querySelector('.chat-header-sub');
+        const headerDot = document.querySelector('.chat-header-dot');
+
+        let sending       = false;
         let placeholderIdx = 0;
+        let backendOnline = false;
+        let sessionId     = null;
+
+        // -- BACKEND HEALTH CHECK --
+        function setStatus(online) {
+            backendOnline = online;
+            if (headerSub) headerSub.textContent = online ? 'xPathfinder Labs' : 'Online';
+            if (headerDot) {
+                headerDot.style.background   = online ? '#44d680' : 'var(--brand-blue)';
+                headerDot.style.boxShadow    = online ? '0 0 6px #44d680' : '0 0 6px var(--brand-blue)';
+            }
+        }
+
+        async function checkBackend() {
+            if (!BACKEND_HEALTH) { setStatus(false); return; }
+            try {
+                const ctrl  = new AbortController();
+                const timer = setTimeout(() => ctrl.abort(), 4000);
+                const r     = await fetch(BACKEND_HEALTH, { signal: ctrl.signal });
+                clearTimeout(timer);
+                setStatus(r.ok);
+            } catch (_) { setStatus(false); }
+        }
+        checkBackend();
+        setInterval(checkBackend, 20000);
 
         // -- PLACEHOLDER ROTATION --
         function rotatePlaceholder() {
@@ -1245,7 +1279,7 @@
         toggle.addEventListener('click', () => {
             const open = win.classList.toggle('visible');
             toggle.classList.toggle('open', open);
-            if (open) input.focus();
+            if (open) { input.focus(); checkBackend(); }
         });
 
         // -- HELPERS --
@@ -1297,7 +1331,7 @@
             input.disabled = locked;
         }
 
-        // -- SEND (client-side KB, no network required) --
+        // -- SEND (xPathfinder Labs primary, KB fallback) --
         async function send() {
             const text = input.value.trim();
             if (!text || sending) return;
@@ -1308,9 +1342,39 @@
             setLock(true);
             showTyping();
 
-            // Brief simulated thinking delay for natural UX
-            await new Promise(r => setTimeout(r, 350 + Math.random() * 500));
+            // ── Try live xPathfinder Labs backend first ──────────────────────
+            if (backendOnline && BACKEND_URL) {
+                try {
+                    const body = { message: text, user_id: USER_ID };
+                    if (sessionId) body.session_id = sessionId;
 
+                    const ctrl  = new AbortController();
+                    const timer = setTimeout(() => ctrl.abort(), 90000);
+                    const res   = await fetch(BACKEND_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(body),
+                        signal: ctrl.signal,
+                    });
+                    clearTimeout(timer);
+
+                    if (res.ok) {
+                        const data = await res.json();
+                        sessionId  = data.session_id || sessionId;
+                        hideTyping();
+                        addBubble(data.response, 'assistant');
+                        setLock(false);
+                        input.focus();
+                        return;
+                    }
+                } catch (_) {
+                    // Backend unreachable — fall through to KB
+                    setStatus(false);
+                }
+            }
+
+            // ── KB fallback (always available) ───────────────────────────────
+            await new Promise(r => setTimeout(r, 350 + Math.random() * 500));
             hideTyping();
             addBubble(getBotResponse(text), 'assistant');
             setLock(false);
