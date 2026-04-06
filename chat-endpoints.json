@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-06T18:51:55Z",
+  "updated_at": "2026-04-06T18:53:43Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://lesson-paso-courses-vii.trycloudflare.com/api/chat/",
-    "health_url": "https://lesson-paso-courses-vii.trycloudflare.com/health"
+    "api_url": "https://feb-frontier-contained-warming.trycloudflare.com/api/chat/",
+    "health_url": "https://feb-frontier-contained-warming.trycloudflare.com/health"
   }
 }
