@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-06T07:12:34Z",
+  "updated_at": "2026-04-06T07:14:55Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://hampton-origin-duties-persian.trycloudflare.com/api/chat/",
-    "health_url": "https://hampton-origin-duties-persian.trycloudflare.com/health"
+    "api_url": "https://cap-institute-princess-lead.trycloudflare.com/api/chat/",
+    "health_url": "https://cap-institute-princess-lead.trycloudflare.com/health"
   }
 }
