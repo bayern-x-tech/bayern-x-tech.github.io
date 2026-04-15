@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-14T04:08:58Z",
+  "updated_at": "2026-04-15T23:25:43Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://buys-obj-operating-protocol.trycloudflare.com/api/chat/",
-    "health_url": "https://buys-obj-operating-protocol.trycloudflare.com/health"
+    "api_url": "https://shaw-geo-habitat-limousines.trycloudflare.com/api/chat/",
+    "health_url": "https://shaw-geo-habitat-limousines.trycloudflare.com/health"
   }
 }
