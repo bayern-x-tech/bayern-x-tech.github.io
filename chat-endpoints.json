@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-17T15:34:33Z",
+  "updated_at": "2026-04-20T03:52:48Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://replies-talented-missouri-tongue.trycloudflare.com/api/chat/",
-    "health_url": "https://replies-talented-missouri-tongue.trycloudflare.com/health"
+    "api_url": "https://dome-replacing-combinations-snowboard.trycloudflare.com/api/chat/",
+    "health_url": "https://dome-replacing-combinations-snowboard.trycloudflare.com/health"
   }
 }
