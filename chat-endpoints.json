@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-21T11:15:01Z",
+  "updated_at": "2026-04-22T14:08:37Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://recognize-cute-mozilla-secretariat.trycloudflare.com/api/chat/",
-    "health_url": "https://recognize-cute-mozilla-secretariat.trycloudflare.com/health"
+    "api_url": "https://adipex-sheer-bit-wake.trycloudflare.com/api/chat/",
+    "health_url": "https://adipex-sheer-bit-wake.trycloudflare.com/health"
   }
 }
