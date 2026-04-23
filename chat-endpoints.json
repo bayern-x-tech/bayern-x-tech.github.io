@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-22T15:10:02Z",
+  "updated_at": "2026-04-23T10:18:13Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://used-larger-forecasts-prague.trycloudflare.com/api/chat/",
-    "health_url": "https://used-larger-forecasts-prague.trycloudflare.com/health"
+    "api_url": "https://featuring-hence-critical-calendars.trycloudflare.com/api/chat/",
+    "health_url": "https://featuring-hence-critical-calendars.trycloudflare.com/health"
   }
 }
