@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-27T15:34:51Z",
+  "updated_at": "2026-04-29T07:58:40Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://stand-agrees-plains-signatures.trycloudflare.com/api/chat/",
-    "health_url": "https://stand-agrees-plains-signatures.trycloudflare.com/health"
+    "api_url": "https://parental-karma-arg-referral.trycloudflare.com/api/chat/",
+    "health_url": "https://parental-karma-arg-referral.trycloudflare.com/health"
   }
 }
