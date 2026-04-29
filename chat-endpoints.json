@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-29T07:59:22Z",
+  "updated_at": "2026-04-29T11:06:12Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://terminal-border-beer-corp.trycloudflare.com/api/chat/",
-    "health_url": "https://terminal-border-beer-corp.trycloudflare.com/health"
+    "api_url": "https://firewall-knife-water-speaker.trycloudflare.com/api/chat/",
+    "health_url": "https://firewall-knife-water-speaker.trycloudflare.com/health"
   }
 }
