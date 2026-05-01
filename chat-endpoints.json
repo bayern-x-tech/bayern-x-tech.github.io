@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-04-30T16:40:05Z",
+  "updated_at": "2026-05-01T07:23:16Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://countries-likely-lcd-feof.trycloudflare.com/api/chat/",
-    "health_url": "https://countries-likely-lcd-feof.trycloudflare.com/health"
+    "api_url": "https://oils-usr-wellness-syndicate.trycloudflare.com/api/chat/",
+    "health_url": "https://oils-usr-wellness-syndicate.trycloudflare.com/health"
   }
 }
