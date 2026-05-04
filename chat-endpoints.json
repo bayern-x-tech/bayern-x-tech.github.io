@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-02T18:00:00Z",
+  "updated_at": "2026-05-04T11:16:15Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://audience-authentic-textile-updating.trycloudflare.com/api/chat/",
-    "health_url": "https://audience-authentic-textile-updating.trycloudflare.com/health"
+    "api_url": "https://purple-location-prizes-thanksgiving.trycloudflare.com/api/chat/",
+    "health_url": "https://purple-location-prizes-thanksgiving.trycloudflare.com/health"
   }
 }
