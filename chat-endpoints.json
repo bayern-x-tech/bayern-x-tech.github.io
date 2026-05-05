@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-04T15:48:00Z",
+  "updated_at": "2026-05-05T16:21:45Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://reproduction-furniture-its-ada.trycloudflare.com/api/chat/",
-    "health_url": "https://reproduction-furniture-its-ada.trycloudflare.com/health"
+    "api_url": "https://weekly-eye-roughly-viking.trycloudflare.com/api/chat/",
+    "health_url": "https://weekly-eye-roughly-viking.trycloudflare.com/health"
   }
 }
