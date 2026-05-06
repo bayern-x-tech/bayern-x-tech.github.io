@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-06T15:02:52Z",
+  "updated_at": "2026-05-06T18:03:04Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://sharing-occurrence-situations-podcasts.trycloudflare.com/api/chat/",
-    "health_url": "https://sharing-occurrence-situations-podcasts.trycloudflare.com/health"
+    "api_url": "https://altered-struggle-cartoon-engineers.trycloudflare.com/api/chat/",
+    "health_url": "https://altered-struggle-cartoon-engineers.trycloudflare.com/health"
   }
 }
