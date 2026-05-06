@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-05T16:21:45Z",
+  "updated_at": "2026-05-06T15:02:52Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://weekly-eye-roughly-viking.trycloudflare.com/api/chat/",
-    "health_url": "https://weekly-eye-roughly-viking.trycloudflare.com/health"
+    "api_url": "https://sharing-occurrence-situations-podcasts.trycloudflare.com/api/chat/",
+    "health_url": "https://sharing-occurrence-situations-podcasts.trycloudflare.com/health"
   }
 }
