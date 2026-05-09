@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-09T04:43:04Z",
+  "updated_at": "2026-05-09T05:42:26Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://worth-adequate-prints-scanners.trycloudflare.com/api/chat/",
-    "health_url": "https://worth-adequate-prints-scanners.trycloudflare.com/health"
+    "api_url": "https://jane-pill-diagram-bestsellers.trycloudflare.com/api/chat/",
+    "health_url": "https://jane-pill-diagram-bestsellers.trycloudflare.com/health"
   }
 }
