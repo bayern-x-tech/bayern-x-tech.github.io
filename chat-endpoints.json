@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-06T18:03:04Z",
+  "updated_at": "2026-05-09T04:43:04Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://altered-struggle-cartoon-engineers.trycloudflare.com/api/chat/",
-    "health_url": "https://altered-struggle-cartoon-engineers.trycloudflare.com/health"
+    "api_url": "https://worth-adequate-prints-scanners.trycloudflare.com/api/chat/",
+    "health_url": "https://worth-adequate-prints-scanners.trycloudflare.com/health"
   }
 }
