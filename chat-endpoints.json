@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T18:26:32Z",
+  "updated_at": "2026-05-10T18:32:30Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://once-implied-somehow-drunk.trycloudflare.com/api/chat/",
-    "health_url": "https://once-implied-somehow-drunk.trycloudflare.com/health"
+    "api_url": "https://merge-tunnel-sympathy-eagle.trycloudflare.com/api/chat/",
+    "health_url": "https://merge-tunnel-sympathy-eagle.trycloudflare.com/health"
   }
 }
