@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T03:28:46Z",
+  "updated_at": "2026-05-10T04:35:57Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://targeted-portsmouth-through-continues.trycloudflare.com/api/chat/",
-    "health_url": "https://targeted-portsmouth-through-continues.trycloudflare.com/health"
+    "api_url": "https://biology-institutions-course-bearing.trycloudflare.com/api/chat/",
+    "health_url": "https://biology-institutions-course-bearing.trycloudflare.com/health"
   }
 }
