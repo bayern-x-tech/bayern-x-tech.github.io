@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T12:55:53Z",
+  "updated_at": "2026-05-10T13:11:19Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://teachers-pharmacology-maintenance-refresh.trycloudflare.com/api/chat/",
-    "health_url": "https://teachers-pharmacology-maintenance-refresh.trycloudflare.com/health"
+    "api_url": "https://mardi-anybody-sponsorship-licensing.trycloudflare.com/api/chat/",
+    "health_url": "https://mardi-anybody-sponsorship-licensing.trycloudflare.com/health"
   }
 }
