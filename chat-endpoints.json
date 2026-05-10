@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T22:38:29Z",
+  "updated_at": "2026-05-10T22:41:36Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://graph-corporate-saint-property.trycloudflare.com/api/chat/",
-    "health_url": "https://graph-corporate-saint-property.trycloudflare.com/health"
+    "api_url": "https://firms-phantom-invision-harvey.trycloudflare.com/api/chat/",
+    "health_url": "https://firms-phantom-invision-harvey.trycloudflare.com/health"
   }
 }
