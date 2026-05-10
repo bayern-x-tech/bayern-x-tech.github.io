@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T09:33:14Z",
+  "updated_at": "2026-05-10T12:55:53Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://domestic-faculty-fixes-winston.trycloudflare.com/api/chat/",
-    "health_url": "https://domestic-faculty-fixes-winston.trycloudflare.com/health"
+    "api_url": "https://teachers-pharmacology-maintenance-refresh.trycloudflare.com/api/chat/",
+    "health_url": "https://teachers-pharmacology-maintenance-refresh.trycloudflare.com/health"
   }
 }
