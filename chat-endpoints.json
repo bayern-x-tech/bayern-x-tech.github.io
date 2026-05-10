@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-10T15:09:31Z",
+  "updated_at": "2026-05-10T16:06:40Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://newton-advocacy-subaru-cheese.trycloudflare.com/api/chat/",
-    "health_url": "https://newton-advocacy-subaru-cheese.trycloudflare.com/health"
+    "api_url": "https://handle-senate-kathy-tension.trycloudflare.com/api/chat/",
+    "health_url": "https://handle-senate-kathy-tension.trycloudflare.com/health"
   }
 }
