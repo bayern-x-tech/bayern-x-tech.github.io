@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T02:18:14Z",
+  "updated_at": "2026-05-11T02:24:37Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://pride-banana-immediately-positioning.trycloudflare.com/api/chat/",
-    "health_url": "https://pride-banana-immediately-positioning.trycloudflare.com/health"
+    "api_url": "https://maker-bend-enterprises-parcel.trycloudflare.com/api/chat/",
+    "health_url": "https://maker-bend-enterprises-parcel.trycloudflare.com/health"
   }
 }
