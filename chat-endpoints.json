@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T00:17:48Z",
+  "updated_at": "2026-05-11T01:30:07Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://instructions-raises-famous-recommends.trycloudflare.com/api/chat/",
-    "health_url": "https://instructions-raises-famous-recommends.trycloudflare.com/health"
+    "api_url": "https://realtors-minus-practitioners-reservations.trycloudflare.com/api/chat/",
+    "health_url": "https://realtors-minus-practitioners-reservations.trycloudflare.com/health"
   }
 }
