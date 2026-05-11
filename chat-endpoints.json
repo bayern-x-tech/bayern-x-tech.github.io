@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T02:58:19Z",
+  "updated_at": "2026-05-11T03:52:36Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://contemporary-jenny-plane-waves.trycloudflare.com/api/chat/",
-    "health_url": "https://contemporary-jenny-plane-waves.trycloudflare.com/health"
+    "api_url": "https://postings-ought-mls-reliance.trycloudflare.com/api/chat/",
+    "health_url": "https://postings-ought-mls-reliance.trycloudflare.com/health"
   }
 }
