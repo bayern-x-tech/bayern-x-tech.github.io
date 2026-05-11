@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T01:42:10Z",
+  "updated_at": "2026-05-11T01:58:58Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://experienced-ears-candles-concentration.trycloudflare.com/api/chat/",
-    "health_url": "https://experienced-ears-candles-concentration.trycloudflare.com/health"
+    "api_url": "https://incidence-playlist-chat-layer.trycloudflare.com/api/chat/",
+    "health_url": "https://incidence-playlist-chat-layer.trycloudflare.com/health"
   }
 }
