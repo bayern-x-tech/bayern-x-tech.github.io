@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T05:51:48Z",
+  "updated_at": "2026-05-11T06:05:20Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://directive-clinics-librarian-long.trycloudflare.com/api/chat/",
-    "health_url": "https://directive-clinics-librarian-long.trycloudflare.com/health"
+    "api_url": "https://tourist-prepared-distributions-fat.trycloudflare.com/api/chat/",
+    "health_url": "https://tourist-prepared-distributions-fat.trycloudflare.com/health"
   }
 }
