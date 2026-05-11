@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T05:38:02Z",
+  "updated_at": "2026-05-11T05:51:48Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://veteran-gospel-academics-architect.trycloudflare.com/api/chat/",
-    "health_url": "https://veteran-gospel-academics-architect.trycloudflare.com/health"
+    "api_url": "https://directive-clinics-librarian-long.trycloudflare.com/api/chat/",
+    "health_url": "https://directive-clinics-librarian-long.trycloudflare.com/health"
   }
 }
