@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-11T11:23:18Z",
+  "updated_at": "2026-05-12T19:08:21Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://graduated-gazette-paragraphs-measurements.trycloudflare.com/api/chat/",
-    "health_url": "https://graduated-gazette-paragraphs-measurements.trycloudflare.com/health"
+    "api_url": "https://floating-drinking-tales-admission.trycloudflare.com/api/chat/",
+    "health_url": "https://floating-drinking-tales-admission.trycloudflare.com/health"
   }
 }
