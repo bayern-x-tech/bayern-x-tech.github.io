@@ -8,6 +8,8 @@ on:
 jobs:
   runtime-backend-health:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Check runtime backend manifest
         id: manifest
@@ -35,6 +37,7 @@ jobs:
         if: failure()
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const now = new Date().toISOString();
             const backendUrl = '${{ steps.manifest.outputs.backend_url }}';
