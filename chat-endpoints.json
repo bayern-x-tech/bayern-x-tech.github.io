@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-14T11:22:29Z",
+  "updated_at": "2026-05-14T12:04:17Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://informational-tube-branches-chance.trycloudflare.com/api/chat/",
-    "health_url": "https://informational-tube-branches-chance.trycloudflare.com/health"
+    "api_url": "https://buf-surrounding-lifetime-semiconductor.trycloudflare.com/api/chat/",
+    "health_url": "https://buf-surrounding-lifetime-semiconductor.trycloudflare.com/health"
   }
 }
