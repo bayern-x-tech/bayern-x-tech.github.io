@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-14T13:07:58Z",
+  "updated_at": "2026-05-14T14:44:10Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://perspectives-meeting-proposition-cart.trycloudflare.com/api/chat/",
-    "health_url": "https://perspectives-meeting-proposition-cart.trycloudflare.com/health"
+    "api_url": "https://examinations-get-accomplish-hourly.trycloudflare.com/api/chat/",
+    "health_url": "https://examinations-get-accomplish-hourly.trycloudflare.com/health"
   }
 }
