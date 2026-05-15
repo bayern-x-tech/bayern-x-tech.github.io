@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-15T12:06:04Z",
+  "updated_at": "2026-05-15T12:06:47Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://appliance-yale-vermont-dispatched.trycloudflare.com/api/chat/",
-    "health_url": "https://appliance-yale-vermont-dispatched.trycloudflare.com/health"
+    "api_url": "https://pie-bookmarks-excluding-disabilities.trycloudflare.com/api/chat/",
+    "health_url": "https://pie-bookmarks-excluding-disabilities.trycloudflare.com/health"
   }
 }
