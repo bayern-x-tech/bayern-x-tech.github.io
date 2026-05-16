@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-15T12:06:47Z",
+  "updated_at": "2026-05-16T06:50:01Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://pie-bookmarks-excluding-disabilities.trycloudflare.com/api/chat/",
-    "health_url": "https://pie-bookmarks-excluding-disabilities.trycloudflare.com/health"
+    "api_url": "https://pulse-mandatory-offering-jason.trycloudflare.com/api/chat/",
+    "health_url": "https://pulse-mandatory-offering-jason.trycloudflare.com/health"
   }
 }
