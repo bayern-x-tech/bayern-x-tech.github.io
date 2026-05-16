@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-16T07:34:30Z",
+  "updated_at": "2026-05-16T08:24:20Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://via-cookie-tracked-way.trycloudflare.com/api/chat/",
-    "health_url": "https://via-cookie-tracked-way.trycloudflare.com/health"
+    "api_url": "https://specs-steps-gregory-specialties.trycloudflare.com/api/chat/",
+    "health_url": "https://specs-steps-gregory-specialties.trycloudflare.com/health"
   }
 }
