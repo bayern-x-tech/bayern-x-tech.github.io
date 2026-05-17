@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-17T12:52:00Z",
+  "updated_at": "2026-05-17T13:06:16Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://treasures-sufficiently-diamond-ferrari.trycloudflare.com/api/chat/",
-    "health_url": "https://treasures-sufficiently-diamond-ferrari.trycloudflare.com/health"
+    "api_url": "https://segments-rap-youth-protecting.trycloudflare.com/api/chat/",
+    "health_url": "https://segments-rap-youth-protecting.trycloudflare.com/health"
   }
 }
