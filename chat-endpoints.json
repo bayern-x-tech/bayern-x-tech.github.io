@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-17T15:10:06Z",
+  "updated_at": "2026-05-17T15:36:04Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://lane-midlands-circuit-separated.trycloudflare.com/api/chat/",
-    "health_url": "https://lane-midlands-circuit-separated.trycloudflare.com/health"
+    "api_url": "https://owner-timer-converted-mainland.trycloudflare.com/api/chat/",
+    "health_url": "https://owner-timer-converted-mainland.trycloudflare.com/health"
   }
 }
