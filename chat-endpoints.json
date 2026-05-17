@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-17T11:43:13Z",
+  "updated_at": "2026-05-17T11:59:31Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://damages-reseller-societies-saturn.trycloudflare.com/api/chat/",
-    "health_url": "https://damages-reseller-societies-saturn.trycloudflare.com/health"
+    "api_url": "https://goes-union-stuff-spears.trycloudflare.com/api/chat/",
+    "health_url": "https://goes-union-stuff-spears.trycloudflare.com/health"
   }
 }
