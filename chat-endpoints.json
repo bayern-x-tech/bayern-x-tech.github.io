@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-18T21:36:34Z",
+  "updated_at": "2026-05-18T21:46:01Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://claimed-collective-frontier-induction.trycloudflare.com/api/chat/",
-    "health_url": "https://claimed-collective-frontier-induction.trycloudflare.com/health"
+    "api_url": "https://assess-nation-essays-numerous.trycloudflare.com/api/chat/",
+    "health_url": "https://assess-nation-essays-numerous.trycloudflare.com/health"
   }
 }
