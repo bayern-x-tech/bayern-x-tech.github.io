@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "updated_at": "2026-05-18T11:12:00Z",
-  "status": "degraded",
+  "updated_at": "2026-05-18T14:10:48Z",
+  "status": "online",
   "note": "Backend temporarily offline. Auto-recovery in progress (Cloudflare API rate limit cooling down).",
   "active_backend": {
-    "label": "BXT GPU (recovering)",
+    "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "",
-    "health_url": ""
+    "api_url": "https://gold-noon-relief-drag.trycloudflare.com/api/chat/",
+    "health_url": "https://gold-noon-relief-drag.trycloudflare.com/health"
   }
 }
