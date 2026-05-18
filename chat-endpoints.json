@@ -1,12 +1,13 @@
 {
   "version": 1,
-  "updated_at": "2026-05-17T18:20:32Z",
-  "status": "online",
+  "updated_at": "2026-05-18T11:12:00Z",
+  "status": "degraded",
+  "note": "Backend temporarily offline. Auto-recovery in progress (Cloudflare API rate limit cooling down).",
   "active_backend": {
-    "label": "BXT GPU",
+    "label": "BXT GPU (recovering)",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://requiring-destination-sleeping-modern.trycloudflare.com/api/chat/",
-    "health_url": "https://requiring-destination-sleeping-modern.trycloudflare.com/health"
+    "api_url": "",
+    "health_url": ""
   }
 }
