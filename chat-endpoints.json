@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-20T18:01:34Z",
+  "updated_at": "2026-05-27T22:03:24Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://instructor-seed-top-totals.trycloudflare.com/api/chat/",
-    "health_url": "https://instructor-seed-top-totals.trycloudflare.com/health"
+    "api_url": "https://thereafter-device-aerial-clock.trycloudflare.com/api/chat/",
+    "health_url": "https://thereafter-device-aerial-clock.trycloudflare.com/health"
   }
 }
