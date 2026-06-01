@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-05-31T08:48:24Z",
+  "updated_at": "2026-06-01T18:00:59Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://surely-manufactured-lemon-rain.trycloudflare.com/api/chat/",
-    "health_url": "https://surely-manufactured-lemon-rain.trycloudflare.com/health"
+    "api_url": "https://describes-thee-menus-slide.trycloudflare.com/api/chat/",
+    "health_url": "https://describes-thee-menus-slide.trycloudflare.com/health"
   }
 }
