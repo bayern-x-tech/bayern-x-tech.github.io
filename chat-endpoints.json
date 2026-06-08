@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-06-08T20:24:28Z",
+  "updated_at": "2026-06-08T20:25:44Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://yeah-drinking-situation-anytime.trycloudflare.com/api/chat/",
-    "health_url": "https://yeah-drinking-situation-anytime.trycloudflare.com/health"
+    "api_url": "https://shower-stem-calculators-administered.trycloudflare.com/api/chat/",
+    "health_url": "https://shower-stem-calculators-administered.trycloudflare.com/health"
   }
 }
