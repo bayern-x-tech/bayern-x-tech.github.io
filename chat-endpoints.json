@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-06-09T15:38:58Z",
+  "updated_at": "2026-06-09T20:30:20Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://zinc-married-collected-daily.trycloudflare.com/api/chat/",
-    "health_url": "https://zinc-married-collected-daily.trycloudflare.com/health"
+    "api_url": "https://monitoring-group-checking-athletes.trycloudflare.com/api/chat/",
+    "health_url": "https://monitoring-group-checking-athletes.trycloudflare.com/health"
   }
 }
