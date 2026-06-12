@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-06-11T18:05:24Z",
+  "updated_at": "2026-06-12T15:16:19Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://soonest-hang-planners-group.trycloudflare.com/api/chat/",
-    "health_url": "https://soonest-hang-planners-group.trycloudflare.com/health"
+    "api_url": "https://audience-constitution-promotions-impressive.trycloudflare.com/api/chat/",
+    "health_url": "https://audience-constitution-promotions-impressive.trycloudflare.com/health"
   }
 }
