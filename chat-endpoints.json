@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-06-14T14:13:09Z",
+  "updated_at": "2026-06-14T14:17:59Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://rock-messages-text-three.trycloudflare.com/api/chat/",
-    "health_url": "https://rock-messages-text-three.trycloudflare.com/health"
+    "api_url": "https://citizen-les-geography-healthcare.trycloudflare.com/api/chat/",
+    "health_url": "https://citizen-les-geography-healthcare.trycloudflare.com/health"
   }
 }
