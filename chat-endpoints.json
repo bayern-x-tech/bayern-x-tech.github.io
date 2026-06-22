@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-06-22T15:04:33Z",
+  "updated_at": "2026-06-22T15:05:08Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://buttons-solely-dropped-separation.trycloudflare.com/api/chat/",
-    "health_url": "https://buttons-solely-dropped-separation.trycloudflare.com/health"
+    "api_url": "https://flight-caught-prot-victoria.trycloudflare.com/api/chat/",
+    "health_url": "https://flight-caught-prot-victoria.trycloudflare.com/health"
   }
 }
