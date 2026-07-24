@@ -120,6 +120,32 @@
         }
         nav a:hover { opacity: 1; color: var(--brand-blue); }
 
+        /* --- PARTNER LINK (subtle) --- */
+        .partner-link {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.55;
+            transition: opacity 0.3s, color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .partner-link:hover { opacity: 1; color: var(--brand-blue); }
+        .partner-tag {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            opacity: 0.8;
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 999px;
+            padding: 2px 8px;
+            transition: border-color 0.3s;
+        }
+        .partner-link:hover .partner-tag { border-color: var(--brand-blue); }
+
         /* --- HERO SECTION --- */
         .hero {
             height: 100vh;
@@ -232,6 +258,14 @@
             letter-spacing: 0.02em;
             display: inline-block;
             margin-top: 12px;
+        }
+        /* Longer descriptive statement variant: smaller + constrained for readability */
+        .hero-highlight.hero-statement {
+            font-size: clamp(1.1rem, 2.1vw, 1.7rem);
+            font-weight: 400;
+            line-height: 1.35;
+            max-width: 42ch;
+            margin-top: 18px;
         }
 
         /* Scroll indicator */
@@ -525,6 +559,7 @@
         </div>
         
         <nav>
+            <a href="https://labland.ai" target="_blank" rel="noopener noreferrer" class="partner-link" title="Partnerunternehmen · labland.ai"><span class="partner-tag" data-i18n="nav_partner">Partner</span> labland.ai</a>
             <a href="mailto:dylan.kane@bayernxtech.de" data-i18n="nav_contact">Kontakt</a>
             <a href="https://www.linkedin.com/company/bayern-x-tech">LinkedIn</a>
             <a href="#" id="langToggle" style="cursor:pointer;text-transform:uppercase;font-weight:600;letter-spacing:0.05em">EN</a>
@@ -535,7 +570,7 @@
         <div class="hero-content">
             <h1>
                 <span data-i18n="hero_line1">Logik & Lösungen für die moderne Ära.</span> <br>
-                <span class="hero-highlight" data-i18n="hero_line2">Dein Team verdient mehr als Standard-Copiloten.</span>
+                <span class="hero-highlight hero-statement" data-i18n="hero_line2">Von Robotik über Analytik bis hin zu komplexem Systems Engineering — kann unsere xPathfinderLabs-Software dein Projekt nicht direkt umsetzen, entwickeln wir es maßgeschneidert für dich.</span>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Ein einsatzbereites F&amp;E-Labor mit ehemaligen Volvo-, Mercedes- &amp; ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern — mit der Geschwindigkeit moderner Technologie.</p>
             <a href="mailto:dylan.kane@bayernxtech.de" class="hero-cta" data-i18n="hero_cta">Sprich mit uns über deine Herausforderungen</a>
@@ -1513,9 +1548,10 @@
     (() => {
         const T = {
             de: {
+                nav_partner: 'Partner',
                 nav_contact: 'Kontakt',
                 hero_line1: 'Logik & L\u00f6sungen f\u00fcr die moderne \u00c4ra.',
-                hero_line2: 'Dein Team verdient mehr als Standard-Copiloten.',
+                hero_line2: 'Von Robotik über Analytik bis hin zu komplexem Systems Engineering — kann unsere xPathfinderLabs-Software dein Projekt nicht direkt umsetzen, entwickeln wir es maßgeschneidert für dich.',
                 hero_subtitle: 'Ein einsatzbereites F&E-Labor mit ehemaligen Volvo-, Mercedes- & ZF-Ingenieur:innen. Wir bauen, testen, analysieren und verbessern \u2014 mit der Geschwindigkeit moderner Technologie.',
                 hero_cta: 'Sprich mit uns \u00fcber deine Herausforderungen',
                 hero_cta_sub: 'Wir bauen komplette L\u00f6sungen \u2014 & sch\u00e4rfen dein Team f\u00fcr das, was als N\u00e4chstes kommt.',
@@ -1579,9 +1615,10 @@
                 chat_placeholder: 'Nachricht eingeben\u2026',
             },
             en: {
+                nav_partner: 'Partner',
                 nav_contact: 'Contact',
                 hero_line1: 'Logic & solutions for the modern era.',
-                hero_line2: 'Your team deserves better than standard corporate copilots.',
+                hero_line2: 'From robotics to analytics to complex systems engineering — if our xPathfinderLabs software can\u0027t directly execute your project, we build it custom for you.',
                 hero_subtitle: 'A ready-built R&D lab with ex-Volvo, Mercedes & ZF engineers. We build, test, analyze, and improve \u2014 at the speed of modern technology.',
                 hero_cta: 'Discuss your challenges with us',
                 hero_cta_sub: 'We build complete solutions \u2014 & sharpen your team to build what\u0027s next.',
