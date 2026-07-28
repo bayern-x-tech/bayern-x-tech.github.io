@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-07-24T13:52:16Z",
+  "updated_at": "2026-07-28T11:41:55Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://fioricet-arlington-championship-navigation.trycloudflare.com/api/chat/",
-    "health_url": "https://fioricet-arlington-championship-navigation.trycloudflare.com/health"
+    "api_url": "https://directly-keywords-codes-unit.trycloudflare.com/api/chat/",
+    "health_url": "https://directly-keywords-codes-unit.trycloudflare.com/health"
   }
 }
