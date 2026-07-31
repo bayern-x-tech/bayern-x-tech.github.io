@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-07-31T06:50:01Z",
+  "updated_at": "2026-07-31T10:22:19Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://magnitude-shuttle-tucson-provider.trycloudflare.com/api/chat/",
-    "health_url": "https://magnitude-shuttle-tucson-provider.trycloudflare.com/health"
+    "api_url": "https://journal-conceptual-contents-cams.trycloudflare.com/api/chat/",
+    "health_url": "https://journal-conceptual-contents-cams.trycloudflare.com/health"
   }
 }
