@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-07-31T15:01:18Z",
+  "updated_at": "2026-07-31T19:39:43Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://template-bikini-came-rap.trycloudflare.com/api/chat/",
-    "health_url": "https://template-bikini-came-rap.trycloudflare.com/health"
+    "api_url": "https://donate-colon-reporters-projector.trycloudflare.com/api/chat/",
+    "health_url": "https://donate-colon-reporters-projector.trycloudflare.com/health"
   }
 }
