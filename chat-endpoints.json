@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-01T02:37:16Z",
+  "updated_at": "2026-08-02T02:36:03Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://coverage-mathematics-tutorial-sends.trycloudflare.com/api/chat/",
-    "health_url": "https://coverage-mathematics-tutorial-sends.trycloudflare.com/health"
+    "api_url": "https://chemical-toward-prep-antiques.trycloudflare.com/api/chat/",
+    "health_url": "https://chemical-toward-prep-antiques.trycloudflare.com/health"
   }
 }
