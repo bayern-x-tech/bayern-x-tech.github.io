@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T14:19:21Z",
+  "updated_at": "2026-08-03T14:32:27Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://montreal-derby-sales-foster.trycloudflare.com/api/chat/",
-    "health_url": "https://montreal-derby-sales-foster.trycloudflare.com/health"
+    "api_url": "https://why-hills-genetics-frederick.trycloudflare.com/api/chat/",
+    "health_url": "https://why-hills-genetics-frederick.trycloudflare.com/health"
   }
 }
