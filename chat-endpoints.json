@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T18:53:51Z",
+  "updated_at": "2026-08-03T19:31:30Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://attitude-quiz-dts-ranked.trycloudflare.com/api/chat/",
-    "health_url": "https://attitude-quiz-dts-ranked.trycloudflare.com/health"
+    "api_url": "https://rays-charter-boys-unions.trycloudflare.com/api/chat/",
+    "health_url": "https://rays-charter-boys-unions.trycloudflare.com/health"
   }
 }
