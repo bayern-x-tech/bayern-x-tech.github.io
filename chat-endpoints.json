@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T13:53:32Z",
+  "updated_at": "2026-08-03T14:03:51Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://guide-orders-advanced-wanted.trycloudflare.com/api/chat/",
-    "health_url": "https://guide-orders-advanced-wanted.trycloudflare.com/health"
+    "api_url": "https://cbs-themselves-moss-compatible.trycloudflare.com/api/chat/",
+    "health_url": "https://cbs-themselves-moss-compatible.trycloudflare.com/health"
   }
 }
