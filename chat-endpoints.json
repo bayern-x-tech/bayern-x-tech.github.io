@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-02T02:36:03Z",
+  "updated_at": "2026-08-03T02:35:02Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://chemical-toward-prep-antiques.trycloudflare.com/api/chat/",
-    "health_url": "https://chemical-toward-prep-antiques.trycloudflare.com/health"
+    "api_url": "https://valid-exempt-levy-this.trycloudflare.com/api/chat/",
+    "health_url": "https://valid-exempt-levy-this.trycloudflare.com/health"
   }
 }
