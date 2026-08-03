@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T21:17:17Z",
+  "updated_at": "2026-08-03T21:31:35Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://sin-grant-hunt-fridge.trycloudflare.com/api/chat/",
-    "health_url": "https://sin-grant-hunt-fridge.trycloudflare.com/health"
+    "api_url": "https://amount-extraordinary-metal-flow.trycloudflare.com/api/chat/",
+    "health_url": "https://amount-extraordinary-metal-flow.trycloudflare.com/health"
   }
 }
