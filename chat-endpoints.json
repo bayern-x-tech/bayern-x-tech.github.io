@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T21:31:35Z",
+  "updated_at": "2026-08-03T21:39:50Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://amount-extraordinary-metal-flow.trycloudflare.com/api/chat/",
-    "health_url": "https://amount-extraordinary-metal-flow.trycloudflare.com/health"
+    "api_url": "https://butterfly-boards-problems-charles.trycloudflare.com/api/chat/",
+    "health_url": "https://butterfly-boards-problems-charles.trycloudflare.com/health"
   }
 }
