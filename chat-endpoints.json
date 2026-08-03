@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T11:59:19Z",
+  "updated_at": "2026-08-03T12:03:48Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://courier-portion-freelance-icon.trycloudflare.com/api/chat/",
-    "health_url": "https://courier-portion-freelance-icon.trycloudflare.com/health"
+    "api_url": "https://scientific-oldest-subject-pay.trycloudflare.com/api/chat/",
+    "health_url": "https://scientific-oldest-subject-pay.trycloudflare.com/health"
   }
 }
