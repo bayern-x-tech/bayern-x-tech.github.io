@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T16:20:13Z",
+  "updated_at": "2026-08-03T17:23:39Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://brothers-establishment-postposted-fraction.trycloudflare.com/api/chat/",
-    "health_url": "https://brothers-establishment-postposted-fraction.trycloudflare.com/health"
+    "api_url": "https://royal-appointments-chevy-hoping.trycloudflare.com/api/chat/",
+    "health_url": "https://royal-appointments-chevy-hoping.trycloudflare.com/health"
   }
 }
