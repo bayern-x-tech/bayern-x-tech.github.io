@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T10:11:32Z",
+  "updated_at": "2026-08-03T11:51:21Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://exterior-patch-madonna-saskatchewan.trycloudflare.com/api/chat/",
-    "health_url": "https://exterior-patch-madonna-saskatchewan.trycloudflare.com/health"
+    "api_url": "https://bidder-calendar-sharp-nearby.trycloudflare.com/api/chat/",
+    "health_url": "https://bidder-calendar-sharp-nearby.trycloudflare.com/health"
   }
 }
