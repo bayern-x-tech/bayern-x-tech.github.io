@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-03T12:03:48Z",
+  "updated_at": "2026-08-03T12:13:19Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://scientific-oldest-subject-pay.trycloudflare.com/api/chat/",
-    "health_url": "https://scientific-oldest-subject-pay.trycloudflare.com/health"
+    "api_url": "https://repository-describe-welding-beverages.trycloudflare.com/api/chat/",
+    "health_url": "https://repository-describe-welding-beverages.trycloudflare.com/health"
   }
 }
