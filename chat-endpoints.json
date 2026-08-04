@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T09:34:54Z",
+  "updated_at": "2026-08-04T09:48:11Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://dozens-evaluate-microwave-keyboards.trycloudflare.com/api/chat/",
-    "health_url": "https://dozens-evaluate-microwave-keyboards.trycloudflare.com/health"
+    "api_url": "https://hearts-difficulty-socket-officials.trycloudflare.com/api/chat/",
+    "health_url": "https://hearts-difficulty-socket-officials.trycloudflare.com/health"
   }
 }
