@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T19:11:40Z",
+  "updated_at": "2026-08-04T19:13:42Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://mold-paper-combines-pill.trycloudflare.com/api/chat/",
-    "health_url": "https://mold-paper-combines-pill.trycloudflare.com/health"
+    "api_url": "https://penetration-roughly-arranged-renewable.trycloudflare.com/api/chat/",
+    "health_url": "https://penetration-roughly-arranged-renewable.trycloudflare.com/health"
   }
 }
