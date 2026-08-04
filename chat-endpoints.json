@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T10:23:39Z",
+  "updated_at": "2026-08-04T10:39:06Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://rack-bids-glossary-reunion.trycloudflare.com/api/chat/",
-    "health_url": "https://rack-bids-glossary-reunion.trycloudflare.com/health"
+    "api_url": "https://operating-insert-johnny-invalid.trycloudflare.com/api/chat/",
+    "health_url": "https://operating-insert-johnny-invalid.trycloudflare.com/health"
   }
 }
