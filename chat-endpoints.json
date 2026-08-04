@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T13:54:40Z",
+  "updated_at": "2026-08-04T13:58:17Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://winning-hearing-bidding-implied.trycloudflare.com/api/chat/",
-    "health_url": "https://winning-hearing-bidding-implied.trycloudflare.com/health"
+    "api_url": "https://msg-drives-las-scotia.trycloudflare.com/api/chat/",
+    "health_url": "https://msg-drives-las-scotia.trycloudflare.com/health"
   }
 }
