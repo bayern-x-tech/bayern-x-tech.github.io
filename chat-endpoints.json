@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T12:48:47Z",
+  "updated_at": "2026-08-04T12:49:55Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://period-shut-charitable-predictions.trycloudflare.com/api/chat/",
-    "health_url": "https://period-shut-charitable-predictions.trycloudflare.com/health"
+    "api_url": "https://ppm-warriors-availability-opposed.trycloudflare.com/api/chat/",
+    "health_url": "https://ppm-warriors-availability-opposed.trycloudflare.com/health"
   }
 }
