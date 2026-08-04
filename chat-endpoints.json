@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T18:47:29Z",
+  "updated_at": "2026-08-04T19:03:17Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://knives-receipt-pattern-substances.trycloudflare.com/api/chat/",
-    "health_url": "https://knives-receipt-pattern-substances.trycloudflare.com/health"
+    "api_url": "https://reminder-feel-anyone-colour.trycloudflare.com/api/chat/",
+    "health_url": "https://reminder-feel-anyone-colour.trycloudflare.com/health"
   }
 }
