@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T10:58:05Z",
+  "updated_at": "2026-08-04T10:59:40Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://crafts-san-baby-submitted.trycloudflare.com/api/chat/",
-    "health_url": "https://crafts-san-baby-submitted.trycloudflare.com/health"
+    "api_url": "https://cache-political-exchanges-athens.trycloudflare.com/api/chat/",
+    "health_url": "https://cache-political-exchanges-athens.trycloudflare.com/health"
   }
 }
