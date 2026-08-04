@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T14:08:38Z",
+  "updated_at": "2026-08-04T14:13:33Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://vacation-lyrics-friendship-cigarette.trycloudflare.com/api/chat/",
-    "health_url": "https://vacation-lyrics-friendship-cigarette.trycloudflare.com/health"
+    "api_url": "https://properly-virtually-discount-approved.trycloudflare.com/api/chat/",
+    "health_url": "https://properly-virtually-discount-approved.trycloudflare.com/health"
   }
 }
