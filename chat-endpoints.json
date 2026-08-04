@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T15:46:57Z",
+  "updated_at": "2026-08-04T16:07:35Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://acer-folks-lil-decor.trycloudflare.com/api/chat/",
-    "health_url": "https://acer-folks-lil-decor.trycloudflare.com/health"
+    "api_url": "https://dimensions-promise-myth-antarctica.trycloudflare.com/api/chat/",
+    "health_url": "https://dimensions-promise-myth-antarctica.trycloudflare.com/health"
   }
 }
