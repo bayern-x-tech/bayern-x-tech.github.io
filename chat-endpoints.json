@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-05T00:25:34Z",
+  "updated_at": "2026-08-05T00:30:06Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://wma-respond-serious-smart.trycloudflare.com/api/chat/",
-    "health_url": "https://wma-respond-serious-smart.trycloudflare.com/health"
+    "api_url": "https://model-quantities-larry-sol.trycloudflare.com/api/chat/",
+    "health_url": "https://model-quantities-larry-sol.trycloudflare.com/health"
   }
 }
