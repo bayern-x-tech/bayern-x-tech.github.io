@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-05T07:56:55Z",
+  "updated_at": "2026-08-05T12:27:02Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://ampland-crucial-attached-tramadol.trycloudflare.com/api/chat/",
-    "health_url": "https://ampland-crucial-attached-tramadol.trycloudflare.com/health"
+    "api_url": "https://load-creation-bacon-header.trycloudflare.com/api/chat/",
+    "health_url": "https://load-creation-bacon-header.trycloudflare.com/health"
   }
 }
