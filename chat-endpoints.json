@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-05T02:33:10Z",
+  "updated_at": "2026-08-05T04:32:52Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://alerts-reduce-loves-villages.trycloudflare.com/api/chat/",
-    "health_url": "https://alerts-reduce-loves-villages.trycloudflare.com/health"
+    "api_url": "https://accomplished-indication-lens-crimes.trycloudflare.com/api/chat/",
+    "health_url": "https://accomplished-indication-lens-crimes.trycloudflare.com/health"
   }
 }
