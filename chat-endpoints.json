@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-08T01:20:52Z",
+  "updated_at": "2026-08-08T02:29:50Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://mercury-nutten-reporting-baseball.trycloudflare.com/api/chat/",
-    "health_url": "https://mercury-nutten-reporting-baseball.trycloudflare.com/health"
+    "api_url": "https://act-shut-levitra-van.trycloudflare.com/api/chat/",
+    "health_url": "https://act-shut-levitra-van.trycloudflare.com/health"
   }
 }
