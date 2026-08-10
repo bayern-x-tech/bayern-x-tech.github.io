@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-09T02:28:29Z",
+  "updated_at": "2026-08-10T02:27:31Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://pending-mambo-eliminate-beach.trycloudflare.com/api/chat/",
-    "health_url": "https://pending-mambo-eliminate-beach.trycloudflare.com/health"
+    "api_url": "https://downloadable-bigger-cups-noticed.trycloudflare.com/api/chat/",
+    "health_url": "https://downloadable-bigger-cups-noticed.trycloudflare.com/health"
   }
 }
