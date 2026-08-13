@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-13T02:23:52Z",
+  "updated_at": "2026-08-13T22:06:03Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://hunter-aus-nursing-acting.trycloudflare.com/api/chat/",
-    "health_url": "https://hunter-aus-nursing-acting.trycloudflare.com/health"
+    "api_url": "https://cartoon-bullet-seas-portraits.trycloudflare.com/api/chat/",
+    "health_url": "https://cartoon-bullet-seas-portraits.trycloudflare.com/health"
   }
 }
