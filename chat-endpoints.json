@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-13T22:06:03Z",
+  "updated_at": "2026-08-14T02:22:38Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://cartoon-bullet-seas-portraits.trycloudflare.com/api/chat/",
-    "health_url": "https://cartoon-bullet-seas-portraits.trycloudflare.com/health"
+    "api_url": "https://synthetic-satisfaction-colour-replica.trycloudflare.com/api/chat/",
+    "health_url": "https://synthetic-satisfaction-colour-replica.trycloudflare.com/health"
   }
 }
