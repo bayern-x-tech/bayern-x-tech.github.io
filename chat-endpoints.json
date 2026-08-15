@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-14T20:34:41Z",
+  "updated_at": "2026-08-15T02:21:40Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://science-briefly-feeding-consumption.trycloudflare.com/api/chat/",
-    "health_url": "https://science-briefly-feeding-consumption.trycloudflare.com/health"
+    "api_url": "https://ventures-biological-hitting-los.trycloudflare.com/api/chat/",
+    "health_url": "https://ventures-biological-hitting-los.trycloudflare.com/health"
   }
 }
