@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-16T15:08:59Z",
+  "updated_at": "2026-08-17T01:09:00Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://metres-jeffrey-contacts-swimming.trycloudflare.com/api/chat/",
-    "health_url": "https://metres-jeffrey-contacts-swimming.trycloudflare.com/health"
+    "api_url": "https://latina-namely-professional-these.trycloudflare.com/api/chat/",
+    "health_url": "https://latina-namely-professional-these.trycloudflare.com/health"
   }
 }
