@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-18T02:18:03Z",
+  "updated_at": "2026-08-18T08:49:04Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://saves-britain-advise-spirituality.trycloudflare.com/api/chat/",
-    "health_url": "https://saves-britain-advise-spirituality.trycloudflare.com/health"
+    "api_url": "https://assessed-julian-showtimes-expectations.trycloudflare.com/api/chat/",
+    "health_url": "https://assessed-julian-showtimes-expectations.trycloudflare.com/health"
   }
 }
