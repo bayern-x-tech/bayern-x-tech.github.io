@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-17T12:50:37Z",
+  "updated_at": "2026-08-18T02:18:03Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://healthy-proposed-tasks-enhance.trycloudflare.com/api/chat/",
-    "health_url": "https://healthy-proposed-tasks-enhance.trycloudflare.com/health"
+    "api_url": "https://saves-britain-advise-spirituality.trycloudflare.com/api/chat/",
+    "health_url": "https://saves-britain-advise-spirituality.trycloudflare.com/health"
   }
 }
