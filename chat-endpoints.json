@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-20T02:57:52Z",
+  "updated_at": "2026-08-20T07:31:54Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://concentration-upgrades-powered-grew.trycloudflare.com/api/chat/",
-    "health_url": "https://concentration-upgrades-powered-grew.trycloudflare.com/health"
+    "api_url": "https://thick-pupils-dude-janet.trycloudflare.com/api/chat/",
+    "health_url": "https://thick-pupils-dude-janet.trycloudflare.com/health"
   }
 }
