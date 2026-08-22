@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-21T02:15:00Z",
+  "updated_at": "2026-08-22T02:13:52Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://smithsonian-reflects-prairie-indicated.trycloudflare.com/api/chat/",
-    "health_url": "https://smithsonian-reflects-prairie-indicated.trycloudflare.com/health"
+    "api_url": "https://rounds-mill-pending-recipe.trycloudflare.com/api/chat/",
+    "health_url": "https://rounds-mill-pending-recipe.trycloudflare.com/health"
   }
 }
