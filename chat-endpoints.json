@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-22T02:13:52Z",
+  "updated_at": "2026-08-23T00:57:51Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://rounds-mill-pending-recipe.trycloudflare.com/api/chat/",
-    "health_url": "https://rounds-mill-pending-recipe.trycloudflare.com/health"
+    "api_url": "https://mime-pig-isaac-say.trycloudflare.com/api/chat/",
+    "health_url": "https://mime-pig-isaac-say.trycloudflare.com/health"
   }
 }
