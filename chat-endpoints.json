@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-23T02:12:40Z",
+  "updated_at": "2026-08-24T02:11:45Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://counted-seminar-sequence-heroes.trycloudflare.com/api/chat/",
-    "health_url": "https://counted-seminar-sequence-heroes.trycloudflare.com/health"
+    "api_url": "https://nextel-hansen-advertisers-kitchen.trycloudflare.com/api/chat/",
+    "health_url": "https://nextel-hansen-advertisers-kitchen.trycloudflare.com/health"
   }
 }
