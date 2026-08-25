@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T12:32:32Z",
+  "updated_at": "2026-08-25T12:35:18Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://identifies-wallpapers-days-connectivity.trycloudflare.com/api/chat/",
-    "health_url": "https://identifies-wallpapers-days-connectivity.trycloudflare.com/health"
+    "api_url": "https://joined-cite-debian-warner.trycloudflare.com/api/chat/",
+    "health_url": "https://joined-cite-debian-warner.trycloudflare.com/health"
   }
 }
