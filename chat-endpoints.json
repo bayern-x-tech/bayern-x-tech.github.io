@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-24T15:24:41Z",
+  "updated_at": "2026-08-25T01:04:22Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://abroad-communication-warrant-bet.trycloudflare.com/api/chat/",
-    "health_url": "https://abroad-communication-warrant-bet.trycloudflare.com/health"
+    "api_url": "https://surgeon-understanding-smithsonian-jill.trycloudflare.com/api/chat/",
+    "health_url": "https://surgeon-understanding-smithsonian-jill.trycloudflare.com/health"
   }
 }
