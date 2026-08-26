@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-26T02:09:05Z",
+  "updated_at": "2026-08-26T16:15:20Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://triple-treasures-different-taxation.trycloudflare.com/api/chat/",
-    "health_url": "https://triple-treasures-different-taxation.trycloudflare.com/health"
+    "api_url": "https://responses-browsers-wars-thru.trycloudflare.com/api/chat/",
+    "health_url": "https://responses-browsers-wars-thru.trycloudflare.com/health"
   }
 }
