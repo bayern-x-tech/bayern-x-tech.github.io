@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-27T02:08:02Z",
+  "updated_at": "2026-08-28T02:07:12Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://contacted-sensitive-find-foster.trycloudflare.com/api/chat/",
-    "health_url": "https://contacted-sensitive-find-foster.trycloudflare.com/health"
+    "api_url": "https://appropriations-increased-rarely-diana.trycloudflare.com/api/chat/",
+    "health_url": "https://appropriations-increased-rarely-diana.trycloudflare.com/health"
   }
 }
