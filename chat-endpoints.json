@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-28T02:07:12Z",
+  "updated_at": "2026-08-29T02:06:10Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://appropriations-increased-rarely-diana.trycloudflare.com/api/chat/",
-    "health_url": "https://appropriations-increased-rarely-diana.trycloudflare.com/health"
+    "api_url": "https://operation-barrier-loved-carb.trycloudflare.com/api/chat/",
+    "health_url": "https://operation-barrier-loved-carb.trycloudflare.com/health"
   }
 }
