@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-08-29T02:06:10Z",
+  "updated_at": "2026-08-30T02:24:22Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://operation-barrier-loved-carb.trycloudflare.com/api/chat/",
-    "health_url": "https://operation-barrier-loved-carb.trycloudflare.com/health"
+    "api_url": "https://reproduced-oaks-auditor-clinton.trycloudflare.com/api/chat/",
+    "health_url": "https://reproduced-oaks-auditor-clinton.trycloudflare.com/health"
   }
 }
