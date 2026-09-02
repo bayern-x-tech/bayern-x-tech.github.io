@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-02T02:04:18Z",
+  "updated_at": "2026-09-02T03:00:06Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://asks-territory-reload-exchange.trycloudflare.com/api/chat/",
-    "health_url": "https://asks-territory-reload-exchange.trycloudflare.com/health"
+    "api_url": "https://online-school-expenses-arnold.trycloudflare.com/api/chat/",
+    "health_url": "https://online-school-expenses-arnold.trycloudflare.com/health"
   }
 }
