@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-04T02:58:55Z",
+  "updated_at": "2026-09-04T10:29:20Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://teaching-naturally-posters-arm.trycloudflare.com/api/chat/",
-    "health_url": "https://teaching-naturally-posters-arm.trycloudflare.com/health"
+    "api_url": "https://magnet-walls-engines-moving.trycloudflare.com/api/chat/",
+    "health_url": "https://magnet-walls-engines-moving.trycloudflare.com/health"
   }
 }
