@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-04T19:33:40Z",
+  "updated_at": "2026-09-05T02:56:53Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://somehow-psi-eclipse-tuesday.trycloudflare.com/api/chat/",
-    "health_url": "https://somehow-psi-eclipse-tuesday.trycloudflare.com/health"
+    "api_url": "https://expressions-accompanying-subdivision-rugs.trycloudflare.com/api/chat/",
+    "health_url": "https://expressions-accompanying-subdivision-rugs.trycloudflare.com/health"
   }
 }
