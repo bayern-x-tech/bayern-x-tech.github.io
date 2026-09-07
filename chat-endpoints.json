@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-06T02:56:08Z",
+  "updated_at": "2026-09-07T02:54:48Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://myrtle-adopt-eos-strand.trycloudflare.com/api/chat/",
-    "health_url": "https://myrtle-adopt-eos-strand.trycloudflare.com/health"
+    "api_url": "https://dairy-knock-patterns-rolled.trycloudflare.com/api/chat/",
+    "health_url": "https://dairy-knock-patterns-rolled.trycloudflare.com/health"
   }
 }
