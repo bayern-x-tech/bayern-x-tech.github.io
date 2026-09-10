@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-10T02:50:34Z",
+  "updated_at": "2026-09-10T10:42:30Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://preferred-encouraged-nav-trained.trycloudflare.com/api/chat/",
-    "health_url": "https://preferred-encouraged-nav-trained.trycloudflare.com/health"
+    "api_url": "https://murray-fares-clark-shaft.trycloudflare.com/api/chat/",
+    "health_url": "https://murray-fares-clark-shaft.trycloudflare.com/health"
   }
 }
