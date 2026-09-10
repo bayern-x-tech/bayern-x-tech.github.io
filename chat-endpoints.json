@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-09T02:51:50Z",
+  "updated_at": "2026-09-10T02:50:34Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://paying-prize-dad-mai.trycloudflare.com/api/chat/",
-    "health_url": "https://paying-prize-dad-mai.trycloudflare.com/health"
+    "api_url": "https://preferred-encouraged-nav-trained.trycloudflare.com/api/chat/",
+    "health_url": "https://preferred-encouraged-nav-trained.trycloudflare.com/health"
   }
 }
