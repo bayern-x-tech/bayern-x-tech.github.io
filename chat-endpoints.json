@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-11T06:24:53Z",
+  "updated_at": "2026-09-11T13:58:04Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://insert-newman-citizens-effort.trycloudflare.com/api/chat/",
-    "health_url": "https://insert-newman-citizens-effort.trycloudflare.com/health"
+    "api_url": "https://list-anna-silence-reason.trycloudflare.com/api/chat/",
+    "health_url": "https://list-anna-silence-reason.trycloudflare.com/health"
   }
 }
