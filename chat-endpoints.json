@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-13T02:47:38Z",
+  "updated_at": "2026-09-14T02:46:46Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://tract-capabilities-concrete-statements.trycloudflare.com/api/chat/",
-    "health_url": "https://tract-capabilities-concrete-statements.trycloudflare.com/health"
+    "api_url": "https://recipes-desperate-consumers-turns.trycloudflare.com/api/chat/",
+    "health_url": "https://recipes-desperate-consumers-turns.trycloudflare.com/health"
   }
 }
