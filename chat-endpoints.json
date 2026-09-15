@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-14T02:46:46Z",
+  "updated_at": "2026-09-15T00:59:26Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://recipes-desperate-consumers-turns.trycloudflare.com/api/chat/",
-    "health_url": "https://recipes-desperate-consumers-turns.trycloudflare.com/health"
+    "api_url": "https://submission-simulation-bar-skiing.trycloudflare.com/api/chat/",
+    "health_url": "https://submission-simulation-bar-skiing.trycloudflare.com/health"
   }
 }
