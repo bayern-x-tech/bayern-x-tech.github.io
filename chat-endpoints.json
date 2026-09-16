@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-16T02:44:30Z",
+  "updated_at": "2026-09-16T18:57:58Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://tions-transform-logan-islamic.trycloudflare.com/api/chat/",
-    "health_url": "https://tions-transform-logan-islamic.trycloudflare.com/health"
+    "api_url": "https://doubt-wrist-technologies-links.trycloudflare.com/api/chat/",
+    "health_url": "https://doubt-wrist-technologies-links.trycloudflare.com/health"
   }
 }
