@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-18T02:42:12Z",
+  "updated_at": "2026-09-18T09:02:15Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://decrease-genetic-graphics-memorabilia.trycloudflare.com/api/chat/",
-    "health_url": "https://decrease-genetic-graphics-memorabilia.trycloudflare.com/health"
+    "api_url": "https://apache-geological-neighbors-acer.trycloudflare.com/api/chat/",
+    "health_url": "https://apache-geological-neighbors-acer.trycloudflare.com/health"
   }
 }
