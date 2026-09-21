@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-20T13:48:17Z",
+  "updated_at": "2026-09-21T02:39:07Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://beautiful-reported-shift-year.trycloudflare.com/api/chat/",
-    "health_url": "https://beautiful-reported-shift-year.trycloudflare.com/health"
+    "api_url": "https://mid-rick-pharmacology-opponents.trycloudflare.com/api/chat/",
+    "health_url": "https://mid-rick-pharmacology-opponents.trycloudflare.com/health"
   }
 }
