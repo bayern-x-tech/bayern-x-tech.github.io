@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-22T11:59:45Z",
+  "updated_at": "2026-09-23T02:36:19Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://sensors-encouraged-deaf-prior.trycloudflare.com/api/chat/",
-    "health_url": "https://sensors-encouraged-deaf-prior.trycloudflare.com/health"
+    "api_url": "https://descending-wifi-terms-belongs.trycloudflare.com/api/chat/",
+    "health_url": "https://descending-wifi-terms-belongs.trycloudflare.com/health"
   }
 }
