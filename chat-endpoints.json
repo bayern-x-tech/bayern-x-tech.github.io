@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-25T02:34:19Z",
+  "updated_at": "2026-09-26T02:32:55Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://sheffield-outcome-mins-tee.trycloudflare.com/api/chat/",
-    "health_url": "https://sheffield-outcome-mins-tee.trycloudflare.com/health"
+    "api_url": "https://rise-adoption-whilst-observation.trycloudflare.com/api/chat/",
+    "health_url": "https://rise-adoption-whilst-observation.trycloudflare.com/health"
   }
 }
