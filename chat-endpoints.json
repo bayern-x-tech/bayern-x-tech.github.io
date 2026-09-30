@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-29T02:29:10Z",
+  "updated_at": "2026-09-30T02:28:15Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://utah-coordinator-medicines-dodge.trycloudflare.com/api/chat/",
-    "health_url": "https://utah-coordinator-medicines-dodge.trycloudflare.com/health"
+    "api_url": "https://map-expired-occasional-lambda.trycloudflare.com/api/chat/",
+    "health_url": "https://map-expired-occasional-lambda.trycloudflare.com/health"
   }
 }
