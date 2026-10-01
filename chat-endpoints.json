@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-10-01T02:26:58Z",
+  "updated_at": "2026-10-01T03:56:35Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://sort-thousand-metric-happens.trycloudflare.com/api/chat/",
-    "health_url": "https://sort-thousand-metric-happens.trycloudflare.com/health"
+    "api_url": "https://pulled-increase-job-nodes.trycloudflare.com/api/chat/",
+    "health_url": "https://pulled-increase-job-nodes.trycloudflare.com/health"
   }
 }
