@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-09-30T02:28:15Z",
+  "updated_at": "2026-10-01T02:26:58Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://map-expired-occasional-lambda.trycloudflare.com/api/chat/",
-    "health_url": "https://map-expired-occasional-lambda.trycloudflare.com/health"
+    "api_url": "https://sort-thousand-metric-happens.trycloudflare.com/api/chat/",
+    "health_url": "https://sort-thousand-metric-happens.trycloudflare.com/health"
   }
 }
