@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updated_at": "2026-10-08T02:18:55Z",
+  "updated_at": "2026-10-09T02:17:47Z",
   "status": "online",
   "active_backend": {
     "label": "BXT GPU",
     "source": "cloudflare-quick-tunnel",
     "protocol": "http2",
-    "api_url": "https://exchanges-status-remain-pointing.trycloudflare.com/api/chat/",
-    "health_url": "https://exchanges-status-remain-pointing.trycloudflare.com/health"
+    "api_url": "https://setup-capabilities-where-hampshire.trycloudflare.com/api/chat/",
+    "health_url": "https://setup-capabilities-where-hampshire.trycloudflare.com/health"
   }
 }
